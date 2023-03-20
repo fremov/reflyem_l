@@ -42,26 +42,26 @@
                                 <div class="tab-pane fade show active" id="list-home" role="tabpanel"
                                      aria-labelledby="list-home-list">
                                     <span class="fw-bold">Выбираем нужную расу персонажа: </span> <br>
-                                    <img src="../../../../../reflyem/assets/image/insruction1.png" alt="" srcset="">
+                                    <img src="{{ asset('images/insruction1.png') }}" alt="pic" srcset="">
                                 </div>
                                 <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
                                     <span class="fw-bold">Выбираем нужный камень для персонажа: </span> <br>
-                                    <img src="../../../../../reflyem/assets/image/insruction2.png" alt="" srcset="">
+                                    <img src="{{ asset('images/insruction2.png') }}" alt="pic" srcset="">
                                 </div>
                                 <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
                                     <span class="fw-bold">Выбираем нужный уровень сложности: </span><br>
-                                    <img src="../../../../../reflyem/assets/image/insruction3.png" alt="" srcset="">
+                                    <img src="{{ asset('images/insruction3.png') }}" alt="pic" srcset="">
                                 </div>
                                 <div class="tab-pane fade" id="list-messages-1" role="tabpanel" aria-labelledby="list-messages-list-1">
                                     <span class="fw-bold">В первом поле вводим текущее значение нужного навыка: </span> <br>
                                     <span class="fw-bold">Во втором поле вводим значение навыка до которого вы хотите повысить: </span>
-                                    <img src="../../../../../reflyem/assets/image/insruction6.png" alt="" srcset="">
+                                    <img src="{{ asset('images/insruction4.png') }}" alt="pic" srcset="">
                                 </div>
                                 <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
                                     <span class="fw-bold">И наконец нажимаем на кнопку "Расчитать" и смотрим на результаты: </span>
                                     <br>
-                                    <img src="../../../../../reflyem/assets/image/insruction4.png" alt="" srcset=""> <br>
-                                    <img class="w-75" src="../../../../../reflyem/assets/image/insruction5.png" alt="" srcset="">
+                                    <img style="width: 700px!important;" src="{{ asset('images/insruction5.png') }}" alt="pic" srcset=""> <br>
+                                    <img class="w-75" style="width: 300px!important;" src="{{ asset('images/insruction6.png') }}" alt="pic" srcset="">
                                 </div>
                             </div>
                         </div>

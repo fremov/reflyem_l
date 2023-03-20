@@ -26,41 +26,24 @@
     <title> Reflyem DataBase </title>
 </head>
 <body>
-
-
+{{--Хеадер--}}
 <x-header />
+{{--Хеадер--}}
 <!-- Background image -->
-<div
-        class="bg-image"
-        style="background-image: url('{{asset('images/Frem.png')}}');height: 937px!important;">
-    <div class="h-100">
-        <!-- Pills navs -->
-        <ul class="nav nav-pills mb-3 d-flex justify-content-center align-items-center" id="ex1" role="tablist">
-            <li class="nav-item" role="presentation">
-                <a
-                        class="nav-link active "
-                        id="ex1-tab-1"
-                        data-mdb-toggle="pill"
-                        href="#ex1-pills-1"
-                        role="tab"
-                        aria-controls="ex1-pills-1"
-                        aria-selected="true"
-                >Оружие</a
-                >
-            </li>
-        </ul>
-
-        <!-- Pills content -->
-        <div class="tab-content d-flex justify-content-center align-items-center container-fluid" id="ex1-content" style="width: 100%">
-            <div
-                    class="tab-pane fade show active text-info fs-5 fw-bold"
-                    id="ex1-pills-1"
-                    role="tabpanel"
-                    aria-labelledby="ex1-tab-1"
-            >
-                <!-- Pills navs поиск в 1 пилсе -->
+<div class="bg-image" style="background-image: url('{{asset('images/Frem.png')}}');height: 937px!important;">
+    <div class="h-100 d-flex justify-content-center align-items-center">
+            <div class="tab-pane fade show active text-info fs-5 fw-bold" id="ex1-pills-1" role="tabpanel" aria-labelledby="ex1-tab-1">
+                <!--поиск -->
                 <div class="container-fluid d-flex h-100 justify-content-center mb-3" style="width: 350px;">
-                Форма поиска
+                    <div class="input-group">
+                        <div class="form-outline">
+                            <input type="search" id="form1" class="form-control" />
+                            <label class="form-label" for="form1">Search</label>
+                        </div>
+                        <button type="button" class="btn btn-primary">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
                 </div>
             <!--таблица в первом пилсе-->
                 <div class="container-fluid d-flex justify-content-center h-100">
@@ -109,17 +92,7 @@
                                 </label> Всё оружие<br>
                                 <input type="submit" class="btn btn-primary mt-3" value="Подтвердить">
                             </form>
-                            <!--Сброс поиска-->
                         </div>
-                        <!-- Default checkbox -->
-<!--                        <div>-->
-<!--                            <div class="form-check">-->
-<!--                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />-->
-<!--                                <label class="form-check-label" for="flexCheckDefault">Default checkbox</label>-->
-<!--                                <a href="assets/php/index.php">1</a>-->
-<!--                            </div>-->
-<!---->
-<!--                        </div>-->
                     </div>
                 </div>
                 <div class="container-fluid d-flex justify-content-center h-100">
@@ -128,7 +101,6 @@
             </div>
         </div>
     </div>
-</div>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"></script>
 </body>
 </html>
