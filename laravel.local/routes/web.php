@@ -17,7 +17,8 @@ Route::get('/', function () {
     return view('main_page.welcome');
 });
 Route::get('/database', [\App\Http\Controllers\DataBaseController::class, 'show_data']);
-
+Route::get('/installation', [\App\Http\Controllers\InstallationController::class, 'show']);
+Route::get('/LPCalculator', [\App\Http\Controllers\LPcalcController::class, 'show']);
 //Route::post('/form', [PostController::class, 'form']);
 //Route::get('/form', [PostController::class, 'form']);
 

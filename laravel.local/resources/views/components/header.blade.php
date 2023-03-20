@@ -41,11 +41,11 @@
                             <span class="text-lowercase"><span class="text-uppercase">Д</span>ля игроков</span>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <li><a class="dropdown-item" href="faq.html">Как установить?</a></li>
+                            <li><a class="dropdown-item" href="instalation">Как установить?</a></li>
                             <li><a class="dropdown-item" href="builds.html">Билды</a></li>
                             <li><a class="dropdown-item" href="guides.html">Гайды</a></li>
                             <li><a class="dropdown-item" href="calcLP.html" target="_blank">Калькулятор LP</a></li>
-                            <li><a class="dropdown-item" href="../../../database">База знаний</a></li>
+                            <li><a class="dropdown-item" href="database">База знаний</a></li>
                         </ul>
                     </div>
                 </li>
