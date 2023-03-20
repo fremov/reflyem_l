@@ -1,90 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta property="og:title" content="Reflyem">
-
-    <meta name="description" content="Reflyem это сборка модов для Skyrim Special Edition,
-                                        которая меняет множество аспектов игры и создана для того,
-                                        чтобы ваше путешествие по миру Скайрима было
-                                        максимально комфортным и приятным.">
-    <meta property="og:description" content="Reflyem это сборка модов для Skyrim Special Edition,
-                                        которая меняет множество аспектов игры и создана для того,
-                                        чтобы ваше путешествие по миру Скайрима было
-                                        максимально комфортным и приятным.">
-    <meta name="keywords" content="Reflyem, Рефлием, Скайрим спешл эдишен, сборка модов, моды, reflyem">
-    <meta name="yandex-verification" content="e29c8116acf9e039" />
-    <link rel="shortcut icon" href="{{asset('images/slidkiy_rulet.png')}}" type="image/x-icon">
-    <link rel="icon" href="{{asset('images/slidkiy_rulet.png')}}">
-    <title> Reflyem </title>
-
-  <!-- Font Awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
-  <!-- MDB -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css" rel="stylesheet"/>
-    <!-- MDB -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"></script>
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-{{--    <link rel="stylesheet" href="{{ asset('style/main.css') }}">--}}
-    <link rel="stylesheet" href="{{ asset('style/scrollbar.css') }}">
+<x-head />
 </head>
 <body>
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="background-color: rgba(0, 0, 0, 0.8)!important;">
-    <div class="container-fluid">
-        <button
-                class="navbar-toggler"
-                type="button"
-                data-mdb-toggle="collapse"
-                data-mdb-target="#navbarNav"
-                aria-controls="navbarNav"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-        >
-            <i class="fas fa-bars text-light"></i>
-        </button>
-        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active text-white " aria-current="page" href="#Main">Главная</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white ms-3 me-3" href="#Base">База знаний</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white  me-3" href="#Discord">Дискорд</a>
-                </li>
-                <li class="nav-item text-white">
-                    <a class="nav-link text-white me-2" href="#Donation">Поддержка</a>
-                </li>
-                <li class="nav-item p-0 fs-5">
-                    <div class="dropdown text-center shadow-0" style="background-color: rgba(0, 0, 0, 0)!important;">
-                        <button
-                                class="btn btn-black text-light dropdown-toggle"
-                                type="button"
-                                id="dropdownMenuButton"
-                                data-mdb-toggle="dropdown"
-                                aria-expanded="false"
-
-
-                        >
-                            <span class="text-lowercase"><span class="text-uppercase">Д</span>ля игроков</span>
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <li><a class="dropdown-item" href="installation">Как установить?</a></li>
-                            <li><a class="dropdown-item" href="builds.html">Билды</a></li>
-                            <li><a class="dropdown-item" href="guides.html">Гайды</a></li>
-                            <li><a class="dropdown-item" href="LPCalculator" target="_blank">Калькулятор LP</a></li>
-                            <li><a class="dropdown-item" href="database">База знаний</a></li>
-                        </ul>
-                    </div>
-                </li>
-
-            </ul>
-        </div>
-    </div>
-</nav>
+{{--Хедер--}}
+<x-header />
+{{--Хедер--}}
 <!-- Блок Главная -->
 <div
         class="bg-image p-5 text-center shadow-1-strong"

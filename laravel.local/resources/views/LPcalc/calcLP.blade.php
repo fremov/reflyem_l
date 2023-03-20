@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>LPcalc</title>
-    <link rel="stylesheet" href="../../../../../reflyem/assets/mdb/css/mdb.min.css">
-    <link rel="stylesheet" href="../../../../../reflyem/assets/style/calcLPstyle.css">
-    <link rel="stylesheet" href="../../../../../reflyem/assets/style/scrollbar.css">
+   <x-head />
+    <link rel="stylesheet" href="{{ asset('style/calcLPstyle.css') }}">
 </head>
 <body class="bg-dark" style="background-color: black!important;">
 
@@ -346,8 +343,11 @@
     </tr>
     </tbody>
 </table>
+    <div class="d-flex h-100 justify-content-center align-items-center">
+        <a href="/"><button class="btn btn-primary rounded-3">На главную</button></a>
+    </div>
 </div>
-<script src="../../../../../reflyem/assets/mdb/js/mdb.min.js"></script>
-<script src="../../../../../reflyem/assets/script/main.js"></script>
+
+<script src="{{ asset('script/main.js') }}"></script>
 </body>
 </html>

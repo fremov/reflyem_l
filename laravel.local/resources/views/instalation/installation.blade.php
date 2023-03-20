@@ -1,104 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta property="og:title" content="Reflyem">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Reflyem это сборка модов для Skyrim Special Edition,
-                                        которая меняет множество аспектов игры и создана для того,
-                                        чтобы ваше путешествие по миру Скайрима было
-                                        максимально комфортным и приятным.
-">
-    <meta property="og:description" content="Reflyem это сборка модов для Skyrim Special Edition,
-                                        которая меняет множество аспектов игры и создана для того,
-                                        чтобы ваше путешествие по миру Скайрима было
-                                        максимально комфортным и приятным.">
-    <meta name="keywords" content="Reflyem, Рефлием, Скайрим спешл эдишен, сборка модов, моды, reflyem">
-    <meta name="yandex-verification" content="e29c8116acf9e039" />
-    <link rel="shortcut icon" href="assets/image/slidkiy_rulet.png" type="image/x-icon">
-    <link rel="icon" href="assets/image/slidkiy_rulet.png">
-    <title> Reflyem </title>
-
-    <!-- Font Awesome -->
-    <link
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-            rel="stylesheet"
-    />
-    <!-- MDB -->
-    <link
-            href="assets/mdb/css/mdb.min.css"
-            rel="stylesheet"
-    />
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-          rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-          crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/style/main.css">
-    <link rel="stylesheet" href="assets/style/scrollbar.css">
+   <x-head />
+    <link rel="stylesheet" href="{{ asset('style/main.css') }}">
 </head>
-
 <body>
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="background-color: rgba(0, 0, 0, 0.8)!important;">
-    <div class="container-fluid">
-        <button
-                class="navbar-toggler"
-                type="button"
-                data-mdb-toggle="collapse"
-                data-mdb-target="#navbarNav"
-                aria-controls="navbarNav"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-        >
-            <i class="fas fa-bars text-light"></i>
-        </button>
-        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active text-white " aria-current="page" href="index.html#Main">Главная</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white ms-3 me-3" href="index.html#Base">База знаний</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white  me-3" href="index.html#Discord">Дискорд</a>
-                </li>
-                <li class="nav-item text-white">
-                    <a class="nav-link text-white " href="index.html#Donation">Поддержка</a>
-                </li>
-                <li class="nav-item p-0 fs-5 ms-2">
-                    <div class="dropdown text-center" style="background-color: rgba(0, 0, 0, 0)!important;">
-                        <button
-                                class="btn btn-black text-light dropdown-toggle"
-                                type="button"
-                                id="dropdownMenuButton"
-                                data-mdb-toggle="dropdown"
-                                aria-expanded="false">
-                            <span class="text-lowercase"><span class="text-uppercase">Д</span>ля игроков</span>
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <li><a class="dropdown-item" href="#">Гайды</a></li>
-                            <li><a class="dropdown-item" href="#">Билды</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </div>
-                </li>
-
-            </ul>
-        </div>
-    </div>
-</nav>
+{{--Хедер--}}
+<x-header />
+{{--Хедер--}}
 <!-- Блок Главная -->
-<div
-        style="background-image: url('{{asset('images/faq-1.jpg')}}');
-        height: 937px;
-"
->
-    <div class="h-100 d-flex justify-content-start align-items-center overflow-hidden">
-        <h3 class="badge bg-primary  me-auto ms-5 text-start  h-100 overflow-hidden text-light align-items-center justify-content-center w-75 shadow-1-strong lh-sm shadow-5"
-            style="background-color: rgba(0, 0, 0, 0)!important;
-            padding-top: 290px;
-">
+<div style="background-image: url('{{asset('images/faq-1.jpg')}}');height: 937px;">
+    <div class="h-100 d-flex justify-content-start align-items-center overflow-hidden fs-3">
+        <h3 class="badge bg-primary  me-auto ms-5 text-start  h-100 overflow-hidden text-light align-items-center justify-content-center w-75 shadow-1-strong lh-sm shadow-5" style="background-color: rgba(0, 0, 0, 0)!important;padding-top: 290px;">
+            <span>Текстовый гайд</span> <br>
             1. Установите чистый Skyrim — Special Edition 1.5.97.0.8 <br> <span class="text-danger">НЕ устанавливайте его в Program Files или Program Files (x86)</span>,
             <br> <span class="text-danger">это может вызвать проблемы</span>
             <br><br>
@@ -119,9 +33,5 @@
     </div>
 </div>
 <!-- Блок Главная -->
-
-
-<!-- MDB -->
-<script type="text/javascript" src="assets/mdb/js/mdb.min.js"></script>
 </body>
 </html>
