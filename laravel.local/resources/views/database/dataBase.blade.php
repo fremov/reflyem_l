@@ -47,7 +47,7 @@
                 </div>
             <!--таблица в первом пилсе-->
                 <div class="container-fluid d-flex justify-content-center h-100">
-                <table class="table bg-black text-white table-bordered text-center justify-content-center align-items-center w-75 ms-auto" style="width: 1000px!important;">
+                <table class="table bg-black text-white table-bordered text-center justify-content-center align-items-center w-75 ms-auto" style="width: 1200px!important;">
                     <thead>
                     <tr>
                         <th scope="col"></th>
@@ -70,30 +70,39 @@
                         <td style="width: 15%;">{{$item->material}}</td>
                         <td style="width: 5%;">{{$item->weight}}</td>
                         <td style="width: 15%;">{{$item->location}}</td>
+                        <td>
+                            <a href="{{ route('database.show', $item->id) }}">Show</a>
+                            <a href="{{ route('database.edit', $item->id) }}">Edit</a>
+                            <form action="{{ route('database.destroy', $item->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit">Delete</button>
+                            </form>
+                        </td>
                     </tr>
                     @endforeach
                     </tbody>
                 </table>
-                    <div class="fw-bold text-white fs-5 shadow-5-strong container-fluid h-100 w-25 me-auto d-flex justify-content-center flex-column align-items-center ms-3" style="width: 250px!important;">
-                        <div class="form-check">
-                                <h2>Сортировка</h2>
-                            <form action="dataBase" method="post">
-                                <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" name="wearon" value="spear">
-                                </label> Копья<br>
-                                <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" name="wearon" value="dagger">
-                                </label> Кинжалы<br>
-                                <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" name="wearon" value="axe">
-                                </label> Топоры<br>
-                                <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" name="wearon" value="wearon">
-                                </label> Всё оружие<br>
-                                <input type="submit" class="btn btn-primary mt-3" value="Подтвердить">
-                            </form>
-                        </div>
-                    </div>
+{{--                    <div class="fw-bold text-white fs-5 shadow-5-strong container-fluid h-100 w-25 me-auto d-flex justify-content-center flex-column align-items-center ms-3" style="width: 250px!important;">--}}
+{{--                        <div class="form-check">--}}
+{{--                                <h2>Сортировка</h2>--}}
+{{--                            <form action="dataBase" method="post">--}}
+{{--                                <label class="form-check-label">--}}
+{{--                                    <input type="radio" class="form-check-input" name="wearon" value="spear">--}}
+{{--                                </label> Копья<br>--}}
+{{--                                <label class="form-check-label">--}}
+{{--                                    <input type="radio" class="form-check-input" name="wearon" value="dagger">--}}
+{{--                                </label> Кинжалы<br>--}}
+{{--                                <label class="form-check-label">--}}
+{{--                                    <input type="radio" class="form-check-input" name="wearon" value="axe">--}}
+{{--                                </label> Топоры<br>--}}
+{{--                                <label class="form-check-label">--}}
+{{--                                    <input type="radio" class="form-check-input" name="wearon" value="wearon">--}}
+{{--                                </label> Всё оружие<br>--}}
+{{--                                <input type="submit" class="btn btn-primary mt-3" value="Подтвердить">--}}
+{{--                            </form>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                 </div>
                 <div class="container-fluid d-flex justify-content-center h-100">
                     {{$data->onEachSide(2)->links()}}

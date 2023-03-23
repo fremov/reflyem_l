@@ -9,6 +9,14 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Wearon extends Model
 {
     protected $table = 'wearon';
-
+    protected $fillable = [
+      'name',
+        'description',
+        'material',
+        'weight',
+        'image',
+        'location',
+        'type',
+    ];
     use HasFactory, SoftDeletes;
 }
