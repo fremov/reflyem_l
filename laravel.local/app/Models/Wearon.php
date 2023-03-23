@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Foundation\Validation\ValidatesRequests;
 
 class Wearon extends Model
 {
@@ -18,5 +19,5 @@ class Wearon extends Model
         'location',
         'type',
     ];
-    use HasFactory, SoftDeletes;
+    use HasFactory, SoftDeletes, ValidatesRequests;
 }

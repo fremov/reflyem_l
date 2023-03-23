@@ -16,9 +16,9 @@ use App\Http\Controllers\PostController;
 Route::get('/', function () {
     return view('main_page.welcome');
 });
+Route::post('/database', [\App\Http\Controllers\DataBaseController::class, 'store'])->name('database.store');
 Route::get('/database', [\App\Http\Controllers\DataBaseController::class, 'index'])->name('database.index');
 Route::get('/database/create', [\App\Http\Controllers\DataBaseController::class, 'create'])->name('database.create');
-Route::post('/database', [\App\Http\Controllers\DataBaseController::class, 'store'])->name('database.store');
 Route::get('/database/{id}', [\App\Http\Controllers\DataBaseController::class, 'show'])->name('database.show');
 Route::get('/database/{id}/edit', [\App\Http\Controllers\DataBaseController::class, 'edit'])->name('database.edit');
 Route::put('/database/{id}', [\App\Http\Controllers\DataBaseController::class, 'update'])->name('database.update');

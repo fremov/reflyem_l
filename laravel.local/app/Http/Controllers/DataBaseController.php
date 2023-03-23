@@ -39,13 +39,13 @@ class DataBaseController extends Controller
     public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
-            'name' => 'max:50'.$id,
-            'description',
-            'material',
-            'weight',
-            'image',
-            'location',
-            'type',
+            'name' => 'required|max:50'.$id,
+            'description' => 'required',
+            'material' => 'required',
+            'weight' => 'required',
+            'image' => 'required',
+            'location' => 'required',
+            'type' => 'required',
         ]);
 
         Wearon::whereId($id)->update($validatedData);
