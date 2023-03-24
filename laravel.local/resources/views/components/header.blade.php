@@ -50,6 +50,18 @@
                             </ul>
                         </div>
                     </li>
+                    <li>
+                        @if (Auth::guest())
+                            <a href="{{ route('register') }}">Регистрация</a>
+                            <a href="{{ route('login') }}">Вход</a>
+                        @else
+                            <a href="{{ route('logout') }}">
+                                @if(Auth::check())
+                                    Добро пожаловать, {{ Auth::user()->name }}
+                                @endif
+                            </a>
+                        @endif
+                    </li>
                 </ul>
             </div>
         </div>

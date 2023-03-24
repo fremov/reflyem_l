@@ -16,6 +16,20 @@ use App\Http\Controllers\PostController;
 Route::get('/', function () {
     return view('main_page.welcome');
 });
+
+// Регистрация пользователя
+Route::get('/register', [\App\Http\Controllers\UserController::class, 'getRegister'])->name('register');
+Route::post('/register', [\App\Http\Controllers\UserController::class, 'postRegister']);
+
+// Авторизация пользователя
+Route::get('/login', [\App\Http\Controllers\UserController::class, 'getLogin'])->name('login');
+Route::post('/login', [\App\Http\Controllers\UserController::class, 'postLogin']);
+
+// Выход пользователя
+Route::get('/logout', [\App\Http\Controllers\UserController::class, 'logout'])->name('logout');
+
+
+
 Route::post('/database', [\App\Http\Controllers\DataBaseController::class, 'store'])->name('database.store');
 Route::get('/database', [\App\Http\Controllers\DataBaseController::class, 'index'])->name('database.index');
 Route::get('/database/create', [\App\Http\Controllers\DataBaseController::class, 'create'])->name('database.create');

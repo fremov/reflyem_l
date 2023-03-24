@@ -5,8 +5,8 @@
     <input type="text" name="description" placeholder="Описание" value="{{ $data->description }}">
     <input type="text" name="material" placeholder="Материал" value="{{ $data->material }}">
     <input type="number" name="weight" placeholder="Вес" value="{{ $data->weight }}">
-    <input type="text" name="image" placeholder="Картинка" value="{{ $data->image }}">
-    <input type="text" name="location" placeholder="Картинка" value="{{ $data->location }}">
+    <input type="file" name="image" placeholder="Картинка" value="{{ $data->image }}">
+    <input type="text" name="location" placeholder="Местонахождение" value="{{ $data->location }}">
     <input type="text" name="type" placeholder="Тип" value="{{ $data->type }}">
 
     <button type="submit">Обновить данные</button>
