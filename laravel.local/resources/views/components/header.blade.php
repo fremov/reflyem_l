@@ -30,7 +30,7 @@
                         <a class="nav-link text-white me-2" href="/#Donation">Поддержка</a>
                     </li>
                     <li class="nav-item p-0 fs-5">
-                        <div class="dropdown text-center shadow-0"
+                        <div class="dropdown text-center"
                              style="background-color: rgba(0, 0, 0, 0)!important;">
                             <button
                                 class="btn btn-black text-light dropdown-toggle"
@@ -78,6 +78,9 @@
                             </li>
                         @elseif (Auth::user()->is_admin)
                             <li>
+                                <a class="dropdown-item" href="#">My profile</a>
+                            </li>
+                            <li>
                                 <a class="dropdown-item" href="{{route('dashboard')}}">Админ панель</a>
                             </li>
                             <li>
@@ -99,25 +102,3 @@
         </div>
     </nav>
 </header>
-
-
-{{--<li>--}}
-{{--    @if (Auth::guest())--}}
-{{--        <a href="{{ route('register') }}">Регистрация</a>--}}
-{{--        <a href="{{ route('login') }}">Вход</a>--}}
-{{--</li>--}}
-{{--<li>--}}
-{{--    @elseif (Auth::user()->is_admin)--}}
-{{--        <a href="{{route('dashboard')}}">Админ панель</a>--}}
-{{--        <a href="{{ route('logout') }}">Выйти</a>--}}
-{{--</li>--}}
-{{--@else--}}
-{{--    <li>--}}
-{{--        <a href="{{ route('logout') }}">--}}
-{{--            @if(Auth::check())--}}
-{{--                Добро пожаловать, {{ Auth::user()->name }}--}}
-{{--            @endif--}}
-{{--        </a>--}}
-{{--    </li>--}}
-{{--    @endif--}}
-{{--    </li>--}}
