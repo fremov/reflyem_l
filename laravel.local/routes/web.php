@@ -13,6 +13,13 @@ use App\Http\Controllers\PostController;
 |
 */
 
+Route::middleware('is_admin', 'auth')->group( function () {
+   Route::get('/admin/dashboard', function () {
+       return view('admin.index');
+   });
+});
+
+
 Route::get('/', function () {
     return view('main_page.welcome');
 });
@@ -40,7 +47,7 @@ Route::delete('/database/{id}', [\App\Http\Controllers\DataBaseController::class
 
 
 Route::get('/installation', [\App\Http\Controllers\InstallationController::class, 'show']);
-Route::get('/LPCalculator', [\App\Http\Controllers\LPcalcController::class, 'show']);
+
 
 
 

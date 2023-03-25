@@ -117,6 +117,7 @@
       <excludeFolder url="file://$MODULE_DIR$/laravel.local/vendor/theseer/tokenizer" />
       <excludeFolder url="file://$MODULE_DIR$/laravel.local/vendor/maximebf/debugbar" />
       <excludeFolder url="file://$MODULE_DIR$/laravel.local/vendor/barryvdh/laravel-debugbar" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel.local/vendor/spatie/laravel-permission" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -112,6 +112,7 @@
       <path value="F:/OSPanel/modules/php/PHP_8.1" />
       <path value="$PROJECT_DIR$/laravel.local/vendor/maximebf/debugbar" />
       <path value="$PROJECT_DIR$/laravel.local/vendor/barryvdh/laravel-debugbar" />
+      <path value="$PROJECT_DIR$/laravel.local/vendor/spatie/laravel-permission" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />
