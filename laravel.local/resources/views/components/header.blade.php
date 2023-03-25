@@ -1,7 +1,8 @@
 <!-- Navbar -->
 <header>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="background-color: rgba(0, 0, 0, 0.8)!important;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top"
+         style="background-color: rgba(0, 0, 0, 0.8)!important;">
         <div class="container-fluid">
             <button
                 class="navbar-toggler"
@@ -29,7 +30,8 @@
                         <a class="nav-link text-white me-2" href="/#Donation">Поддержка</a>
                     </li>
                     <li class="nav-item p-0 fs-5">
-                        <div class="dropdown text-center shadow-0" style="background-color: rgba(0, 0, 0, 0)!important;">
+                        <div class="dropdown text-center shadow-0"
+                             style="background-color: rgba(0, 0, 0, 0)!important;">
                             <button
                                 class="btn btn-black text-light dropdown-toggle"
                                 type="button"
@@ -50,23 +52,72 @@
                             </ul>
                         </div>
                     </li>
-                    <li>
-                        @if (Auth::guest())
-                            <a href="{{ route('register') }}">Регистрация</a>
-                            <a href="{{ route('login') }}">Вход</a>
-                        @elseif (Auth::user()->is_admin)
-                            <a href="{{route('dashboard')}}">Админ панель</a>
-                            <a href="{{ route('logout') }}">Выйти
-                        @else
-                            <a href="{{ route('logout') }}">
-                                @if(Auth::check())
-                                    Добро пожаловать, {{ Auth::user()->name }}
-                                @endif
-                            </a>
-                        @endif
-                    </li>
                 </ul>
             </div>
+            <!-- Right elements -->
+            <div class="d-flex align-items-center me-3">
+                <!-- Avatar -->
+                <div class="dropdown">
+                    <a
+                        class="dropdown-toggle d-flex align-items-center hidden-arrow"
+                        href="#"
+                        id="navbarDropdownMenuAvatar"
+                        role="button"
+                        data-mdb-toggle="dropdown"
+                        aria-expanded="false"
+                    >
+                        Профиль
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
+                        @if(Auth::guest())
+                            <li>
+                                <a class="dropdown-item" href="{{route('login')}}">Авторизация</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{route('register')}}">Регистрация</a>
+                            </li>
+                        @elseif (Auth::user()->is_admin)
+                            <li>
+                                <a class="dropdown-item" href="{{route('dashboard')}}">Админ панель</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{ route('logout') }}">Выйти</a>
+                            </li>
+                        @elseif (Auth::user())
+                            <li>
+                                <a class="dropdown-item" href="#">My profile</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{ route('logout') }}">Выйти</a>
+                            </li>
+                        @endif
+                    </ul>
+                </div>
+            </div>
+            <!-- Right elements -->
+        </div>
         </div>
     </nav>
 </header>
+
+
+{{--<li>--}}
+{{--    @if (Auth::guest())--}}
+{{--        <a href="{{ route('register') }}">Регистрация</a>--}}
+{{--        <a href="{{ route('login') }}">Вход</a>--}}
+{{--</li>--}}
+{{--<li>--}}
+{{--    @elseif (Auth::user()->is_admin)--}}
+{{--        <a href="{{route('dashboard')}}">Админ панель</a>--}}
+{{--        <a href="{{ route('logout') }}">Выйти</a>--}}
+{{--</li>--}}
+{{--@else--}}
+{{--    <li>--}}
+{{--        <a href="{{ route('logout') }}">--}}
+{{--            @if(Auth::check())--}}
+{{--                Добро пожаловать, {{ Auth::user()->name }}--}}
+{{--            @endif--}}
+{{--        </a>--}}
+{{--    </li>--}}
+{{--    @endif--}}
+{{--    </li>--}}
