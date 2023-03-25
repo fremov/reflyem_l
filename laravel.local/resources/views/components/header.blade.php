@@ -54,6 +54,9 @@
                         @if (Auth::guest())
                             <a href="{{ route('register') }}">Регистрация</a>
                             <a href="{{ route('login') }}">Вход</a>
+                        @elseif (Auth::user()->is_admin)
+                            <a href="{{route('dashboard')}}">Админ панель</a>
+                            <a href="{{ route('logout') }}">Выйти
                         @else
                             <a href="{{ route('logout') }}">
                                 @if(Auth::check())
