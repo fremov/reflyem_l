@@ -15,7 +15,7 @@ use App\Http\Controllers\PostController;
 
 Route::middleware('is_admin', 'auth')->group( function () {
    Route::get('/admin/dashboard', function () {
-       return view('admin.index');
+       return view('admin.index')
    });
 });
 
