@@ -15,17 +15,18 @@
             <table class="table table-bordered">
                 <thead>
                 <tr>
-                    <th style="width: 15%; height: 45px">Image</th>
-                    <th style="width: 5%; height: 45px">Name</th>
-                    <th style="width: 45%;">Description</th>
-                    <th style="width: 15%;">Material</th>
-                    <th style="width: 5%;">Weight</th>
-                    <th style="width: 15%;">Location</th>
+                    <th>Картинка/Тип</th>
+                    <th>Название</th>
+                    <th>Описание</th>
+                    <th>Материал</th>
+                    <th>Вес</th>
+                    <th>Местонахождение</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <td style="width: 15%; height: 45px"><img style="height: 60px;" src="{{asset('images/' . $data->image)}}" alt="img"></td>
+                    <td style="width: 15%; height: 45px"><img style="height: 60px;" src="{{asset('images/' . $data->image)}}" alt="img">
+                        <br> {{$data->type}}</td>
                     <td style="width: 5%; height: 45px">{{$data->name}}</td>
                     <td style="width: 45%;">{{$data->description}}</td>
                     <td style="width: 15%;">{{$data->material}}</td>
@@ -35,7 +36,7 @@
                 </tbody>
             </table>
             <a href="{{ route('admin.database') }}"
-               class="btn btn-secondary">Back</a>
+               class="btn btn-secondary">Назад</a>
         </div>
     </div>
 </div>
