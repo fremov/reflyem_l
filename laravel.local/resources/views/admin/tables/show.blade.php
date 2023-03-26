@@ -18,4 +18,4 @@
     </tr>
 </tbody>
 
-<a href="{{ route('database.index') }}">Вернутся назад</a>
+<a href="{{ route('admin.database') }}">Вернутся назад</a>

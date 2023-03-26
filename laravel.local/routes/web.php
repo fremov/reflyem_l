@@ -14,8 +14,20 @@ use App\Http\Controllers\PostController;
 */
 
 Route::middleware('is_admin', 'auth')->group( function () {
-    Route::get('/admin/dashboard', [\App\Http\Controllers\AdminController::class, 'index'])->name('dashboard');
-    Route::get('/admin/tables', [\App\Http\Controllers\AdminWearonTableController::class, 'index'])->name('admin_tables');
+
+//    Таблица с оружием
+    Route::prefix('admin')->group(function () {
+
+        Route::get('/dashboard', [\App\Http\Controllers\AdminController::class, 'index'])->name('dashboard');
+
+        Route::get('/tables', [\App\Http\Controllers\AdminWearonTableController::class, 'index'])->name('admin.database');
+        Route::post('/database', [\App\Http\Controllers\AdminWearonTableController::class, 'store'])->name('admin.database.store');
+        Route::get('/database/create', [\App\Http\Controllers\AdminWearonTableController::class, 'create'])->name('admin.database.create');
+        Route::get('/database/{id}', [\App\Http\Controllers\AdminWearonTableController::class, 'show'])->name('admin.database.show');
+        Route::get('/database/{id}/edit', [\App\Http\Controllers\AdminWearonTableController::class, 'edit'])->name('admin.database.edit');
+        Route::put('/database/{id}', [\App\Http\Controllers\AdminWearonTableController::class, 'update'])->name('admin.database.update');
+        Route::delete('/database/{id}', [\App\Http\Controllers\AdminWearonTableController::class, 'destroy'])->name('admin.database.destroy');
+    });
 });
 
 
@@ -35,14 +47,7 @@ Route::post('/login', [\App\Http\Controllers\UserController::class, 'postLogin']
 Route::get('/logout', [\App\Http\Controllers\UserController::class, 'logout'])->name('logout');
 
 
-
-Route::post('/database', [\App\Http\Controllers\DataBaseController::class, 'store'])->name('database.store');
-Route::get('/database', [\App\Http\Controllers\DataBaseController::class, 'index'])->name('database.index');
-Route::get('/database/create', [\App\Http\Controllers\DataBaseController::class, 'create'])->name('database.create');
-Route::get('/database/{id}', [\App\Http\Controllers\DataBaseController::class, 'show'])->name('database.show');
-Route::get('/database/{id}/edit', [\App\Http\Controllers\DataBaseController::class, 'edit'])->name('database.edit');
-Route::put('/database/{id}', [\App\Http\Controllers\DataBaseController::class, 'update'])->name('database.update');
-Route::delete('/database/{id}', [\App\Http\Controllers\DataBaseController::class, 'destroy'])->name('database.destroy');
+Route::get('/database', [\App\Http\Controllers\DataBaseController::class, 'index']);
 
 
 Route::get('/installation', [\App\Http\Controllers\InstallationController::class, 'show']);

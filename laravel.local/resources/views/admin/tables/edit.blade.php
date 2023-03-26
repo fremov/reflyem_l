@@ -1,4 +1,4 @@
-<form action="{{ route('database.update', $data->id) }}" method="POST">
+<form action="{{ route('admin.database.update', $data->id) }}" method="POST">
     @csrf
     @method('PUT')
     <input type="text" name="name" placeholder="Название" value="{{ $data->name }}">
@@ -12,4 +12,4 @@
     <button type="submit">Обновить данные</button>
 </form>
 
-<a href="{{ route('database.index') }}">Вернутся назад</a>
+<a href="{{ route('admin.database') }}">Вернутся назад</a>

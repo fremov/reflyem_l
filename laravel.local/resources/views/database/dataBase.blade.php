@@ -70,15 +70,6 @@
                         <td style="width: 15%;">{{$item->material}}</td>
                         <td style="width: 5%;">{{$item->weight}}</td>
                         <td style="width: 15%;">{{$item->location}}</td>
-                        <td>
-                            <a href="{{ route('database.show', $item->id) }}">Show</a>
-                            <a href="{{ route('database.edit', $item->id) }}">Edit</a>
-                            <form action="{{ route('database.destroy', $item->id) }}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit">Delete</button>
-                            </form>
-                        </td>
                     </tr>
                     @endforeach
                     </tbody>
