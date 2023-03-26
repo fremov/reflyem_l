@@ -15,6 +15,7 @@ use App\Http\Controllers\PostController;
 
 Route::middleware('is_admin', 'auth')->group( function () {
     Route::get('/admin/dashboard', [\App\Http\Controllers\AdminController::class, 'index'])->name('dashboard');
+    Route::get('/admin/tables', [\App\Http\Controllers\AdminWearonTableController::class, 'index'])->name('admin_tables');
 });
 
 
