@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<x-head />
+<body>
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Create Item</h4>
+                </div>
+                <div class="card-body">
+                    <form action="{{ route('admin.database.store') }}" method="POST">
+                        @csrf
+                        <div class="form-group">
+                            <label for="name">Название:</label>
+                            <input type="text" name="name" id="name" class="form-control mb-3" placeholder="Введите название">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Описание:</label>
+                            <input type="text" name="description" id="description" class="form-control mb-3" placeholder="Введите описание">
+                        </div>
+                        <div class="form-group">
+                            <label for="material">Материал:</label>
+                            <input type="text" name="material" id="material" class="form-control mb-3" placeholder="Введите материал">
+                        </div>
+                        <div class="form-group">
+                            <label for="weight">Вес:</label>
+                            <input type="number" name="weight" id="weight" class="form-control mb-3" placeholder="Введите вес">
+                        </div>
+                        <div class="form-group">
+                            <label for="image">Картинка:</label>
+                            <input type="text" name="image" id="image" class="form-control mb-3" placeholder="Добавьте картинку">
+                        </div>
+                        <div class="form-group">
+                            <label for="location">Местонахождение:</label>
+                            <input type="text" name="location" id="location" class="form-control mb-3" placeholder="Введите местонахождение">
+                        </div>
+                        <div class="form-group">
+                            <label for="type">Тип:</label>
+                            <input type="text" name="type" id="type" class="form-control mb-3" placeholder="Введите тип">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Добавить</button>
+                    </form>
+                    <a href="{{ route('admin.database') }}" class="mt-3 d-inline-block">Вернутся назад</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmIaP9ZjWUksdQRVvox" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+J4nW9Eckv+2OY6F5NkZQ2KRg9W0C2" crossorigin="anonymous"></script>
+</body>
+</html>

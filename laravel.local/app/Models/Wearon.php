@@ -19,5 +19,6 @@ class Wearon extends Model
         'location',
         'type',
     ];
+    protected $dates = ['deleted_at'];
     use HasFactory, SoftDeletes, ValidatesRequests;
 }

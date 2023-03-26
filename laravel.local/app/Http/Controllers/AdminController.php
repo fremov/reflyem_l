@@ -10,7 +10,7 @@ class AdminController extends Controller
         return view('admin.index');
     }
     public function tables() {
-        return view('admin.tables');
+        return view('admin.wearonTable');
     }
 
 }

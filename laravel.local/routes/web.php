@@ -20,13 +20,15 @@ Route::middleware('is_admin', 'auth')->group( function () {
 
         Route::get('/dashboard', [\App\Http\Controllers\AdminController::class, 'index'])->name('dashboard');
 
-        Route::get('/tables', [\App\Http\Controllers\AdminWearonTableController::class, 'index'])->name('admin.database');
+        Route::get('/table/wearon', [\App\Http\Controllers\AdminWearonTableController::class, 'index'])->name('admin.database');
         Route::post('/database', [\App\Http\Controllers\AdminWearonTableController::class, 'store'])->name('admin.database.store');
         Route::get('/database/create', [\App\Http\Controllers\AdminWearonTableController::class, 'create'])->name('admin.database.create');
         Route::get('/database/{id}', [\App\Http\Controllers\AdminWearonTableController::class, 'show'])->name('admin.database.show');
         Route::get('/database/{id}/edit', [\App\Http\Controllers\AdminWearonTableController::class, 'edit'])->name('admin.database.edit');
         Route::put('/database/{id}', [\App\Http\Controllers\AdminWearonTableController::class, 'update'])->name('admin.database.update');
         Route::delete('/database/{id}', [\App\Http\Controllers\AdminWearonTableController::class, 'destroy'])->name('admin.database.destroy');
+        Route::put('/records/{id}/restore', [\App\Http\Controllers\AdminWearonTableController::class, 'restore'])->name('restore');
+        Route::get('/database/deleted', [\App\Http\Controllers\AdminWearonTableController::class, 'deletedRecords'])->name('deleted');
     });
 });
 
