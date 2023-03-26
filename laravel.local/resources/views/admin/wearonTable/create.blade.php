@@ -8,7 +8,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <h4>Create Item</h4>
+                    <h4>Добавление оружия</h4>
                 </div>
                 <div class="card-body">
                     <form action="{{ route('admin.database.store') }}" method="POST">
@@ -31,7 +31,7 @@
                         </div>
                         <div class="form-group">
                             <label for="image">Картинка:</label>
-                            <input type="text" name="image" id="image" class="form-control mb-3" placeholder="Добавьте картинку">
+                            <input type="file" name="image" id="image" class="form-control mb-3" placeholder="Добавьте картинку">
                         </div>
                         <div class="form-group">
                             <label for="location">Местонахождение:</label>

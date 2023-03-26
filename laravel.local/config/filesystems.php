@@ -35,6 +35,12 @@ return [
             'root' => storage_path('app'),
             'throw' => false,
         ],
+        'weapons' => [
+            'driver' => 'local',
+            'root' => public_path('images'),
+            'url' => env('APP_URL').'/images',
+            'visibility' => 'public',
+        ],
 
         'public' => [
             'driver' => 'local',
