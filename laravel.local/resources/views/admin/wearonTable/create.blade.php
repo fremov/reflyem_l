@@ -15,31 +15,51 @@
                         @csrf
                         <div class="form-group">
                             <label for="name">Название:</label>
-                            <input type="text" name="name" id="name" class="form-control mb-3" placeholder="Введите название">
+                            <input type="text" name="name" id="name" class="form-control mb-3" placeholder="Введите название" required>
+                            <div class="invalid-feedback">
+                                Пожалуйста, введите название.
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="description">Описание:</label>
-                            <input type="text" name="description" id="description" class="form-control mb-3" placeholder="Введите описание">
+                            <input type="text" name="description" id="description" class="form-control mb-3" placeholder="Введите описание" required>
+                            <div class="invalid-feedback">
+                                Пожалуйста, введите описание.
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="material">Материал:</label>
-                            <input type="text" name="material" id="material" class="form-control mb-3" placeholder="Введите материал">
+                            <input type="text" name="material" id="material" class="form-control mb-3" placeholder="Введите материал" required>
+                            <div class="invalid-feedback">
+                                Пожалуйста, введите материал.
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="weight">Вес:</label>
-                            <input type="number" name="weight" id="weight" class="form-control mb-3" placeholder="Введите вес">
+                            <input type="number" name="weight" id="weight" class="form-control mb-3" placeholder="Введите вес" required>
+                            <div class="invalid-feedback">
+                                Пожалуйста, введите вес.
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label for="image">Картинка:</label>
-                            <input type="file" name="image" id="image" class="form-control mb-3" placeholder="Добавьте картинку">
+                            <label for="image">Тип:</label>
+                            <select name="type" id="type" class="form-control mb-3" required>
+                                <option value="">Выберите Тип</option>
+                                <option value="Кинжал">Кинжал</option>
+                                <option value="200 г">200 г</option>
+                                <option value="500 г">500 г</option>
+                                <option value="1 кг">1 кг</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Пожалуйста, выберите вес.
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="location">Местонахождение:</label>
                             <input type="text" name="location" id="location" class="form-control mb-3" placeholder="Введите местонахождение">
-                        </div>
-                        <div class="form-group">
-                            <label for="type">Тип:</label>
-                            <input type="text" name="type" id="type" class="form-control mb-3" placeholder="Введите тип">
+                            <div class="invalid-feedback">
+                                Пожалуйста, введите Местонахождение.
+                            </div>
                         </div>
                         <button type="submit" class="btn btn-primary">Добавить</button>
                     </form>

@@ -22,6 +22,13 @@
                         <button type="submit" class="btn btn-success">Восставновить</button>
                     </form>
                 </td>
+                <td>
+                    <form action="{{ route('deletedestroy', $record->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">Удалить навсегда</button>
+                    </form>
+                </td>
             </tr>
         @endforeach
         </tbody>

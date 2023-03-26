@@ -29,6 +29,7 @@ Route::middleware('is_admin', 'auth')->group( function () {
         Route::delete('/database/{id}', [\App\Http\Controllers\AdminWearonTableController::class, 'destroy'])->name('admin.database.destroy');
         Route::put('/records/{id}/restore', [\App\Http\Controllers\AdminWearonTableController::class, 'restore'])->name('restore');
         Route::get('/database/deleted', [\App\Http\Controllers\AdminWearonTableController::class, 'deletedRecords'])->name('deleted');
+        Route::delete('record/delete/{id}', [App\Http\Controllers\AdminWearonTableController::class, 'deletedestroy'])->name('deletedestroy');
     });
 });
 
