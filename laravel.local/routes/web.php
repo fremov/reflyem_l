@@ -46,6 +46,8 @@ Route::delete('/database/{id}', [\App\Http\Controllers\DataBaseController::class
 
 Route::get('/installation', [\App\Http\Controllers\InstallationController::class, 'show']);
 
-
+Route::get('404', function () {
+    return view('errors.404');
+})->name('404');
 
 
