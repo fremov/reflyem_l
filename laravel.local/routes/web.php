@@ -54,6 +54,9 @@ Route::get('/database', [\App\Http\Controllers\DataBaseController::class, 'index
 
 
 Route::get('/installation', [\App\Http\Controllers\InstallationController::class, 'show']);
+Route::get('/LPCalculator', function () {
+   return view('LPcalc.calcLP');
+});
 
 Route::get('404', function () {
     return view('errors.404');

@@ -12,6 +12,7 @@
 <div class="container my-5">
     <div class="row">
         <div class="col-md-12">
+            <x-preloader />
             <table class="table table-bordered">
                 <thead>
                 <tr>

@@ -7,6 +7,7 @@
             <div class="card border-light bg-dark text-white">
                 <div class="card-header bg-primary">{{ ('Вход') }}</div>
                 <div class="card-body">
+                    <x-preloader />
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 

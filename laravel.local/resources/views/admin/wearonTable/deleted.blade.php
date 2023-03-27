@@ -13,6 +13,7 @@
         </tr>
         </thead>
         <tbody>
+        <x-preloader />
         @foreach($records as $record)
             <tr class="deleted-record">
                 <td class="text-danger">{{ $record->name }}</td>

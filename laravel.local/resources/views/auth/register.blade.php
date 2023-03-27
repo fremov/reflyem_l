@@ -6,7 +6,7 @@
         <div class="col-md-4">
             <div class="card bg-dark text-white border-light">
                 <div class="card-header bg-primary">{{ ('Регистрация') }}</div>
-
+                <x-preloader />
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf

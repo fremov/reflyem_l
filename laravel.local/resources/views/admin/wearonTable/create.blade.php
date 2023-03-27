@@ -11,6 +11,7 @@
                     <h4>Добавление оружия</h4>
                 </div>
                 <div class="card-body">
+                    <x-preloader />
                     <form action="{{ route('admin.database.store') }}" method="POST">
                         @csrf
                         <div class="form-group">
