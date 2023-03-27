@@ -20,6 +20,7 @@ Route::middleware('is_admin', 'auth')->group( function () {
 
         Route::get('/dashboard', [\App\Http\Controllers\AdminController::class, 'index'])->name('dashboard');
 
+
         Route::get('/table/wearon', [\App\Http\Controllers\AdminWearonTableController::class, 'index'])->name('admin.database');
         Route::post('/database', [\App\Http\Controllers\AdminWearonTableController::class, 'store'])->name('admin.database.store');
         Route::get('/database/create', [\App\Http\Controllers\AdminWearonTableController::class, 'create'])->name('admin.database.create');
