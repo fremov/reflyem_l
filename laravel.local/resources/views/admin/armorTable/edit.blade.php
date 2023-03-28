@@ -67,7 +67,7 @@
                 <button type="submit" class="btn btn-primary">Обновить данные</button>
             </form>
 
-            <a href="{{ route('admin.database') }}" class="mt-3 d-inline-block">Вернутся назад</a>
+            <a href="{{ route('admin.armor') }}" class="mt-3 d-inline-block">Вернутся назад</a>
         </div>
     </div>
 </div>
