@@ -14,6 +14,9 @@
 <link rel="shortcut icon" href="{{asset('images/slidkiy_rulet.png')}}" type="image/x-icon">
 <link rel="icon" href="{{asset('images/slidkiy_rulet.png')}}">
 <link rel="stylesheet" href="{{asset('style/preloader.css')}}">
+<link rel="stylesheet" href="{{asset('style/scrollbar.css')}}">
+
+
 <title> Reflyem </title>
 
 <!-- Font Awesome -->

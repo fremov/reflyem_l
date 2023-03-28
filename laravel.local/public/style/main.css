@@ -6,8 +6,15 @@
     font-family: 'Lato';
     src: url('Lato-Bold.ttf');
 }
+@font-face {
+    font-family: 'BalsamiqSans';
+    src: url('BalsamiqSans-Italic.ttf');
+}
+
 * {
-    font-family: 'Lato';
+    font-family: 'Zantroke';
+    font-size: medium;
+    text-shadow: #1a202c;
 }
 
 .Frem:hover {

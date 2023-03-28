@@ -47,9 +47,24 @@
                             <select name="type" id="type" class="form-control mb-3" required>
                                 <option value="">Выберите Тип</option>
                                 <option value="Кинжал">Кинжал</option>
-                                <option value="200 г">200 г</option>
-                                <option value="500 г">500 г</option>
-                                <option value="1 кг">1 кг</option>
+                                <option value="Лук">Лук</option>
+                                <option value="Булава">Булава</option>
+                                <option value="Копьё">Копьё</option>
+                                <option value="Топор">Топор</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Пожалуйста, выберите вес.
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="image">Картинка:</label>
+                            <select name="image" id="image" class="form-control mb-3" required>
+                                <option value="">Выберите картинку</option>
+                                <option value="dagger.png">Кинжал</option>
+                                <option value="bow.png">Лук</option>
+                                <option value="mace.png">Булава</option>
+                                <option value="spear.png">Копьё</option>
+                                <option value="axe.png">Топор</option>
                             </select>
                             <div class="invalid-feedback">
                                 Пожалуйста, выберите вес.

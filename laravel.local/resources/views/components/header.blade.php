@@ -66,7 +66,7 @@
                         data-mdb-toggle="dropdown"
                         aria-expanded="false"
                     >
-                        Профиль
+                        <button class="btn btn-primary ">Профиль</button>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
                         @if(Auth::guest())

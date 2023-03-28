@@ -8,6 +8,17 @@
 <x-header />
 {{--Хедер--}}
 <!-- Блок Главная -->
+<style>
+    @font-face {
+        font-family: 'Zantroke';
+        src: url({{asset('style/Zantroke.otf')}});
+    }
+    * {
+        font-family: 'Zantroke';
+        font-size: medium;
+        text-shadow: #1a202c;
+    }
+</style>
 <div
         class="bg-image p-5 text-center shadow-1-strong"
         style="background-image: url('{{asset('images/3690802.jpg')}}');
@@ -19,7 +30,7 @@
             <div class="text-white shadow-5 ">
                 <h1 class="mb-3"> <img src="{{ asset('images/logo.png') }}" style="height: 150px" alt="logo"></h1>
                 <h4 class="mb-3 text-center lh-base ps-3 pe-3 pt-2 border border-2 d-flex"
-                    style="height: 180px; background-color: rgba(0, 0, 0, 0.6)!important;  border-color: rgba(233, 177 , 177 , 0.5)!important;">
+                    style="height: 200px; background-color: rgba(0, 0, 0, 0.6)!important;  border-color: rgba(233, 177 , 177 , 0.5)!important;">
                     Reflyem это сборка модов для Skyrim Special Edition,<br>которая меняет множество аспектов игры и создана для того,<br>чтобы
                     ваше путешествие по миру Скайрима было<br> максимально комфортным и приятным.</h4>
                 <a target="_blank" class="btn text-white btn-lg fw-normal rounded-pill mt-3 justify-content-center align-items-center pt-3"
@@ -42,7 +53,7 @@
     <div class=" ">
         <div class="text-white shadow-5  text-start">
             <h1 class="mb-3 text-center" style="font-size: 60px">База знаний</h1>
-            <h4 class="mb-3 fw-normal pt-4 ps-5" style="">Основную информацию касательно сборки вы <br> можете получить
+            <h4 class="mb-3 fw-normal pt-2 ps-5" style="">Основную информацию касательно сборки вы <br> можете получить
                 из нашей базы знаний.<br> Здесь находится описание многих аспектов игры <br> которые вы можете изучить
                 не скачивая саму <br> сборку.</h4>
             <div class="text-center pt-1">
@@ -100,10 +111,10 @@
         height: 1000px;
 "
 >
-    <div class=" ">
+    <div>
         <div class="text-white shadow-5  text-start">
-            <h1 class="mb-3 text-center" style="font-size: 60px">Поддержка</h1>
-            <h4 class="mb-3 fw-normal pt-4 ps-5" style="">Если тебе понравилась сборка и ты хочешь <br> поддержать
+            <h1 class="mb-1 text-center" style="font-size: 60px">Поддержка</h1>
+            <h4 class="mb-3 fw-normal pt-2 text-center" style="">Если тебе понравилась сборка и ты хочешь <br> поддержать
                 её развитие не только словом, но и
                 <br> делом, то лучший способ это оформить подписку <br> на Boosty, либо перевести любую посильную
                 <br> сумму через один из сервисов для донатов.</h4>

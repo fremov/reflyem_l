@@ -2,17 +2,19 @@
 <html lang="en">
 <head>
    <x-head />
-    <link rel="stylesheet" href="{{ asset('style/main.css') }}">
 </head>
 <body>
 {{--Хедер--}}
 <x-header />
 {{--Хедер--}}
 <!-- Блок Главная -->
+
+
 <div style="background-image: url('{{asset('images/faq-1.jpg')}}');height: 937px;">
     <div class="h-100 d-flex justify-content-start align-items-center overflow-hidden fs-3">
         <h3 class="badge bg-primary  me-auto ms-5 text-start  h-100 overflow-hidden text-light align-items-center justify-content-center w-75 shadow-1-strong lh-sm shadow-5" style="background-color: rgba(0, 0, 0, 0)!important;padding-top: 290px;">
             <span>Текстовый гайд</span> <br>
+            <div class="mt-2"></div>
             1. Установите чистый Skyrim — Special Edition 1.5.97.0.8 <br> <span class="text-danger">НЕ устанавливайте его в Program Files или Program Files (x86)</span>,
             <br> <span class="text-danger">это может вызвать проблемы</span>
             <br><br>

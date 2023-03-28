@@ -33,18 +33,37 @@
                     <input type="number" name="weight" id="weight" class="form-control" placeholder="Вес" value="{{ $data->weight }}">
                 </div>
                 <div class="form-group">
+                    <label for="image">Тип:</label>
+                    <select name="type" id="type" class="form-control mb-3" required>
+                        <option value="">Выберите Тип</option>
+                        <option value="Кинжал">Кинжал</option>
+                        <option value="Лук">Лук</option>
+                        <option value="Булава">Булава</option>
+                        <option value="Копьё">Копьё</option>
+                        <option value="Топор">Топор</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Пожалуйста, выберите вес.
+                    </div>
+                </div>
+                <div class="form-group">
                     <label for="image">Картинка:</label>
-                    <input type="file" name="image" id="image" class="form-control" placeholder="Картинка" value="{{ $data->image }}">
+                    <select name="image" id="image" class="form-control mb-3" required>
+                        <option value="">Выберите картинку</option>
+                        <option value="dagger.png">Кинжал</option>
+                        <option value="bow.png">Лук</option>
+                        <option value="mace.png">Булава</option>
+                        <option value="spear.png">Копьё</option>
+                        <option value="axe.png">Топор</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Пожалуйста, выберите вес.
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="location">Местонахождение:</label>
                     <input type="text" name="location" id="location" class="form-control" placeholder="Местонахождение" value="{{ $data->location }}">
                 </div>
-                <div class="form-group">
-                    <label for="type">Тип:</label>
-                    <input type="text" name="type" id="type" class="form-control" placeholder="Тип" value="{{ $data->type }}">
-                </div>
-
                 <button type="submit" class="btn btn-primary">Обновить данные</button>
             </form>
 
