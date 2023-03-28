@@ -22,26 +22,31 @@ Route::middleware('is_admin', 'auth')->group( function () {
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         Route::get('/table/wearon', [\App\Http\Controllers\AdminWearonTableController::class, 'index'])->name('admin.database');
-        Route::post('/database', [\App\Http\Controllers\AdminWearonTableController::class, 'store'])->name('admin.database.store');
-        Route::get('/database/create', [\App\Http\Controllers\AdminWearonTableController::class, 'create'])->name('admin.database.create');
-        Route::get('/database/{id}', [\App\Http\Controllers\AdminWearonTableController::class, 'show'])->name('admin.database.show');
-        Route::get('/database/{id}/edit', [\App\Http\Controllers\AdminWearonTableController::class, 'edit'])->name('admin.database.edit');
-        Route::put('/database/{id}', [\App\Http\Controllers\AdminWearonTableController::class, 'update'])->name('admin.database.update');
-        Route::delete('/database/{id}', [\App\Http\Controllers\AdminWearonTableController::class, 'destroy'])->name('admin.database.destroy');
-        Route::put('/records/{id}/restore', [\App\Http\Controllers\AdminWearonTableController::class, 'restore'])->name('restore');
-        Route::get('/database/deleted', [\App\Http\Controllers\AdminWearonTableController::class, 'deletedRecords'])->name('deleted');
-        Route::delete('record/delete/{id}', [\App\Http\Controllers\AdminWearonTableController::class, 'deletedestroy'])->name('deletedestroy');
+        Route::prefix('wearon')->group(function () {
+            Route::post('/database', [\App\Http\Controllers\AdminWearonTableController::class, 'store'])->name('admin.database.store');
+            Route::get('/database/create', [\App\Http\Controllers\AdminWearonTableController::class, 'create'])->name('admin.database.create');
+            Route::get('/database/{id}', [\App\Http\Controllers\AdminWearonTableController::class, 'show'])->name('admin.database.show');
+            Route::get('/database/{id}/edit', [\App\Http\Controllers\AdminWearonTableController::class, 'edit'])->name('admin.database.edit');
+            Route::put('/database/{id}', [\App\Http\Controllers\AdminWearonTableController::class, 'update'])->name('admin.database.update');
+            Route::delete('/database/{id}', [\App\Http\Controllers\AdminWearonTableController::class, 'destroy'])->name('admin.database.destroy');
+            Route::put('/records/{id}/restore', [\App\Http\Controllers\AdminWearonTableController::class, 'restore'])->name('restore');
+            Route::get('/database/deleted', [\App\Http\Controllers\AdminWearonTableController::class, 'deletedRecords'])->name('deleted');
+            Route::delete('record/delete/{id}', [\App\Http\Controllers\AdminWearonTableController::class, 'deletedestroy'])->name('deletedestroy');
+        });
+
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         Route::get('/table/armor', [\App\Http\Controllers\AdminArmorTableController::class, 'index'])->name('admin.armor');
-        Route::post('/database', [\App\Http\Controllers\AdminArmorTableController::class, 'store'])->name('admin.armor.store');
-        Route::get('/database/create', [\App\Http\Controllers\AdminArmorTableController::class, 'create'])->name('admin.armor.create');
-        Route::get('/database/{id}', [\App\Http\Controllers\AdminArmorTableController::class, 'show'])->name('admin.armor.show');
-        Route::get('/database/{id}/edit', [\App\Http\Controllers\AdminArmorTableController::class, 'edit'])->name('admin.armor.edit');
-        Route::put('/database/{id}', [\App\Http\Controllers\AdminArmorTableController::class, 'update'])->name('admin.armor.update');
-        Route::delete('/database/{id}', [\App\Http\Controllers\AdminArmorTableController::class, 'destroy'])->name('admin.armor.destroy');
-        Route::put('/records/{id}/restore', [\App\Http\Controllers\AdminArmorTableController::class, 'restore'])->name('restore_armor');
-        Route::get('/database/deleted', [\App\Http\Controllers\AdminArmorTableController::class, 'deletedRecords'])->name('deleted_armor');
-        Route::delete('record/delete/{id}', [\App\Http\Controllers\AdminArmorTableController::class, 'deletedestroy'])->name('deletedestroy_armor');
+        Route::prefix('armor')->group(function () {
+            Route::post('/database', [\App\Http\Controllers\AdminArmorTableController::class, 'store'])->name('admin.armor.store');
+            Route::get('/database/create', [\App\Http\Controllers\AdminArmorTableController::class, 'create'])->name('admin.armor.create');
+            Route::get('/database/{id}', [\App\Http\Controllers\AdminArmorTableController::class, 'show'])->name('admin.armor.show');
+            Route::get('/database/{id}/edit', [\App\Http\Controllers\AdminArmorTableController::class, 'edit'])->name('admin.armor.edit');
+            Route::put('/database/{id}', [\App\Http\Controllers\AdminArmorTableController::class, 'update'])->name('admin.armor.update');
+            Route::delete('/database/{id}', [\App\Http\Controllers\AdminArmorTableController::class, 'destroy'])->name('admin.armor.destroy');
+            Route::put('/records/{id}/restore', [\App\Http\Controllers\AdminArmorTableController::class, 'restore'])->name('restore_armor');
+            Route::get('/database/deleted', [\App\Http\Controllers\AdminArmorTableController::class, 'deletedRecords'])->name('deleted_armor');
+            Route::delete('record/delete/{id}', [\App\Http\Controllers\AdminArmorTableController::class, 'deletedestroy'])->name('deletedestroy_armor');
+        });
     });
 });
 

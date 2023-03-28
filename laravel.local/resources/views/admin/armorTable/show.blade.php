@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{$data->name}}</title>
+    <title>{{$data->title}}</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<div class="container my-5">
+<div class="container-fluid my-5">
     <div class="row">
         <div class="col-md-12">
             <x-preloader />
@@ -18,21 +18,30 @@
                 <tr>
                     <th>Картинка/Тип</th>
                     <th>Название</th>
-                    <th>Описание</th>
-                    <th>Материал</th>
-                    <th>Вес</th>
+                    <th>Шлем</th>
+                    <th>Броня</th>
+                    <th>Перчатки</th>
+                    <th>Ботинки</th>
+                    <th>Бонус</th>
                     <th>Местонахождение</th>
+                    <th>Создано</th>
+                    <th>Обновлено</th>
+
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <td style="width: 15%; height: 45px"><img style="height: 60px;" src="{{asset('images/' . $data->image)}}" alt="img">
+                    <td style="width: 10%; height: 120px"><img style="height: 120px;" src="{{asset('images/' . $data->image)}}" alt="img">
                         <br> {{$data->type}}</td>
-                    <td style="width: 5%; height: 45px">{{$data->name}}</td>
-                    <td style="width: 45%;">{{$data->description}}</td>
-                    <td style="width: 15%;">{{$data->material}}</td>
-                    <td style="width: 5%;">{{$data->weight}}</td>
-                    <td style="width: 15%;">{{$data->location}}</td>
+                    <td style="width: 5%; height: 45px">{{$data->title}}</td>
+                    <td style="width: 5%;">{{$data->helmet}}</td>
+                    <td style="width: 5%;">{{$data->body_armor}}</td>
+                    <td style="width: 5%;">{{$data->gloves}}</td>
+                    <td style="width: 10%;">{{$data->boots}}</td>
+                    <td style="width: 15%;">{{$data->bonus}}</td>
+                    <td style="width: 5%;">{{$data->location}}</td>
+                    <td style="width: 10%;">{{$data->created_at}}</td>
+                    <td style="width: 10%;">{{$data->updated_at}}</td>
                 </tr>
                 </tbody>
             </table>
