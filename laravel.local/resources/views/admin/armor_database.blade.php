@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title><Таблица(Броня)></title>
+    <title>Таблица(Броня)</title>
 
     <!-- Custom fonts for this template -->
     <link href="{{asset('admin_panel/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
@@ -110,12 +110,13 @@
                                             <th>Ботинки</th>
                                             <th>Бонус</th>
                                             <th>Местонахождение</th>
+                                            <th>Действие</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                     @foreach($data as $item)
                                         <tr>
-                                            <td style="width: 15%; height: 45px"><img style="height: 60px;" src="{{asset('images/' . $item->image)}}" alt="Броня">
+                                            <td style="width: 15%; height: 45px"><img style="height: 60px;" src="{{asset('images/' . $item->Image)}}" alt="Броня">
                                                 <br>{{$item->type}}</td>
                                             <td style="width: 5%; height: 45px!important;">{{$item->title}}</td>
                                             <td style="width: 45%;">{{$item->helmet}}</td>

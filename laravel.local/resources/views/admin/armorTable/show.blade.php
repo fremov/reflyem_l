@@ -45,7 +45,7 @@
                 </tr>
                 </tbody>
             </table>
-            <a href="{{ route('admin.database') }}"
+            <a href="{{ route('admin.armor') }}"
                class="btn btn-secondary">Назад</a>
         </div>
     </div>
