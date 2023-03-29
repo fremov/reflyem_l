@@ -47,6 +47,19 @@ Route::middleware('is_admin', 'auth')->group( function () {
             Route::get('/database/deleted', [\App\Http\Controllers\AdminArmorTableController::class, 'deletedRecords'])->name('deleted_armor');
             Route::delete('record/delete/{id}', [\App\Http\Controllers\AdminArmorTableController::class, 'deletedestroy'])->name('deletedestroy_armor');
         });
+
+        Route::get('/table/user', [\App\Http\Controllers\AdminUserTableController::class, 'index'])->name('admin.user');
+        Route::prefix('user')->group(function () {
+            Route::post('/database', [\App\Http\Controllers\AdminUserTableController::class, 'store'])->name('admin.user.store');
+            Route::get('/database/create', [\App\Http\Controllers\AdminUserTableController::class, 'create'])->name('admin.user.create');
+            Route::get('/database/{id}', [\App\Http\Controllers\AdminUserTableController::class, 'show'])->name('admin.user.show');
+            Route::get('/database/{id}/edit', [\App\Http\Controllers\AdminUserTableController::class, 'edit'])->name('admin.user.edit');
+            Route::put('/database/{id}', [\App\Http\Controllers\AdminUserTableController::class, 'update'])->name('admin.user.update');
+            Route::delete('/database/{id}', [\App\Http\Controllers\AdminUserTableController::class, 'destroy'])->name('admin.user.destroy');
+            Route::put('/records/{id}/restore', [\App\Http\Controllers\AdminUserTableController::class, 'restore'])->name('restore_user');
+            Route::get('/database/deleted', [\App\Http\Controllers\AdminUserTableController::class, 'deletedRecords'])->name('deleted_user');
+            Route::delete('record/delete/{id}', [\App\Http\Controllers\AdminUserTableController::class, 'deletedestroy'])->name('deletedestroy_user');
+        });
     });
 });
 
