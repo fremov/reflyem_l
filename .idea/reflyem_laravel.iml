@@ -125,6 +125,7 @@
       <excludeFolder url="file://$MODULE_DIR$/laravel.local/vendor/fabpot/goutte" />
       <excludeFolder url="file://$MODULE_DIR$/laravel.local/vendor/masterminds/html5" />
       <excludeFolder url="file://$MODULE_DIR$/laravel.local/vendor/weidner/goutte" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel.local/vendor/stichoza/google-translate-php" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

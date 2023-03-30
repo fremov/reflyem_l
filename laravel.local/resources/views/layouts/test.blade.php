@@ -5,8 +5,9 @@
     <div class="card mb-3">
         <div class="card-body">
             <h3 class="card-title">{{ $mod['title'] }}</h3>
-            <p class="card-text">{{ $mod['desc'] }}</p>
+            <p class="list-group-item"><img style="width: auto; height: 250px;" src="{{$mod['image']}}" alt="image"></p>
             <ul class="list-group list-group-flush">
+                <li class="list-group-item"><span class="font-weight-bold">Описание:</span> {{ $mod['desc'] }}</li>
                 <li class="list-group-item"><span class="font-weight-bold">Категория:</span> {{ $mod['category'] }}</li>
                 <li class="list-group-item"><span class="font-weight-bold">Дата:</span> {{ $mod['date'] }}</li>
                 <li class="list-group-item"><span class="font-weight-bold">Автор:</span> {{ str_replace('Author:', '', $mod['author']) }}</li>
