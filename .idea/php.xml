@@ -113,6 +113,13 @@
       <path value="$PROJECT_DIR$/laravel.local/vendor/maximebf/debugbar" />
       <path value="$PROJECT_DIR$/laravel.local/vendor/barryvdh/laravel-debugbar" />
       <path value="$PROJECT_DIR$/laravel.local/vendor/spatie/laravel-permission" />
+      <path value="$PROJECT_DIR$/laravel.local/vendor/symfony/http-client" />
+      <path value="$PROJECT_DIR$/laravel.local/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/laravel.local/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/laravel.local/vendor/symfony/browser-kit" />
+      <path value="$PROJECT_DIR$/laravel.local/vendor/fabpot/goutte" />
+      <path value="$PROJECT_DIR$/laravel.local/vendor/masterminds/html5" />
+      <path value="$PROJECT_DIR$/laravel.local/vendor/weidner/goutte" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />

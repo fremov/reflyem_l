@@ -118,6 +118,13 @@
       <excludeFolder url="file://$MODULE_DIR$/laravel.local/vendor/maximebf/debugbar" />
       <excludeFolder url="file://$MODULE_DIR$/laravel.local/vendor/barryvdh/laravel-debugbar" />
       <excludeFolder url="file://$MODULE_DIR$/laravel.local/vendor/spatie/laravel-permission" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel.local/vendor/symfony/http-client" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel.local/vendor/symfony/http-client-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel.local/vendor/symfony/dom-crawler" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel.local/vendor/symfony/browser-kit" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel.local/vendor/fabpot/goutte" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel.local/vendor/masterminds/html5" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel.local/vendor/weidner/goutte" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

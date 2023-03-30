@@ -49,6 +49,7 @@
                                 <li><a class="dropdown-item" href="guides.html">Гайды</a></li>
                                 <li><a class="dropdown-item" href="LPCalculator">Калькулятор LP</a></li>
                                 <li><a class="dropdown-item" href="database">База знаний</a></li>
+                                <li><a class="dropdown-item" href="{{route('parse')}}">Parse</a></li>
                             </ul>
                         </div>
                     </li>
