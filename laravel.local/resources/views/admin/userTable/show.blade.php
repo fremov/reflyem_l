@@ -13,31 +13,42 @@
     <div class="row">
         <div class="col-md-12">
             <x-preloader />
-            <table class="table table-bordered">
+            <div class="container-fluid d-flex h-100 justify-content-center align-items-center">
+            <table class="table table-bordered w-75">
                 <thead>
                 <tr>
-                    <th>Картинка/Тип</th>
-                    <th>Название</th>
-                    <th>Описание</th>
-                    <th>Материал</th>
-                    <th>Вес</th>
-                    <th>Местонахождение</th>
+                    <th scope="col">Тип</th>
+                    <th scope="col">Значение</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <td style="width: 15%; height: 45px"><img style="height: 60px;" src="{{asset('images/' . $data->image)}}" alt="img">
-                        <br> {{$data->type}}</td>
-                    <td style="width: 5%; height: 45px">{{$data->name}}</td>
-                    <td style="width: 45%;">{{$data->description}}</td>
-                    <td style="width: 15%;">{{$data->material}}</td>
-                    <td style="width: 5%;">{{$data->weight}}</td>
-                    <td style="width: 15%;">{{$data->location}}</td>
+                    <td>ID</td>
+                    <td>{{$data->id}}</td>
+                </tr>
+                <tr>
+                    <td>Имя пользователя</td>
+                    <td>{{$data->name}}</td>
+                </tr>
+                <tr>
+                    <td>Почта пользователя</td>
+                    <td>{{$data->email}}</td>
+                </tr>
+                <tr>
+                    <td>Дата создания</td>
+                    <td>{{$data->created_at}}</td>
+                </tr>
+                <tr>
+                    <td>Дата изменения</td>
+                    <td>{{$data->updated_at}}</td>
                 </tr>
                 </tbody>
             </table>
-            <a href="{{ route('admin.database') }}"
-               class="btn btn-secondary">Назад</a>
+            </div>
+            <div class="container-fluid d-flex h-100 justify-content-center">
+                <a href="{{ route('admin.user') }}"
+                   class="btn btn-secondary pt-2" style="height: 45px;">Назад</a>
+            </div>
         </div>
     </div>
 </div>

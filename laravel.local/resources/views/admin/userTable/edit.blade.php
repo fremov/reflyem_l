@@ -13,61 +13,37 @@
     <div class="row justify-content-center mt-5">
         <div class="col-md-6">
             <x-preloader />
-            <form action="{{ route('admin.database.update', $data->id) }}" method="POST">
+            <form action="{{ route('admin.user.update', $data->id) }}" method="POST">
                 @csrf
                 @method('PUT')
                 <div class="form-group">
-                    <label for="name">Название:</label>
-                    <input type="text" name="name" id="name" class="form-control" placeholder="Название" value="{{ $data->name }}">
+                    <label for="name">Имя пользователя:</label>
+                    <input type="text" name="name" id="name" class="form-control mb-3" value="{{$data->name}}">
                 </div>
+
                 <div class="form-group">
-                    <label for="description">Описание:</label>
-                    <input type="text" name="description" id="description" class="form-control" placeholder="Описание" value="{{ $data->description }}">
+                    <label for="email">Почта пользователя:</label>
+                    <input type="email" name="email" id="email" class="form-control mb-3" value="{{$data->email}}">
                 </div>
+
                 <div class="form-group">
-                    <label for="material">Материал:</label>
-                    <input type="text" name="material" id="material" class="form-control" placeholder="Материал" value="{{ $data->material }}">
+                    <label for="password">Пароль пользователя:</label>
+                    <input type="password" name="password" id="password" class="form-control mb-3" value="{{$data->password}}">
                 </div>
+
                 <div class="form-group">
-                    <label for="weight">Вес:</label>
-                    <input type="number" name="weight" id="weight" class="form-control" placeholder="Вес" value="{{ $data->weight }}">
-                </div>
-                <div class="form-group">
-                    <label for="image">Тип:</label>
-                    <select name="type" id="type" class="form-control mb-3" required>
-                        <option value="">Выберите Тип</option>
-                        <option value="Кинжал">Кинжал</option>
-                        <option value="Лук">Лук</option>
-                        <option value="Булава">Булава</option>
-                        <option value="Копьё">Копьё</option>
-                        <option value="Топор">Топор</option>
+                    <label for="is_admin">Роль пользователя:</label>
+                    <select name="is_admin" id="is_admin" class="form-control mb-3">
+                        <option value="">Выберите роль</option>
+                        <option value="0">Обычный пользователь</option>
+                        <option value="1">Админ</option>
                     </select>
-                    <div class="invalid-feedback">
-                        Пожалуйста, выберите вес.
-                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="image">Картинка:</label>
-                    <select name="image" id="image" class="form-control mb-3" required>
-                        <option value="">Выберите картинку</option>
-                        <option value="dagger.png">Кинжал</option>
-                        <option value="bow.png">Лук</option>
-                        <option value="mace.png">Булава</option>
-                        <option value="spear.png">Копьё</option>
-                        <option value="axe.png">Топор</option>
-                    </select>
-                    <div class="invalid-feedback">
-                        Пожалуйста, выберите вес.
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="location">Местонахождение:</label>
-                    <input type="text" name="location" id="location" class="form-control" placeholder="Местонахождение" value="{{ $data->location }}">
-                </div>
+
                 <button type="submit" class="btn btn-primary">Обновить данные</button>
             </form>
 
-            <a href="{{ route('admin.database') }}" class="mt-3 d-inline-block">Вернутся назад</a>
+            <a href="{{ route('admin.user') }}" class="mt-3 d-inline-block">Вернутся назад</a>
         </div>
     </div>
 </div>
