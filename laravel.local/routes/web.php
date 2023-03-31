@@ -87,8 +87,10 @@ Route::get('/installation', [\App\Http\Controllers\InstallationController::class
 Route::get('/LPCalculator', function () {
    return view('LPcalc.calcLP');
 });
+
 Route::middleware('auth')->group(function () {
     Route::get('/parse_test', [\App\Http\Controllers\ParseModsController::class, 'index'])->name('parse');
+    Route::get('/chagelog', [App\Http\Controllers\ChangelogController::class, 'index'])->name('chagelog');
 });
 
 

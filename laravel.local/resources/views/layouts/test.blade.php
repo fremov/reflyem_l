@@ -1,11 +1,32 @@
 <x-head/>
-<h1 class="text-center mb-3 mt-3">Последние моды</h1>
+<body>
+<div class="bg-image"
+     style="background-color: #1a202c;
+            height: 3700px;
+         width: auto;">
+<div class="container-fluid text-center mb-3 mt-3 d-flex justify-content-center">
+<h1 class="w-75">Последние моды</h1>
+</div>
+<style>
+    .custom-card, h1 {
+        background-color: #000000; /* Задает фоновый цвет */
+        border: 2px solid #ffd700; /* Задает ширину и стиль границы */
+        box-shadow: 2px 2px 10px #008080; /* Задает тень блока */
+        text-align: center; /* Задает выравнивание текста в блоке */
+        font-family: Comic Sans MS, cursive, sans-serif; /* Задает шрифт текста */
+        color: #ffffff; /* Задает цвет текста */
+        padding: 15px; /* Задает внутренний отступ блока */
+    }
+    body {
+        background-image: {{asset('images/3690802.jpg')}};
+    }
+</style>
 <div class="container-fluid">
     <div class="row justify-content-center">
         @foreach($data as $mod)
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="card h-100">
-                    <img src="{{$mod['image']}}" class="card-img-top" alt="image">
+                <div class="card custom-card h-100">
+                    <img src="{{$mod['image']}}" class="card-img-top rounded-2" alt="image">
                     <div class="card-body">
                         <h3 class="card-title">{{ $mod['title'] }}</h3>
                         <ul class="list-group list-group-flush">
@@ -34,5 +55,5 @@
         @endforeach
     </div>
 </div>
-
-
+</div>
+</body>

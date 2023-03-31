@@ -126,6 +126,13 @@
       <excludeFolder url="file://$MODULE_DIR$/laravel.local/vendor/masterminds/html5" />
       <excludeFolder url="file://$MODULE_DIR$/laravel.local/vendor/weidner/goutte" />
       <excludeFolder url="file://$MODULE_DIR$/laravel.local/vendor/stichoza/google-translate-php" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel.local/vendor/myclabs/php-enum" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel.local/vendor/phpoffice/phpspreadsheet" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel.local/vendor/maatwebsite/excel" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel.local/vendor/ezyang/htmlpurifier" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel.local/vendor/markbaker/matrix" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel.local/vendor/markbaker/complex" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel.local/vendor/maennchen/zipstream-php" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -121,6 +121,13 @@
       <path value="$PROJECT_DIR$/laravel.local/vendor/masterminds/html5" />
       <path value="$PROJECT_DIR$/laravel.local/vendor/weidner/goutte" />
       <path value="$PROJECT_DIR$/laravel.local/vendor/stichoza/google-translate-php" />
+      <path value="$PROJECT_DIR$/laravel.local/vendor/myclabs/php-enum" />
+      <path value="$PROJECT_DIR$/laravel.local/vendor/phpoffice/phpspreadsheet" />
+      <path value="$PROJECT_DIR$/laravel.local/vendor/maatwebsite/excel" />
+      <path value="$PROJECT_DIR$/laravel.local/vendor/ezyang/htmlpurifier" />
+      <path value="$PROJECT_DIR$/laravel.local/vendor/markbaker/matrix" />
+      <path value="$PROJECT_DIR$/laravel.local/vendor/markbaker/complex" />
+      <path value="$PROJECT_DIR$/laravel.local/vendor/maennchen/zipstream-php" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />
