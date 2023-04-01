@@ -1,8 +1,8 @@
 <x-head/>
 <body>
-<div class="bg-image"
+<div class="bg-image position-relative"
      style="background-color: #1a202c;
-            height: 3700px;
+
          width: auto;">
 <div class="container-fluid text-center mb-3 mt-3 d-flex justify-content-center">
 <h1 class="w-75">Последние моды</h1>
@@ -25,7 +25,7 @@
     <div class="row justify-content-center">
         @foreach($data as $mod)
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="card custom-card h-100">
+                <div class="card custom-card h-auto w-auto">
                     <img src="{{$mod['image']}}" class="card-img-top rounded-2" alt="image">
                     <div class="card-body">
                         <h3 class="card-title">{{ $mod['title'] }}</h3>
