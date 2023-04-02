@@ -67,7 +67,13 @@
                     <i class="fas fa-fw fa-table"></i>
                     <span>Таблица(броня)</span></a>
             </li>
-
+            <hr class="sidebar-divider my-0">
+            <!-- Nav Item - Tables -->
+            <li class="nav-item active">
+                <a class="nav-link" href="{{route('admin.user')}}">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Таблица(Пользователи)</span></a>
+            </li>
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 

@@ -13,26 +13,49 @@
     <div class="row">
         <div class="col-md-12">
             <x-preloader />
-            <table class="table table-bordered">
+            <table class="table table-bordered w-75">
                 <thead>
                 <tr>
-                    <th>Картинка/Тип</th>
-                    <th>Название</th>
-                    <th>Описание</th>
-                    <th>Материал</th>
-                    <th>Вес</th>
-                    <th>Местонахождение</th>
+                    <th scope="col">Тип</th>
+                    <th scope="col">Значение</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <td style="width: 15%; height: 45px"><img style="height: 60px;" src="{{asset('images/' . $data->image)}}" alt="img">
-                        <br> {{$data->type}}</td>
-                    <td style="width: 5%; height: 45px">{{$data->name}}</td>
-                    <td style="width: 45%;">{{$data->description}}</td>
-                    <td style="width: 15%;">{{$data->material}}</td>
-                    <td style="width: 5%;">{{$data->weight}}</td>
-                    <td style="width: 15%;">{{$data->location}}</td>
+                    <td>Картинка</td>
+                    <td><img style="height: auto;" src="{{asset('images/' . $data->image)}}" alt="img">
+                </tr>
+                <tr>
+                    <td>Тип</td>
+                    <td>{{$data->type}}</td>
+                </tr>
+                <tr>
+                    <td>Название</td>
+                    <td>{{$data->name}}</td>
+                </tr>
+                <tr>
+                    <td>Описание</td>
+                    <td>{{$data->description}}</td>
+                </tr>
+                <tr>
+                    <td>Материал</td>
+                    <td>{{$data->material}}</td>
+                </tr>
+                <tr>
+                    <td>Вес</td>
+                    <td>{{$data->weight}}</td>
+                </tr>
+                <tr>
+                    <td>Местонахождение</td>
+                    <td>{{$data->location}}</td>
+                </tr>
+                <tr>
+                    <td>Дата создания</td>
+                    <td>{{$data->created_at}}</td>
+                </tr>
+                <tr>
+                    <td>Дата обновления</td>
+                    <td>{{$data->updated_at}}</td>
                 </tr>
                 </tbody>
             </table>
@@ -41,10 +64,5 @@
         </div>
     </div>
 </div>
-
-<!-- Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

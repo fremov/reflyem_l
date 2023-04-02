@@ -8,52 +8,89 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-<body>
+<body class="">
 <div class="container-fluid my-5">
     <div class="row">
-        <div class="col-md-12">
-            <x-preloader />
-            <table class="table table-bordered">
+        <div class="container-fluid d-flex h-100 justify-content-center align-items-center">
+            <table class="table table-bordered w-75">
                 <thead>
                 <tr>
-                    <th>Картинка/Тип</th>
-                    <th>Название</th>
-                    <th>Шлем</th>
-                    <th>Броня</th>
-                    <th>Перчатки</th>
-                    <th>Ботинки</th>
-                    <th>Бонус</th>
-                    <th>Местонахождение</th>
-                    <th>Создано</th>
-                    <th>Обновлено</th>
-
+                    <th scope="col">Тип</th>
+                    <th scope="col">Значение</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <td style="width: 10%; height: 120px"><img style="height: 120px;" src="{{asset('images/' . $data->image)}}" alt="img">
-                        <br> {{$data->type}}</td>
-                    <td style="width: 5%; height: 45px">{{$data->title}}</td>
-                    <td style="width: 5%;">{{$data->helmet}}</td>
-                    <td style="width: 5%;">{{$data->body_armor}}</td>
-                    <td style="width: 5%;">{{$data->gloves}}</td>
-                    <td style="width: 10%;">{{$data->boots}}</td>
-                    <td style="width: 15%;">{{$data->bonus}}</td>
-                    <td style="width: 5%;">{{$data->location}}</td>
-                    <td style="width: 10%;">{{$data->created_at}}</td>
-                    <td style="width: 10%;">{{$data->updated_at}}</td>
+                    <td>Картинка</td>
+                    <td><img style="height: 120px;" src="{{asset('images/' . $data->Image)}}" alt="img">
+                </tr>
+                <tr>
+                    <td>Тип</td>
+                    <td>{{$data->type}}</td>
+                </tr>
+                <tr>
+                    <td>Название</td>
+                    <td>{{$data->title}}</td>
+                </tr>
+                <tr>
+                    <td>Шлем</td>
+                    <td>{{$data->helmet}}</td>
+                </tr>
+                <tr>
+                    <td>Броня</td>
+                    <td>{{$data->body_armor}}</td>
+                </tr>
+                <tr>
+                    <td>Перчатки</td>
+                    <td>{{$data->gloves}}</td>
+                </tr>
+                <tr>
+                    <td>Ботинки</td>
+                    <td>{{$data->boots}}</td>
+                </tr>
+                <tr>
+                    <td>Бонус комплекта</td>
+                    <td>
+                        @if(is_null($data->bonus))
+                            Бонус отсутвует
+                        @else
+                        {{$data->bonus}}
+                        @endif
+                    </td>
+                </tr>
+                <tr>
+                    <td>Местонахождение</td>
+                    <td>{{$data->location}}</td>
+                </tr>
+                <tr>
+                    <td>Дата создания</td>
+                    <td>
+                        @if(is_null($data->created_at))
+                        -
+                        @else
+                        {{$data->created_at}}
+                        @endif
+                    </td>
+                </tr>
+                <tr>
+                    <td>Дата изменения</td>
+                    <td>
+                    @if(is_null($data->updated_at))
+                        -
+                    @else
+                        {{$data->updated_at}}
+                    @endif
+                    </td>
                 </tr>
                 </tbody>
             </table>
-            <a href="{{ route('admin.armor') }}"
-               class="btn btn-secondary">Назад</a>
         </div>
+        </div>
+    <div class="container-fluid justify-content-center d-flex h-auto">
+    <a href="{{ route('admin.armor') }}"
+       class="btn btn-secondary">Назад</a>
+    </div>
     </div>
 </div>
-
-<!-- Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
