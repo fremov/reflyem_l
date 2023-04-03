@@ -19,6 +19,7 @@
         text-shadow: #1a202c;
     }
 </style>
+<x-preloader />
 <div
         class="bg-image p-5 text-center shadow-1-strong"
         style="background-image: url('{{asset('images/3690802.jpg')}}');
@@ -35,7 +36,7 @@
                     ваше путешествие по миру Скайрима было<br> максимально комфортным и приятным.</h4>
                 <a target="_blank" class="btn text-white btn-lg fw-normal rounded-pill mt-3 justify-content-center align-items-center pt-3"
                    style="width: 250px; height: 70px;background-color: rgba(0, 0, 0, 0.6) !important; border-color: rgba(233, 177 , 177 , 0.5)!important;"
-                   href="https://drive.google.com/file/d/1IjC1BkzpyYGuI8Oy1VupeaG2wx_kOhur/view?usp=share_link" role="button">Скачать сборку</a>
+                   href="https://drive.google.com/file/d/1MwhGeiXEEzOOjwcraSgQH5CYvGebiz5g/view?usp=share_link" role="button">Скачать сборку</a>
             </div>
         </div>
 </div>

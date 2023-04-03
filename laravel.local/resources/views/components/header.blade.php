@@ -67,7 +67,9 @@
                         data-mdb-toggle="dropdown"
                         aria-expanded="false"
                     >
-                        <button class="btn btn-primary ">Профиль</button>
+                        <button class="btn btn-primary ">
+                            {{Auth::user()->name ?? 'Профиль'}}
+                        </button>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
                         @if(Auth::guest())

@@ -1,6 +1,6 @@
 <x-head/>
 <body>
-<div class="bg-image position-relative"
+<div class="bg-image"
      style="background-color: #1a202c;
          width: auto;
         height: auto;
@@ -23,6 +23,7 @@
             background-image: {{asset('images/3690802.jpg')}};
         }
     </style>
+    <x-preloader />
     <div class="container-fluid">
         <div class="row justify-content-center">
             @foreach($data as $mod)

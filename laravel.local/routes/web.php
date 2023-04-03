@@ -64,9 +64,7 @@ Route::middleware('is_admin', 'auth')->group( function () {
 });
 
 
-Route::get('/', function () {
-    return view('main_page.welcome');
-});
+Route::get('/', [\App\Http\Controllers\AppController::class, 'index']);
 
 // Регистрация пользователя
 Route::get('/register', [\App\Http\Controllers\UserController::class, 'getRegister'])->name('register');
@@ -80,20 +78,22 @@ Route::post('/login', [\App\Http\Controllers\UserController::class, 'postLogin']
 Route::get('/logout', [\App\Http\Controllers\UserController::class, 'logout'])->name('logout');
 
 
-Route::get('/database', [\App\Http\Controllers\DataBaseController::class, 'index']);
-
-
 Route::get('/installation', [\App\Http\Controllers\InstallationController::class, 'show']);
-Route::get('/LPCalculator', function () {
-   return view('LPcalc.calcLP');
-});
+
 
 Route::middleware('auth')->group(function () {
-    Route::get('/parse_test', [\App\Http\Controllers\ParseModsController::class, 'index'])->name('parse');
+    Route::get('/database', [\App\Http\Controllers\DataBaseController::class, 'index']);
+    Route::get('/last_mods', [\App\Http\Controllers\ParseModsController::class, 'index'])->name('parse');
     Route::get('/chagelog', [App\Http\Controllers\ChangelogController::class, 'index'])->name('chagelog');
+    Route::get('/LPCalculator', function () {
+        return view('LPcalc.calcLP');
+    });
+
 });
 
-
+Route::get('/test', function () {
+   return view('layouts.dataBase');
+});
 
 Route::get('404', function () {
     return view('errors.404');
