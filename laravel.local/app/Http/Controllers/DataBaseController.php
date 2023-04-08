@@ -8,8 +8,8 @@ use App\Models\Wearon;
 class DataBaseController extends Controller
 {
     public function index() {
-        $data = Wearon::paginate(6);
-        return view('database.dataBase', compact('data'));
+        $data = Wearon::all();
+        return view('layouts.dataBase', compact('data'));
     }
 
 }

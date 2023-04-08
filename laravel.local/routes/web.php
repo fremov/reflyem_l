@@ -91,9 +91,7 @@ Route::middleware('auth')->group(function () {
 
 });
 
-Route::get('/test', function () {
-   return view('layouts.dataBase');
-});
+Route::get('/test', [\App\Http\Controllers\DataBaseController::class, 'index']);
 
 Route::get('404', function () {
     return view('errors.404');
