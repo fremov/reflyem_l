@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Таблица Оружие</title>
+    <title>Таблица</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css" rel="stylesheet"/>
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&amp;display=fallback">
     <!-- Font Awesome -->
@@ -14,11 +15,17 @@
     <link rel="stylesheet" href="{{asset('AdminLTE/plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('AdminLTE/dist/css/adminlte.min.css')}}">
+
+    <link rel="shortcut icon" href="{{asset('images/slidkiy_rulet.png')}}" type="image/x-icon">
+    <link rel="icon" href="{{asset('images/slidkiy_rulet.png')}}">
+    <link rel="stylesheet" href="{{asset('style/scrollbar.css')}}">
+
+
 </head>
 <x-header />
 <body class="layout-boxed mt-5" style="height: auto;">
 <x-preloader />
-<div class="wrapper">
+<div class="container-fluid d-flex h-100 justify-content-center w-75">
 
 
 <div class="card-body">
@@ -41,19 +48,13 @@
                             <tr>
                                 <th>Название</th>
                                 <th>Описание</th>
-                                <th>Материал</th>
-                                <th>Тип</th>
-                                <th>Местонахождение</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($data as $item)
                                 <tr>
-                                    <td>{{$item->name}}</td>
-                                    <td>{{$item->description}}</td>
-                                    <td>{{$item->material}}</td>
-                                    <td>{{$item->type}}</td>
-                                    <td>{{$item->location}}</td>
+                                    <td>{{$item->title}}</td>
+                                    <td>{!! nl2br(e($item->description)) !!}</td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -61,48 +62,13 @@
                             <tr>
                                 <th>Название</th>
                                 <th>Описание</th>
-                                <th>Материал</th>
-                                <th>Тип</th>
-                                <th>Местонахождение</th>
                             </tr>
                             </tfoot>
                         </table>
                     </div>
                 </div>
                 <div class="tab-pane fade" id="vert-tabs-profile" role="tabpanel" aria-labelledby="vert-tabs-profile-tab">
-                    <div class="card-body">
-                        <table id="example2" class="table table-bordered table-striped">
-                            <thead>
-                            <tr>
-                                <th>Название</th>
-                                <th>Описание</th>
-                                <th>Бонус</th>
-                                <th>Тип</th>
-                                <th>Местонахждение</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            @foreach($armor as $item)
-                                <tr>
-                                    <td>{{$item->title}}</td>
-                                    <td>{{$item->description}}</td>
-                                    <td>{{$item->bonus}}</td>
-                                    <td>{{$item->type}}</td>
-                                    <td>{{$item->location}}</td>
-                                </tr>
-                            @endforeach
-                            </tbody>
-                            <tfoot>
-                            <tr>
-                                <th>Название</th>
-                                <th>Описание</th>
-                                <th>Бонус</th>
-                                <th>Тип</th>
-                                <th>Местонахждение</th>
-                            </tr>
-                            </tfoot>
-                        </table>
-                    </div>
+
                 </div>
                 <div class="tab-pane fade" id="vert-tabs-messages" role="tabpanel" aria-labelledby="vert-tabs-messages-tab">
                     Morbi turpis dolor, vulputate vitae felis non, tincidunt congue mauris. Phasellus volutpat augue id mi placerat mollis. Vivamus faucibus eu massa eget condimentum. Fusce nec hendrerit sem, ac tristique nulla. Integer vestibulum orci odio. Cras nec augue ipsum. Suspendisse ut velit condimentum, mattis urna a, malesuada nunc. Curabitur eleifend facilisis velit finibus tristique. Nam vulputate, eros non luctus efficitur, ipsum odio volutpat massa, sit amet sollicitudin est libero sed ipsum. Nulla lacinia, ex vitae gravida fermentum, lectus ipsum gravida arcu, id fermentum metus arcu vel metus. Curabitur eget sem eu risus tincidunt eleifend ac ornare magna.
@@ -149,5 +115,7 @@
         });
     });
 </script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"></script>
 </body>
 </html>
