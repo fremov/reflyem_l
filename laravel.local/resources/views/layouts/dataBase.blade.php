@@ -8,6 +8,7 @@
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&amp;display=fallback">
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{asset('AdminLTE/plugins/fontawesome-free/css/all.min.css')}}">
     <!-- DataTables -->
@@ -20,8 +21,21 @@
     <link rel="shortcut icon" href="{{asset('images/slidkiy_rulet.png')}}" type="image/x-icon">
     <link rel="icon" href="{{asset('images/slidkiy_rulet.png')}}">
     <link rel="stylesheet" href="{{asset('style/scrollbar.css')}}">
-
-
+    <!-- Подключите bootstrap и jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-xxxxxxxxx" crossorigin="anonymous"></script>
+    <!-- Добавьте стили для фиксированной кнопки -->
+    <style>
+        #scrollTopButton {
+            display: none; /* кнопка изначально скрыта */
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <x-header/>
 <body class="layout-boxed mt-5" style="height: auto; background-color: gainsboro">
@@ -116,6 +130,8 @@
         </div>
     </div>
 </div>
+<!-- Добавьте следующий скрипт -->
+
 <!-- jQuery -->
 <script src="{{asset('AdminLTE/plugins/jquery/jquery.min.js')}}"></script>
 <!-- Bootstrap 4 -->
@@ -150,7 +166,27 @@
         });
     });
 </script>
-
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"></script>
+
+
+
+<button class="btn btn-info" id="scrollTopButton">Наверх</button>
+<!-- Добавьте следующий скрипт -->
+<script>
+    // Получаем кнопку и добавляем обработчик клика
+    const scrollTopButton = document.getElementById("scrollTopButton");
+    scrollTopButton.addEventListener("click", function () {
+        document.documentElement.scrollTop = 0; // Поднимаем страницу вверх
+    });
+
+    // Показываем/скрываем кнопку при скролле страницы
+    window.addEventListener("scroll", function () {
+        if (document.documentElement.scrollTop > 100) {
+            scrollTopButton.style.display = "block";
+        } else {
+            scrollTopButton.style.display = "none";
+        }
+    });
+</script>
 </body>
 </html>
