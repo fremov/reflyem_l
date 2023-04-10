@@ -10,7 +10,7 @@ class DataBaseController extends Controller
 {
     public function index() {
         $data = AllItems::all();
-        $changelog = json_decode(file_get_contents(public_path('data/merged_data1.json')), true);;
+        $changelog = json_decode(file_get_contents(public_path('data/test.json')), true);;
         return view('layouts.dataBase', compact('data', 'changelog'));
     }
 
