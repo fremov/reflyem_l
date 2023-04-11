@@ -53,7 +53,7 @@
                     <a class="nav-link active" id="vert-tabs-home-tab" data-toggle="pill" href="#vert-tabs-home"
                        role="tab" aria-controls="vert-tabs-home" aria-selected="true">Снаряжение</a>
                     <a class="nav-link" id="vert-tabs-profile-tab" data-toggle="pill" href="#vert-tabs-profile"
-                       role="tab" aria-controls="vert-tabs-profile" aria-selected="false">Полезная информация</a>
+                       role="tab" aria-controls="vert-tabs-profile" aria-selected="false">Перки</a>
                     <a class="nav-link" id="vert-tabs-messages-tab" data-toggle="pill" href="#vert-tabs-messages"
                        role="tab" aria-controls="vert-tabs-messages" aria-selected="false">Заклинания</a>
                     <a class="nav-link" id="vert-tabs-settings-tab" data-toggle="pill" href="#vert-tabs-settings"
@@ -93,7 +93,43 @@
                     </div>
                     <div class="tab-pane fade" id="vert-tabs-profile" role="tabpanel"
                          aria-labelledby="vert-tabs-profile-tab">
-                        {{--   место для данных--}}
+                        {{--   перки--}}
+                        <table class="table-container ms-5 me-5 fs-5">
+                            @foreach ($warrior_perks as $item)
+                                <tr style="background-color: red;" class="fs-5" data-toggle="tooltip" data-placement="top" title="{{ $item['comment'] }}">
+                                    <td class="border border-3 border-dark">{{ $item['value'] }}</td>
+                                </tr>
+                            @endforeach
+                        </table>
+                        <table class="table-container me-5 fs-5">
+                            @foreach ($assasin_perks as $item)
+                                <tr style="background-color: green;" class="fs-5" data-toggle="tooltip" data-placement="top" title="{{ $item['comment'] }}">
+                                    <td class="border border-3 border-dark">{{ $item['value'] }}</td>
+                                </tr>
+                            @endforeach
+                        </table>
+                        <table class="table-container fs-5">
+                            @foreach ($mage_perks as $item)
+                                <tr style="background-color: blue;" class="fs-5 text-white" data-toggle="tooltip" data-placement="top" title="{{ $item['comment'] }}">
+                                    <td class="border border-5 border-dark">{{ $item['value'] }}</td>
+                                </tr>
+                            @endforeach
+                        </table>
+
+                        <style>
+                            .table-container {
+                                width: auto;
+                                height: auto;
+                                display: inline-block;
+                                vertical-align: top;
+                            }
+                            table {border-collapse: collapse;}
+                        </style>
+                        <script>
+                            $(function () {
+                                $('[data-toggle="tooltip"]').tooltip()
+                            })
+                        </script>
                     </div>
                     <div class="tab-pane fade" id="vert-tabs-messages" role="tabpanel"
                          aria-labelledby="vert-tabs-messages-tab">

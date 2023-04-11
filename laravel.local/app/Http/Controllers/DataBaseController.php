@@ -17,8 +17,22 @@ class DataBaseController extends Controller
         $illision = json_decode(file_get_contents(public_path('data/illision.json')), true);;
         $restore = json_decode(file_get_contents(public_path('data/restore.json')), true);;
 
+        $warrior_perks = json_decode(file_get_contents(public_path('data/warrior_perks.json')), true);;
+        $assasin_perks = json_decode(file_get_contents(public_path('data/assasin_perks.json')), true);;
+        $mage_perks = json_decode(file_get_contents(public_path('data/mage_perks.json')), true);;
 
-        return view('layouts.dataBase', compact('data', 'changelog', 'destract', 'change', 'conjura', 'illision', 'restore'));
+
+        return view('layouts.dataBase', compact('data',
+            'changelog',
+            'destract',
+            'change',
+            'conjura',
+            'illision',
+            'restore',
+            'warrior_perks',
+            'assasin_perks',
+            'mage_perks',
+        ));
     }
 
 }
