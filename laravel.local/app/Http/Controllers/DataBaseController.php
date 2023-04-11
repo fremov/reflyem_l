@@ -11,11 +11,14 @@ class DataBaseController extends Controller
     public function index() {
         $data = AllItems::all();
         $changelog = json_decode(file_get_contents(public_path('data/changelog.json')), true);;
-        $spells = json_decode(file_get_contents(public_path('data/spells.json')), true);;
-        if ($changelog || $spells !== null) {
-            return view('layouts.dataBase', compact('data', 'changelog', 'spells'));
-        } else // Если данные были некорректны, возвращаем ошибку
-            return response()->json(['error' => 'Не удалось загрузить данные'], 500);
+        $destract = json_decode(file_get_contents(public_path('data/destract.json')), true);;
+        $change = json_decode(file_get_contents(public_path('data/change.json')), true);;
+        $conjura = json_decode(file_get_contents(public_path('data/conjura.json')), true);;
+        $illision = json_decode(file_get_contents(public_path('data/illision.json')), true);;
+        $restore = json_decode(file_get_contents(public_path('data/restore.json')), true);;
+
+
+        return view('layouts.dataBase', compact('data', 'changelog', 'destract', 'change', 'conjura', 'illision', 'restore'));
     }
 
 }

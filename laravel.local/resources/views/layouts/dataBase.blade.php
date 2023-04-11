@@ -97,35 +97,273 @@
                     </div>
                     <div class="tab-pane fade" id="vert-tabs-messages" role="tabpanel"
                          aria-labelledby="vert-tabs-messages-tab">
-                        <table class="table table-striped">
-                            <tbody>
-                            @foreach ($spells as $row)
-                                <tr class="fw-bold fs-5">
-                                    @foreach ($row as $key => $value)
-                                        @switch($value)
-                                            @case('Изменение')
-                                            <td class="bg-success">{{ $value }}</td>
-                                            @break
-                                            @case('Разрушение')
-                                            <td class="bg-danger">{{ $value }}</td>
-                                            @break
-                                            @case('Восстановление')
-                                            <td class="bg-warning">{{ $value }}</td>
-                                            @break
-                                            @case('Колдовство')
-                                            <td class="bg-info">{{ $value }}</td>
-                                            @break
-                                            @case('Иллюзия')
-                                            <td class="bg-primary">{{ $value }}</td>
-                                            @break
-                                            @default
-                                            <td>{{$value}}</td>
-                                        @endswitch
-                                    @endforeach
-                                </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
+                        <div class="card-body">
+                            <!-- we are adding the accordion ID so Bootstrap's collapse plugin detects it -->
+                            <div id="accordion">
+                                <div class="card card-orange">
+                                    <div class="card-header">
+                                        <h4 class="card-title w-100">
+                                            <a class="d-block w-100 collapsed" data-toggle="collapse"
+                                               href="#collapseOne" aria-expanded="false">
+                                                Разрушение
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseOne" class="collapse" data-parent="#accordion" style="">
+                                        <div class="card-body">
+                                            <table class="table table-striped fs-5">
+                                                <thead>
+                                                <tr>
+                                                    <th></th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                @foreach ($destract as $row)
+                                                    <tr>
+                                                        @foreach ($row as $key => $value)
+                                                            @switch($value)
+                                                                @case('НОВИЧОК')
+                                                                <td class="fw-bold fs-5">{{ $value }}</td>
+                                                                @break
+                                                                @case('УЧЕНИК')
+                                                                <td class="fw-bold fs-5">{{ $value }}</td>
+                                                                @break
+                                                                @case('АДЕПТ')
+                                                                <td class="fw-bold fs-5">{{ $value }}</td>
+                                                                @break
+                                                                @case('ЭКСПЕРТ')
+                                                                <td class="fw-bold fs-5">{{ $value }}</td>
+                                                                @break
+                                                                @case('МАСТЕР')
+                                                                <td class="fw-bold fs-5">{{ $value }}</td>
+                                                                @break
+                                                                @case('Магия крови')
+                                                                <td class="fw-bold fs-5">{{ $value }}</td>
+                                                                @break
+                                                                @case('Разрушение')
+                                                                <td class="fw-bold h2">{{ $value }}</td>
+                                                                @break
+                                                                @default
+                                                                <td>{{ $value }}</td>
+                                                            @endswitch
+                                                        @endforeach
+                                                    </tr>
+                                                @endforeach
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card card-success">
+                                    <div class="card-header">
+                                        <h4 class="card-title w-100">
+                                            <a class="d-block w-100 collapsed" data-toggle="collapse"
+                                               href="#collapseTwo" aria-expanded="false">
+                                                Изменение
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse" data-parent="#accordion" style="">
+                                        <div class="card-body">
+                                            <table class="table table-striped fs-5">
+                                                <thead>
+                                                <tr>
+                                                    <th></th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                @foreach ($change as $row)
+                                                    <tr>
+                                                        @foreach ($row as $key => $value)
+                                                            @switch($value)
+                                                                @case('НОВИЧОК')
+                                                                <td class="fw-bold fs-5">{{ $value }}</td>
+                                                                @break
+                                                                @case('УЧЕНИК')
+                                                                <td class="fw-bold fs-5">{{ $value }}</td>
+                                                                @break
+                                                                @case('АДЕПТ')
+                                                                <td class="fw-bold fs-5">{{ $value }}</td>
+                                                                @break
+                                                                @case('ЭКСПЕРТ')
+                                                                <td class="fw-bold fs-5">{{ $value }}</td>
+                                                                @break
+                                                                @case('МАСТЕР')
+                                                                <td class="fw-bold fs-5">{{ $value }}</td>
+                                                                @break
+                                                                @case('Изменение')
+                                                                <td class="fw-bold h2">{{ $value }}</td>
+                                                                @break
+                                                                @case('Чародейская ярость')
+                                                                <td class="fw-bold h2">{{ $value }}</td>
+                                                                @break
+                                                                @default
+                                                                <td>{{ $value }}</td>
+                                                            @endswitch
+                                                        @endforeach
+                                                    </tr>
+                                                @endforeach
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card card-purple">
+                                    <div class="card-header">
+                                        <h4 class="card-title w-100">
+                                            <a class="d-block w-100" data-toggle="collapse" href="#collapseThree"
+                                               aria-expanded="true">
+                                                Колдавство
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseThree" class="collapse show" data-parent="#accordion" style="">
+                                        <div class="card-body">
+                                            <table class="table table-striped fs-5">
+                                                <thead>
+                                                <tr>
+                                                    <th></th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                @foreach ($conjura as $row)
+                                                    <tr>
+                                                        @foreach ($row as $key => $value)
+                                                            @switch($value)
+                                                                @case('НОВИЧОК')
+                                                                <td class="fw-bold fs-5">{{ $value }}</td>
+                                                                @break
+                                                                @case('УЧЕНИК')
+                                                                <td class="fw-bold fs-5">{{ $value }}</td>
+                                                                @break
+                                                                @case('АДЕПТ')
+                                                                <td class="fw-bold fs-5">{{ $value }}</td>
+                                                                @break
+                                                                @case('ЭКСПЕРТ')
+                                                                <td class="fw-bold fs-5">{{ $value }}</td>
+                                                                @break
+                                                                @case('МАСТЕР')
+                                                                <td class="fw-bold fs-5">{{ $value }}</td>
+                                                                @break
+                                                                @case('Колдовство')
+                                                                <td class="fw-bold h2">{{ $value }}</td>
+                                                                @break
+                                                                @default
+                                                                <td>{{ $value }}</td>
+                                                            @endswitch
+                                                        @endforeach
+                                                    </tr>
+                                                @endforeach
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card card-info">
+                                    <div class="card-header">
+                                        <h4 class="card-title w-100">
+                                            <a class="d-block w-100 collapsed" data-toggle="collapse"
+                                               href="#collapseFor" aria-expanded="false">
+                                                Иллюзия
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseFor" class="collapse" data-parent="#accordion" style="">
+                                        <div class="card-body">
+                                            <table class="table table-striped fs-5">
+                                                <thead>
+                                                <tr>
+                                                    <th></th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                @foreach ($illision as $row)
+                                                    <tr>
+                                                        @foreach ($row as $key => $value)
+                                                            @switch($value)
+                                                                @case('НОВИЧОК')
+                                                                <td class="fw-bold fs-5">{{ $value }}</td>
+                                                                @break
+                                                                @case('УЧЕНИК')
+                                                                <td class="fw-bold fs-5">{{ $value }}</td>
+                                                                @break
+                                                                @case('АДЕПТ')
+                                                                <td class="fw-bold fs-5">{{ $value }}</td>
+                                                                @break
+                                                                @case('ЭКСПЕРТ')
+                                                                <td class="fw-bold fs-5">{{ $value }}</td>
+                                                                @break
+                                                                @case('МАСТЕР')
+                                                                <td class="fw-bold fs-5">{{ $value }}</td>
+                                                                @break
+                                                                @case('Иллюзия')
+                                                                <td class="fw-bold h2">{{ $value }}</td>
+                                                                @break
+                                                                @default
+                                                                <td>{{ $value }}</td>
+                                                            @endswitch
+                                                        @endforeach
+                                                    </tr>
+                                                @endforeach
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card card-warning">
+                                    <div class="card-header">
+                                        <h4 class="card-title w-100">
+                                            <a class="d-block w-100 collapsed" data-toggle="collapse"
+                                               href="#collapseFive" aria-expanded="false">
+                                                Восстановление
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseFive" class="collapse" data-parent="#accordion" style="">
+                                        <div class="card-body">
+                                            <table class="table table-striped fs-5">
+                                                <thead>
+                                                <tr>
+                                                    <th></th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                @foreach ($restore as $row)
+                                                    <tr>
+                                                        @foreach ($row as $key => $value)
+                                                            @switch($value)
+                                                                @case('НОВИЧОК')
+                                                                <td class="fw-bold fs-5">{{ $value }}</td>
+                                                                @break
+                                                                @case('УЧЕНИК')
+                                                                <td class="fw-bold fs-5">{{ $value }}</td>
+                                                                @break
+                                                                @case('АДЕПТ')
+                                                                <td class="fw-bold fs-5">{{ $value }}</td>
+                                                                @break
+                                                                @case('ЭКСПЕРТ')
+                                                                <td class="fw-bold fs-5">{{ $value }}</td>
+                                                                @break
+                                                                @case('МАСТЕР')
+                                                                <td class="fw-bold fs-5">{{ $value }}</td>
+                                                                @break
+                                                                @case('Восстановление')
+                                                                <td class="fw-bold h2">{{ $value }}</td>
+                                                                @break
+                                                                @default
+                                                                <td>{{ $value }}</td>
+                                                            @endswitch
+                                                        @endforeach
+                                                    </tr>
+                                                @endforeach
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="tab-pane fade" id="vert-tabs-settings" role="tabpanel"
                          aria-labelledby="vert-tabs-settings-tab">
