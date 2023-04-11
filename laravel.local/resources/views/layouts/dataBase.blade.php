@@ -22,7 +22,8 @@
     <link rel="icon" href="{{asset('images/slidkiy_rulet.png')}}">
     <link rel="stylesheet" href="{{asset('style/scrollbar.css')}}">
     <!-- Подключите bootstrap и jquery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-xxxxxxxxx" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-xxxxxxxxx"
+            crossorigin="anonymous"></script>
     <!-- Добавьте стили для фиксированной кнопки -->
     <style>
         #scrollTopButton {
@@ -50,11 +51,11 @@
                 <div class="nav flex-column nav-tabs h-100" id="vert-tabs-tab" role="tablist"
                      aria-orientation="vertical">
                     <a class="nav-link active" id="vert-tabs-home-tab" data-toggle="pill" href="#vert-tabs-home"
-                       role="tab" aria-controls="vert-tabs-home" aria-selected="true">Оружие</a>
+                       role="tab" aria-controls="vert-tabs-home" aria-selected="true">Снаряжение</a>
                     <a class="nav-link" id="vert-tabs-profile-tab" data-toggle="pill" href="#vert-tabs-profile"
-                       role="tab" aria-controls="vert-tabs-profile" aria-selected="false">Броня</a>
+                       role="tab" aria-controls="vert-tabs-profile" aria-selected="false">Полезная информация</a>
                     <a class="nav-link" id="vert-tabs-messages-tab" data-toggle="pill" href="#vert-tabs-messages"
-                       role="tab" aria-controls="vert-tabs-messages" aria-selected="false">Messages</a>
+                       role="tab" aria-controls="vert-tabs-messages" aria-selected="false">Заклинания</a>
                     <a class="nav-link" id="vert-tabs-settings-tab" data-toggle="pill" href="#vert-tabs-settings"
                        role="tab" aria-controls="vert-tabs-settings" aria-selected="false">Список изменений</a>
                 </div>
@@ -96,14 +97,35 @@
                     </div>
                     <div class="tab-pane fade" id="vert-tabs-messages" role="tabpanel"
                          aria-labelledby="vert-tabs-messages-tab">
-                        Morbi turpis dolor, vulputate vitae felis non, tincidunt congue mauris. Phasellus volutpat augue
-                        id mi placerat mollis. Vivamus faucibus eu massa eget condimentum. Fusce nec hendrerit sem, ac
-                        tristique nulla. Integer vestibulum orci odio. Cras nec augue ipsum. Suspendisse ut velit
-                        condimentum, mattis urna a, malesuada nunc. Curabitur eleifend facilisis velit finibus
-                        tristique. Nam vulputate, eros non luctus efficitur, ipsum odio volutpat massa, sit amet
-                        sollicitudin est libero sed ipsum. Nulla lacinia, ex vitae gravida fermentum, lectus ipsum
-                        gravida arcu, id fermentum metus arcu vel metus. Curabitur eget sem eu risus tincidunt eleifend
-                        ac ornare magna.
+                        <table class="table table-striped">
+                            <tbody>
+                            @foreach ($spells as $row)
+                                <tr class="fw-bold fs-5">
+                                    @foreach ($row as $key => $value)
+                                        @switch($value)
+                                            @case('Изменение')
+                                            <td class="bg-success">{{ $value }}</td>
+                                            @break
+                                            @case('Разрушение')
+                                            <td class="bg-danger">{{ $value }}</td>
+                                            @break
+                                            @case('Восстановление')
+                                            <td class="bg-warning">{{ $value }}</td>
+                                            @break
+                                            @case('Колдовство')
+                                            <td class="bg-info">{{ $value }}</td>
+                                            @break
+                                            @case('Иллюзия')
+                                            <td class="bg-primary">{{ $value }}</td>
+                                            @break
+                                            @default
+                                            <td>{{$value}}</td>
+                                        @endswitch
+                                    @endforeach
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
                     </div>
                     <div class="tab-pane fade" id="vert-tabs-settings" role="tabpanel"
                          aria-labelledby="vert-tabs-settings-tab">
@@ -167,7 +189,6 @@
     });
 </script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"></script>
-
 
 
 <button class="btn btn-info" id="scrollTopButton">Наверх</button>
