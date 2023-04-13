@@ -133,6 +133,14 @@
       <excludeFolder url="file://$MODULE_DIR$/laravel.local/vendor/markbaker/matrix" />
       <excludeFolder url="file://$MODULE_DIR$/laravel.local/vendor/markbaker/complex" />
       <excludeFolder url="file://$MODULE_DIR$/laravel.local/vendor/maennchen/zipstream-php" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea/dataSources" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel.local/vendor" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel.local/public/admin_panel/vendor" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel.local/public/AdminLTE/plugins" />
+      <excludeFolder url="file://$MODULE_DIR$/public/admin_panel/vendor" />
+      <excludeFolder url="file://$MODULE_DIR$/public/AdminLTE/plugins" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor" />
+      <excludeFolder url="file://$MODULE_DIR$/public/admin_panel/scss" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
