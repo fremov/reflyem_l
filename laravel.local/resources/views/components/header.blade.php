@@ -18,7 +18,7 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active text-white " aria-current="page" href="/">Главная</a>
+                        <a class="nav-link active text-white " aria-current="page" href="/#Main">Главная</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white ms-3 me-3" href="/#Base">База знаний</a>
@@ -81,18 +81,12 @@
                             </li>
                         @elseif (Auth::user()->is_admin)
                             <li>
-                                <a class="dropdown-item" href="#">My profile</a>
-                            </li>
-                            <li>
                                 <a class="dropdown-item" href="{{route('dashboard')}}">Админ панель</a>
                             </li>
                             <li>
                                 <a class="dropdown-item" href="{{ route('logout') }}">Выйти</a>
                             </li>
                         @elseif (Auth::user())
-                            <li>
-                                <a class="dropdown-item" href="#">My profile</a>
-                            </li>
                             <li>
                                 <a class="dropdown-item" href="{{ route('logout') }}">Выйти</a>
                             </li>
@@ -101,7 +95,6 @@
                 </div>
             </div>
             <!-- Right elements -->
-        </div>
         </div>
     </nav>
 </header>

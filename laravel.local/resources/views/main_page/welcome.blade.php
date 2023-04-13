@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+
 <x-head />
-</head>
+<x-header />
 <body>
 {{--Хедер--}}
-<x-header />
+
 {{--Хедер--}}
 <!-- Блок Главная -->
 <style>
@@ -13,20 +13,22 @@
         font-family: 'Zantroke';
         src: url({{asset('style/Zantroke.otf')}});
     }
-    * {
+    .font-frem {
         font-family: 'Zantroke';
         font-size: medium;
         text-shadow: #1a202c;
     }
 </style>
 <x-preloader />
+<div class="font-frem">
+    <a name="Main"></a>
 <div
         class="bg-image p-5 text-center shadow-1-strong"
         style="background-image: url('{{asset('images/3690802.jpg')}}');
         height: 1000px;
 "
 >
-        <a name="Main"></a>
+
         <div class="d-flex justify-content-center align-items-center h-100 " style="">
             <div class="text-white shadow-5 ">
                 <h1 class="mb-3"> <img src="{{ asset('images/logo.png') }}" style="height: 150px" alt="logo"></h1>
@@ -143,6 +145,6 @@
 </div>
 <!-- Блок Поддержка -->
 
-
+</div>
 </body>
 </html>

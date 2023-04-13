@@ -4,8 +4,9 @@
    <x-head />
     <link rel="stylesheet" href="{{ asset('style/calcLPstyle.css') }}">
 </head>
-<body class="bg-dark" style="background-color: black!important;">
-
+<x-header />
+<body class="bg-dark mt-5" style="background-image: url('{{asset('images/builds-2.jpg')}}')">
+<x-preloader />
 <!--Выбор расы(кнопка)-->
 <div class="d-flex justify-content-evenly w-100 mb-3 pt-3 mt-2">
 
@@ -42,26 +43,26 @@
                                 <div class="tab-pane fade show active" id="list-home" role="tabpanel"
                                      aria-labelledby="list-home-list">
                                     <span class="fw-bold">Выбираем нужную расу персонажа: </span> <br>
-                                    <img src="{{ asset('images/insruction1.png') }}" alt="pic" srcset="">
+                                    <img src="{{ asset('images/insruction1.png') }}" alt="pic">
                                 </div>
                                 <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
                                     <span class="fw-bold">Выбираем нужный камень для персонажа: </span> <br>
-                                    <img src="{{ asset('images/insruction2.png') }}" alt="pic" srcset="">
+                                    <img src="{{ asset('images/insruction2.png') }}" alt="pic">
                                 </div>
                                 <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
                                     <span class="fw-bold">Выбираем нужный уровень сложности: </span><br>
-                                    <img src="{{ asset('images/insruction3.png') }}" alt="pic" srcset="">
+                                    <img src="{{ asset('images/insruction3.png') }}" alt="pic">
                                 </div>
                                 <div class="tab-pane fade" id="list-messages-1" role="tabpanel" aria-labelledby="list-messages-list-1">
                                     <span class="fw-bold">В первом поле вводим текущее значение нужного навыка: </span> <br>
                                     <span class="fw-bold">Во втором поле вводим значение навыка до которого вы хотите повысить: </span>
-                                    <img src="{{ asset('images/insruction4.png') }}" alt="pic" srcset="">
+                                    <img class="w-75" style="width: 300px!important;" src="{{ asset('images/insruction6.png') }}" alt="pic">
                                 </div>
                                 <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
                                     <span class="fw-bold">И наконец нажимаем на кнопку "Расчитать" и смотрим на результаты: </span>
                                     <br>
-                                    <img style="width: 700px!important;" src="{{ asset('images/insruction5.png') }}" alt="pic" srcset=""> <br>
-                                    <img class="w-75" style="width: 300px!important;" src="{{ asset('images/insruction6.png') }}" alt="pic" srcset="">
+                                    <img class="mb-2" src="{{ asset('images/insruction4.png') }}" alt="pic"> <br>
+                                    <img style="width: 650px!important;" src="{{ asset('images/instruction.png') }}" alt="pic">
                                 </div>
                             </div>
                         </div>
@@ -195,7 +196,7 @@
 </div>
 
 
-<div class="d-flex justify-content-center align-items-center container-fluid h-100 mt-3" style="width: 1780px;">
+<div class="d-flex justify-content-center align-items-center container-fluid h-100 mt-4" style="width: 1600px;">
 <table class=" table table-dark table-bordered table-sm d-sm-table-cell">
     <thead>
     <tr class="border border-3 border-dark">
@@ -343,10 +344,8 @@
     </tr>
     </tbody>
 </table>
-    <div class="d-flex h-100 justify-content-center align-items-center">
-        <a href="/"><button class="btn btn-primary rounded-3">На главную</button></a>
-    </div>
 </div>
+
 
 <script src="{{ asset('script/main.js') }}"></script>
 </body>

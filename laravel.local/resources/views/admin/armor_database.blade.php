@@ -108,29 +108,16 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Картинка/Тип</th>
                                             <th>Название</th>
-                                            <th>Шлем</th>
-                                            <th>Броня</th>
-                                            <th>Перчатки</th>
-                                            <th>Ботинки</th>
-                                            <th>Бонус</th>
-                                            <th>Местонахождение</th>
+                                            <th>Описание</th>
                                             <th>Действие</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                     @foreach($data as $item)
                                         <tr>
-                                            <td style="width: 15%; height: 45px"><img style="height: 60px;" src="{{asset('images/' . $item->Image)}}" alt="Броня">
-                                                <br>{{$item->type}}</td>
-                                            <td style="width: 5%; height: 45px!important;">{{$item->title}}</td>
-                                            <td style="width: 45%;">{{$item->helmet}}</td>
-                                            <td style="width: 15%;">{{$item->body_armor}}</td>
-                                            <td style="width: 5%;">{{$item->gloves}}</td>
-                                            <td style="width: 15%;">{{$item->boots}}</td>
-                                            <td style="width: 15%;">{{$item->bonus}}</td>
-                                            <td style="width: 15%;">{{$item->location}}</td>
+                                            <td>{{$item->title}}</td>
+                                            <td>{{$item->description}}</td>
                                             <td class="d-flex">
                                                 <a class="text-white" href="{{ route('admin.armor.show', $item->id) }}"><button class="btn btn-info ">Show</button></a>
                                                 <a class="text-white" href="{{ route('admin.armor.edit', $item->id) }}"><button class="btn btn-warning ms-1">Edit</button></a>

@@ -28,6 +28,7 @@
 <body>
 {{--Хеадер--}}
 <x-header />
+<x-preloader />
 {{--Хеадер--}}
 <!-- Background image -->
 <div class="bg-image" style="background-image: url('{{asset('images/Frem.png')}}');height: 937px!important;">
