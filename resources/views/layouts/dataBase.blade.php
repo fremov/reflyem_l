@@ -21,6 +21,7 @@
     <link rel="shortcut icon" href="{{asset('images/slidkiy_rulet.png')}}" type="image/x-icon">
     <link rel="icon" href="{{asset('images/slidkiy_rulet.png')}}">
     <link rel="stylesheet" href="{{asset('style/scrollbar.css')}}">
+    <link rel="stylesheet" href="{{asset('style/dataBase.css')}}">
     <!-- Подключите bootstrap и jquery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-xxxxxxxxx"
             crossorigin="anonymous"></script>
@@ -39,24 +40,30 @@
     </style>
 </head>
 <x-header/>
-<body class="layout-boxed mt-5" style="height: auto; background-color: gainsboro">
+<body class="layout-boxed mt-5 h-auto position-relative text-white"
+      style="
+          background-image: url('{{asset('images/661452.png')}}');
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-attachment: fixed;
+          ">
 <x-preloader/>
 <div class="container-fluid d-flex h-100 justify-content-center w-75">
 
 
     <div class="card-body">
-        <h4>База знаний</h4>
+        <h1>База знаний</h1>
         <div class="row">
             <div class="col-5 col-sm-3">
                 <div class="nav flex-column nav-tabs h-100" id="vert-tabs-tab" role="tablist"
                      aria-orientation="vertical">
-                    <a class="nav-link active" id="vert-tabs-home-tab" data-toggle="pill" href="#vert-tabs-home"
+                    <a class="nav-link active h2" id="vert-tabs-home-tab" data-toggle="pill" href="#vert-tabs-home"
                        role="tab" aria-controls="vert-tabs-home" aria-selected="true">Снаряжение</a>
-                    <a class="nav-link" id="vert-tabs-profile-tab" data-toggle="pill" href="#vert-tabs-profile"
+                    <a class="nav-link h2" id="vert-tabs-profile-tab" data-toggle="pill" href="#vert-tabs-profile"
                        role="tab" aria-controls="vert-tabs-profile" aria-selected="false">Перки</a>
-                    <a class="nav-link" id="vert-tabs-messages-tab" data-toggle="pill" href="#vert-tabs-messages"
+                    <a class="nav-link h2" id="vert-tabs-messages-tab" data-toggle="pill" href="#vert-tabs-messages"
                        role="tab" aria-controls="vert-tabs-messages" aria-selected="false">Заклинания</a>
-                    <a class="nav-link" id="vert-tabs-settings-tab" data-toggle="pill" href="#vert-tabs-settings"
+                    <a class="nav-link h2" id="vert-tabs-settings-tab" data-toggle="pill" href="#vert-tabs-settings"
                        role="tab" aria-controls="vert-tabs-settings" aria-selected="false">Список изменений</a>
                 </div>
             </div>
@@ -67,7 +74,16 @@
                         {{--Табилца со шмотками--}}
                         <div class="card-body">
                             <table id="example1"
-                                   class="table table-bordered border border-5 border-dark text-dark fs-5">
+                                   class="table
+                                   table-bordered
+                                   border border-5
+                                    border-dark
+                                    text-white
+                                    fst-italic
+                                    fs-5"
+                                   style="text-shadow: 1px 1px 2px black;
+                                    background-color: rgba(0, 0, 0, 0.6)!important;
+">
                                 <thead>
                                 <tr>
                                     <th class="fw-bold border-right border-dark border-3">Название</th>
@@ -96,35 +112,29 @@
                         {{--   перки--}}
                         <table class="table-container ms-5 me-5 fs-5">
                             @foreach ($warrior_perks as $item)
-                                <tr style="background-color: red;" class="fs-5" data-toggle="tooltip" data-placement="top" title="{{ $item['comment'] }}">
+                                <tr style="background-color: red;" class="fs-5" data-toggle="tooltip"
+                                    data-placement="top" title="{{ $item['comment'] }}">
                                     <td class="border border-3 border-dark">{{ $item['value'] }}</td>
                                 </tr>
                             @endforeach
                         </table>
                         <table class="table-container me-5 fs-5">
                             @foreach ($assasin_perks as $item)
-                                <tr style="background-color: green;" class="fs-5" data-toggle="tooltip" data-placement="top" title="{{ $item['comment'] }}">
+                                <tr style="background-color: green;" class="fs-5" data-toggle="tooltip"
+                                    data-placement="top" title="{{ $item['comment'] }}">
                                     <td class="border border-3 border-dark">{{ $item['value'] }}</td>
                                 </tr>
                             @endforeach
                         </table>
                         <table class="table-container fs-5">
                             @foreach ($mage_perks as $item)
-                                <tr style="background-color: blue;" class="fs-5 text-white" data-toggle="tooltip" data-placement="top" title="{{ $item['comment'] }}">
+                                <tr style="background-color: blue;" class="fs-5 text-white" data-toggle="tooltip"
+                                    data-placement="top" title="{{ $item['comment'] }}">
                                     <td class="border border-5 border-dark">{{ $item['value'] }}</td>
                                 </tr>
                             @endforeach
                         </table>
 
-                        <style>
-                            .table-container {
-                                width: auto;
-                                height: auto;
-                                display: inline-block;
-                                vertical-align: top;
-                            }
-                            table {border-collapse: collapse;}
-                        </style>
                         <script>
                             $(function () {
                                 $('[data-toggle="tooltip"]').tooltip()
@@ -136,7 +146,7 @@
                         <div class="card-body">
                             <!-- we are adding the accordion ID so Bootstrap's collapse plugin detects it -->
                             <div id="accordion">
-                                <div class="card card-orange">
+                                <div class="card card-success">
                                     <div class="card-header">
                                         <h4 class="card-title w-100">
                                             <a class="d-block w-100 collapsed" data-toggle="collapse"
@@ -147,7 +157,7 @@
                                     </div>
                                     <div id="collapseOne" class="collapse" data-parent="#accordion" style="">
                                         <div class="card-body">
-                                            <table class="table table-striped fs-5">
+                                            <table class="table text-white fs-5">
                                                 <thead>
                                                 <tr>
                                                     <th></th>
@@ -190,6 +200,7 @@
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="card card-success">
                                     <div class="card-header">
                                         <h4 class="card-title w-100">
@@ -201,7 +212,7 @@
                                     </div>
                                     <div id="collapseTwo" class="collapse" data-parent="#accordion" style="">
                                         <div class="card-body">
-                                            <table class="table table-striped fs-5">
+                                            <table class="table fs-5 text-white">
                                                 <thead>
                                                 <tr>
                                                     <th></th>
@@ -244,7 +255,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card card-purple">
+                                <div class="card card-success">
                                     <div class="card-header">
                                         <h4 class="card-title w-100">
                                             <a class="d-block w-100" data-toggle="collapse" href="#collapseThree"
@@ -253,9 +264,9 @@
                                             </a>
                                         </h4>
                                     </div>
-                                    <div id="collapseThree" class="collapse show" data-parent="#accordion" style="">
+                                    <div id="collapseThree" class="collapse show" data-parent="#accordion">
                                         <div class="card-body">
-                                            <table class="table table-striped fs-5">
+                                            <table class="table text-white fs-5">
                                                 <thead>
                                                 <tr>
                                                     <th></th>
@@ -296,7 +307,7 @@
                                     </div>
                                 </div>
 
-                                <div class="card card-info">
+                                <div class="card card-success">
                                     <div class="card-header">
                                         <h4 class="card-title w-100">
                                             <a class="d-block w-100 collapsed" data-toggle="collapse"
@@ -307,7 +318,7 @@
                                     </div>
                                     <div id="collapseFor" class="collapse" data-parent="#accordion" style="">
                                         <div class="card-body">
-                                            <table class="table table-striped fs-5">
+                                            <table class="table text-white fs-5">
                                                 <thead>
                                                 <tr>
                                                     <th></th>
@@ -347,7 +358,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card card-warning">
+                                <div class="card card-success">
                                     <div class="card-header">
                                         <h4 class="card-title w-100">
                                             <a class="d-block w-100 collapsed" data-toggle="collapse"
@@ -358,7 +369,7 @@
                                     </div>
                                     <div id="collapseFive" class="collapse" data-parent="#accordion" style="">
                                         <div class="card-body">
-                                            <table class="table table-striped fs-5">
+                                            <table class="table text-white fs-5">
                                                 <thead>
                                                 <tr>
                                                     <th></th>
@@ -404,7 +415,11 @@
                     <div class="tab-pane fade" id="vert-tabs-settings" role="tabpanel"
                          aria-labelledby="vert-tabs-settings-tab">
                         {{--Список изменений--}}
-                        <table id="example1" class="table table-bordered border border-5 border-dark text-dark fs-5">
+                        <table id="example1"
+                               class="table table-bordered border border-5 border-dark text-white fs-5 fst-italic"
+                               style="text-shadow: 1px 1px 2px black;
+                               background-color: rgba(0, 0, 0, 0.6)!important;
+">
                             <tbody>
                             @foreach ($changelog as $sheet_name => $sheet_data)
                                 <tr>

@@ -40,8 +40,8 @@ class ParseModsController extends Controller
                 'likes' => $likes,
             ];
         });
-
         return view('layouts.parse', ['data' => $data]);
 
     }
+
 }

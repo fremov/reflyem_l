@@ -1,13 +1,13 @@
 <x-head/>
-<body>
-<div class="bg-image"
-     style="background-color: #1a202c;
+<x-header />
+<body class="mt-5"
+      style="background-color: #1a202c!important;
          width: auto;
         height: auto;
-    ">
-    <div class="container-fluid text-center mb-3 mt-3 d-flex justify-content-center">
-        <h1 class="w-75">Последние моды</h1>
-    </div>
+    "
+>
+<div>
+
     <style>
         .custom-card, h1 {
             background-color: #000000; /* Задает фоновый цвет */

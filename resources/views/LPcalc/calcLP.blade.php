@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="{{ asset('style/calcLPstyle.css') }}">
 </head>
 <x-header />
-<body class="bg-dark mt-5" style="background-image: url('{{asset('images/builds-2.jpg')}}')">
+<body class="bg-dark mt-5" style="background-image: url('{{asset('images/541231.png')}}')">
 <x-preloader />
 <!--Выбор расы(кнопка)-->
 <div class="d-flex justify-content-evenly w-100 mb-3 pt-3 mt-2">
