@@ -46,7 +46,10 @@ class UserController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials, true)) {
-            return redirect()->intended('/');
+            if (Auth::user()->is_admin)
+                return redirect()->route('dashboard');
+            else
+            return redirect()->route('main_page');
         }
         return back()->withErrors([
             'email' => 'Неверный email или пароль',

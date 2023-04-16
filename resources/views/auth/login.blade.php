@@ -1,4 +1,5 @@
 <x-head />
+<x-preloader />
 <body>
 <div class="container-fluid d-flex h-100 justify-content-center align-items-center bg-dark">
     <div
@@ -7,35 +8,22 @@
             <div class="card border-light bg-dark text-white">
                 <div class="card-header bg-primary">{{ ('Вход') }}</div>
                 <div class="card-body">
-                    <x-preloader />
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
-
                         <div class="form-group row">
                             <label for="email" class="text-white mb-3 col-md-4 col-form-label text-md-right">{{ ('E-Mail') }}</label>
-
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                <input id="email" type="email" class="form-control"
+                                       name="email" required autocomplete="email" autofocus>
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="password" class="text-white mb-3 col-md-4 col-form-label text-md-right">{{ __('Пароль') }}</label>
+                            <label for="password" class="text-white mb-3 col-md-4 col-form-label text-md-right">{{ ('Пароль') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                <input id="password" type="password" class="form-control"
+                                       name="password" required autocomplete="current-password">
                             </div>
                         </div>
 
@@ -43,7 +31,7 @@
                             class="form-group row">
                             <div class="col-md-6 offset-md-4">
                                 <div class="form-check">
-                                    <input class="mb-3 form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                                    <input class="mb-3 form-check-input" type="checkbox" name="remember" id="remember" {{ ('remember') ? 'checked' : '' }}>
                                     <label class="form-check-label" for="remember">
                                         {{ ('Запомнить меня') }}
                                     </label>
@@ -58,6 +46,16 @@
                                 </button>
                             </div>
                         </div>
+
+                        @if($errors->any())
+                            <div class="alert alert-danger mt-3">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                     </form>
                 </div>
             </div>

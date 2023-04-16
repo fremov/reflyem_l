@@ -64,7 +64,7 @@ Route::middleware('is_admin', 'auth')->group( function () {
 });
 
 
-Route::get('/', [\App\Http\Controllers\AppController::class, 'index']);
+Route::get('/', [\App\Http\Controllers\AppController::class, 'index'])->name('main_page');
 
 // Регистрация пользователя
 Route::get('/register', [\App\Http\Controllers\UserController::class, 'getRegister'])->name('register');
