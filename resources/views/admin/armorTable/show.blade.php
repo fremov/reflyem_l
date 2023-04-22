@@ -21,10 +21,6 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td>Картинка</td>
-                    <td><img style="height: 120px;" src="{{asset('images/' . $data->Image)}}" alt="img">
-                </tr>
-                <tr>
                     <td>Тип</td>
                     <td>{{$data->type}}</td>
                 </tr>
@@ -33,20 +29,8 @@
                     <td>{{$data->title}}</td>
                 </tr>
                 <tr>
-                    <td>Шлем</td>
-                    <td>{{$data->helmet}}</td>
-                </tr>
-                <tr>
-                    <td>Броня</td>
-                    <td>{{$data->body_armor}}</td>
-                </tr>
-                <tr>
-                    <td>Перчатки</td>
-                    <td>{{$data->gloves}}</td>
-                </tr>
-                <tr>
-                    <td>Ботинки</td>
-                    <td>{{$data->boots}}</td>
+                    <td>Описание</td>
+                    <td>{!! nl2br(e($data->description)) !!}</td>
                 </tr>
                 <tr>
                     <td>Бонус комплекта</td>

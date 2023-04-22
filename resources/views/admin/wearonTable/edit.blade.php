@@ -22,20 +22,16 @@
                 </div>
                 <div class="form-group">
                     <label for="description">Описание:</label>
-                    <input type="text" name="description" id="description" class="form-control" placeholder="Описание" value="{{ $data->description }}">
+                    <textarea name="description" id="description" class="form-control" placeholder="Описание">{{ $data->description }}</textarea>
                 </div>
                 <div class="form-group">
                     <label for="material">Материал:</label>
                     <input type="text" name="material" id="material" class="form-control" placeholder="Материал" value="{{ $data->material }}">
                 </div>
                 <div class="form-group">
-                    <label for="weight">Вес:</label>
-                    <input type="number" name="weight" id="weight" class="form-control" placeholder="Вес" value="{{ $data->weight }}">
-                </div>
-                <div class="form-group">
-                    <label for="image">Тип:</label>
-                    <select name="type" id="type" class="form-control mb-3" required>
-                        <option value="">Выберите Тип</option>
+                    <label for="type">Тип:</label>
+                    <select name="type" id="type" class="form-control mb-3">
+                        <option>{{$data->type}}</option>
                         <option value="Кинжал">Кинжал</option>
                         <option value="Лук">Лук</option>
                         <option value="Булава">Булава</option>
@@ -43,21 +39,7 @@
                         <option value="Топор">Топор</option>
                     </select>
                     <div class="invalid-feedback">
-                        Пожалуйста, выберите вес.
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="image">Картинка:</label>
-                    <select name="image" id="image" class="form-control mb-3" required>
-                        <option value="">Выберите картинку</option>
-                        <option value="dagger.png">Кинжал</option>
-                        <option value="bow.png">Лук</option>
-                        <option value="mace.png">Булава</option>
-                        <option value="spear.png">Копьё</option>
-                        <option value="axe.png">Топор</option>
-                    </select>
-                    <div class="invalid-feedback">
-                        Пожалуйста, выберите вес.
+                        Пожалуйста, выберите тип оружия.
                     </div>
                 </div>
                 <div class="form-group">

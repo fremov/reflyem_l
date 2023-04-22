@@ -58,6 +58,29 @@
             <!-- Right elements -->
             <div class="d-flex align-items-center me-3">
                 <!-- Avatar -->
+                <label for="searchInput" class="me-3">
+                    <input type="text" id="searchInput" placeholder="Введите текст для поиска">
+                </label>
+                <script>
+                    const searchInput = document.getElementById("searchInput");
+                    const listItems = document.querySelectorAll(".item");
+
+                    searchInput.addEventListener("input", (event) => {
+                        const value = event.target.value.toLowerCase();
+                        listItems.forEach((item) => {
+                            if (item.textContent.toLowerCase().includes(value)) {
+                                item.classList.remove("hidden");
+                            } else {
+                                item.classList.add("hidden");
+                            }
+                        });
+                    });
+                </script>
+                <style>
+                    .hidden {
+                        display: none;
+                    }
+                </style>
                 <div class="dropdown">
                     <a
                         class="dropdown-toggle d-flex align-items-center hidden-arrow"

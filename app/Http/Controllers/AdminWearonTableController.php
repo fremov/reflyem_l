@@ -23,13 +23,11 @@ class AdminWearonTableController extends Controller
             'name' => 'required|string|max:255',
             'description' => 'required|string|max:65535',
             'material' => 'required',
-            'weight' => 'required',
-            'image' => 'max:2048',
             'location' => 'required',
             'type' => 'max:100',
         ]);
         $data = Wearon::create($validatedData);
-//        dd($data);
+     //  dd($data);
         return redirect(route('admin.database'))->with('success', 'Оружие успешно добавлено');
     }
     public function show($id) {
@@ -46,8 +44,6 @@ class AdminWearonTableController extends Controller
             'name' => 'max:250'.$id,
             'description' => 'max:250',
             'material' => 'max:250',
-            'weight' => 'max:250',
-            'image' => 'max:250',
             'location' => 'max:250',
             'type' => 'max:250',
         ]);

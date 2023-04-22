@@ -50,8 +50,6 @@
           ">
 <x-preloader/>
 <div class="container-fluid d-flex h-100 justify-content-center w-75">
-
-
     <div class="card-body">
         <h1>База знаний</h1>
         <div class="row">
@@ -108,131 +106,336 @@
                             </table>
                         </div>
                     </div>
+
+
                     <div class="tab-pane fade" id="vert-tabs-profile" role="tabpanel"
                          aria-labelledby="vert-tabs-profile-tab">
-                        {{--   перки--}}
-{{--                        <table class="table-container ms-5 me-5 fs-5">--}}
-{{--                            @foreach ($warrior_perks as $item)--}}
-{{--                                <tr style="background-color: red;" class="fs-5" data-toggle="tooltip"--}}
-{{--                                    data-placement="top" title="{{ $item['comment'] }}">--}}
-{{--                                    <td class="border border-3 border-dark">{{ $item['value'] }}</td>--}}
-{{--                                </tr>--}}
-{{--                            @endforeach--}}
-{{--                        </table>--}}
-{{--                        <table class="table-container me-5 fs-5">--}}
-{{--                            @foreach ($assasin_perks as $item)--}}
-{{--                                <tr style="background-color: green;" class="fs-5" data-toggle="tooltip"--}}
-{{--                                    data-placement="top" title="{{ $item['comment'] }}">--}}
-{{--                                    <td class="border border-3 border-dark">{{ $item['value'] }}</td>--}}
-{{--                                </tr>--}}
-{{--                            @endforeach--}}
-{{--                        </table>--}}
-{{--                        <table class="table-container fs-5">--}}
-{{--                            @foreach ($mage_perks as $item)--}}
-{{--                                <tr style="background-color: blue;" class="fs-5 text-white" data-toggle="tooltip"--}}
-{{--                                    data-placement="top" title="{{ $item['comment'] }}">--}}
-{{--                                    <td class="border border-5 border-dark">{{ $item['value'] }}</td>--}}
-{{--                                </tr>--}}
-{{--                            @endforeach--}}
-{{--                        </table>--}}
-
-{{--                        <script>--}}
-{{--                            $(function () {--}}
-{{--                                $('[data-toggle="tooltip"]').tooltip()--}}
-{{--                            })--}}
-{{--                        </script>--}}
-
-                            <!-- /.card-header -->
-                            <div class="card-body">
-                                <!-- we are adding the accordion ID so Bootstrap's collapse plugin detects it -->
-                                <div id="accordion">
-                                    <div class="card" style="background-color: rgba(0, 0, 0, 0.6)!important; background-color: #0B2161">
-                                        <div class="card-header">
-                                            <h4 class="card-title w-100">
-                                                <a class="d-block w-100 collapsed" data-toggle="collapse" href="#collapseOne" aria-expanded="false">
-                                                    Изменение
-                                                </a>
-                                            </h4>
-                                        </div>
-                                        <div id="collapseOne" class="collapse" data-parent="#accordion" style="">
-                                            <div class="card-body">
-                                                <div class="accordion" id="accordionExample">
-                                                    @foreach ($alteration as $key => $data)
-                                                        <div class="card" style="background-color: rgba(0, 0, 0, 0.6)!important;">
-                                                            <div class="card-header" id="heading{{ $key }}">
-                                                                <h2 class="mb-0">
-                                                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{ $key }}" aria-expanded="true" aria-controls="collapse{{ $key }}">
-                                                                        {{ $data['value'] }}
-                                                                    </button>
-                                                                </h2>
-                                                            </div>
-                                                            <div id="collapse{{ $key }}" class="collapse" aria-labelledby="heading{{ $key }}" data-parent="#accordionExample">
-                                                                <div class="card-body">
-                                                                    {!! nl2br(e($data['comment'])) !!}
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    @endforeach
-                                                </div>
-                                            </div>
-                                        </div>
+                        <div class="accordion" id="accordionExample">
+                            <h2>Изменение</h2>
+                            @foreach ($alteration_perks as $key => $data)
+                                <div class="card" style="background-color: rgba(0, 0, 0, 0.6)!important;">
+                                    <div class="card-header" id="heading{{ $key }}">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-info" style="background-color: rgba(0, 0, 0, 0.6)!important;" type="button" data-toggle="collapse" data-target="#collapse{{ $key }}" aria-expanded="true" aria-controls="collapse{{ $key }}">
+                                                {{ $data['value'] }}
+                                            </button>
+                                        </h2>
                                     </div>
-                                    <div class="card card-danger">
-                                        <div class="card-header">
-                                            <h4 class="card-title w-100">
-                                                <a class="d-block w-100" data-toggle="collapse" href="#collapseTwo">
-                                                    Collapsible Group Danger
-                                                </a>
-                                            </h4>
-                                        </div>
-                                        <div id="collapseTwo" class="collapse" data-parent="#accordion">
-                                            <div class="card-body">
-                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-                                                3
-                                                wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
-                                                laborum
-                                                eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
-                                                nulla
-                                                assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                                                nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
-                                                beer
-                                                farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                                                labore sustainable VHS.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card card-success">
-                                        <div class="card-header">
-                                            <h4 class="card-title w-100">
-                                                <a class="d-block w-100" data-toggle="collapse" href="#collapseThree">
-                                                    Collapsible Group Success
-                                                </a>
-                                            </h4>
-                                        </div>
-                                        <div id="collapseThree" class="collapse" data-parent="#accordion">
-                                            <div class="card-body">
-                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-                                                3
-                                                wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
-                                                laborum
-                                                eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
-                                                nulla
-                                                assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                                                nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
-                                                beer
-                                                farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                                                labore sustainable VHS.
-                                            </div>
+                                    <div id="collapse{{ $key }}" class="collapse" aria-labelledby="heading{{ $key }}" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            {!! nl2br(e($data['comment'])) !!}
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <!-- /.card-body -->
+                            @endforeach
+                            <h2>Разрушение</h2>
+                            @foreach ($destruction_perks as $key => $data)
+                                <div class="card" style="background-color: rgba(0, 0, 0, 0.6)!important;">
+                                    <div class="card-header" id="heading{{ $key }}">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-info" style="background-color: rgba(0, 0, 0, 0.6)!important;" type="button" data-toggle="collapse" data-target="#collapse{{ $key }}" aria-expanded="true" aria-controls="collapse{{ $key }}">
+                                                {{ $data['value'] }}
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="collapse{{ $key }}" class="collapse" aria-labelledby="heading{{ $key }}" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            {!! nl2br(e($data['comment'])) !!}
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                            <h2>Колдавство</h2>
+                            @foreach ($conjuration_perks as $key => $data)
+                                <div class="card" style="background-color: rgba(0, 0, 0, 0.6)!important;">
+                                    <div class="card-header" id="heading{{ $key }}">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-info" style="background-color: rgba(0, 0, 0, 0.6)!important;" type="button" data-toggle="collapse" data-target="#collapse{{ $key }}" aria-expanded="true" aria-controls="collapse{{ $key }}">
+                                                {{ $data['value'] }}
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="collapse{{ $key }}" class="collapse" aria-labelledby="heading{{ $key }}" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            {!! nl2br(e($data['comment'])) !!}
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                            <h2>Зачарование</h2>
+                            @foreach ($enchanting_perks as $key => $data)
+                                <div class="card" style="background-color: rgba(0, 0, 0, 0.6)!important;">
+                                    <div class="card-header" id="heading{{ $key }}">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-info" style="background-color: rgba(0, 0, 0, 0.6)!important;" type="button" data-toggle="collapse" data-target="#collapse{{ $key }}" aria-expanded="true" aria-controls="collapse{{ $key }}">
+                                                {{ $data['value'] }}
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="collapse{{ $key }}" class="collapse" aria-labelledby="heading{{ $key }}" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            {!! nl2br(e($data['comment'])) !!}
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                            <h2>Иллюзия</h2>
+                            @foreach ($illusion_perks as $key => $data)
+                                <div class="card" style="background-color: rgba(0, 0, 0, 0.6)!important;">
+                                    <div class="card-header" id="heading{{ $key }}">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-info" style="background-color: rgba(0, 0, 0, 0.6)!important;" type="button" data-toggle="collapse" data-target="#collapse{{ $key }}" aria-expanded="true" aria-controls="collapse{{ $key }}">
+                                                {{ $data['value'] }}
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="collapse{{ $key }}" class="collapse" aria-labelledby="heading{{ $key }}" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            {!! nl2br(e($data['comment'])) !!}
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                            <h2>Восстановление</h2>
+                            @foreach ($restoration_perks as $key => $data)
+                                <div class="card" style="background-color: rgba(0, 0, 0, 0.6)!important;">
+                                    <div class="card-header" id="heading{{ $key }}">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-info" style="background-color: rgba(0, 0, 0, 0.6)!important;" type="button" data-toggle="collapse" data-target="#collapse{{ $key }}" aria-expanded="true" aria-controls="collapse{{ $key }}">
+                                                {{ $data['value'] }}
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="collapse{{ $key }}" class="collapse" aria-labelledby="heading{{ $key }}" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            {!! nl2br(e($data['comment'])) !!}
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+
+                            <h2>Стрельба</h2>
+                            @foreach ($archery_perks as $key => $data)
+                                <div class="card" style="background-color: rgba(0, 0, 0, 0.6)!important;">
+                                    <div class="card-header" id="heading{{ $key }}">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-danger" style="background-color: rgba(0, 0, 0, 0.6)!important;" type="button" data-toggle="collapse" data-target="#collapse{{ $key }}" aria-expanded="true" aria-controls="collapse{{ $key }}">
+                                                {{ $data['value'] }}
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="collapse{{ $key }}" class="collapse" aria-labelledby="heading{{ $key }}" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            {!! nl2br(e($data['comment'])) !!}
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+
+                            <h2>Блокирование</h2>
+                            @foreach ($block_perks as $key => $data)
+                                <div class="card" style="background-color: rgba(0, 0, 0, 0.6)!important;">
+                                    <div class="card-header" id="heading{{ $key }}">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-danger" style="background-color: rgba(0, 0, 0, 0.6)!important;" type="button" data-toggle="collapse" data-target="#collapse{{ $key }}" aria-expanded="true" aria-controls="collapse{{ $key }}">
+                                                {{ $data['value'] }}
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="collapse{{ $key }}" class="collapse" aria-labelledby="heading{{ $key }}" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            {!! nl2br(e($data['comment'])) !!}
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+
+                            <h2>Тяжёлая броня</h2>
+                            @foreach ($heavy_Armor_perks as $key => $data)
+                                <div class="card" style="background-color: rgba(0, 0, 0, 0.6)!important;">
+                                    <div class="card-header" id="heading{{ $key }}">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-danger" style="background-color: rgba(0, 0, 0, 0.6)!important;" type="button" data-toggle="collapse" data-target="#collapse{{ $key }}" aria-expanded="true" aria-controls="collapse{{ $key }}">
+                                                {{ $data['value'] }}
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="collapse{{ $key }}" class="collapse" aria-labelledby="heading{{ $key }}" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            {!! nl2br(e($data['comment'])) !!}
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+
+                            <h2>Одноручное оружие</h2>
+                            @foreach ($one_Handed_perks as $key => $data)
+                                <div class="card" style="background-color: rgba(0, 0, 0, 0.6)!important;">
+                                    <div class="card-header" id="heading{{ $key }}">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-danger" style="background-color: rgba(0, 0, 0, 0.6)!important;" type="button" data-toggle="collapse" data-target="#collapse{{ $key }}" aria-expanded="true" aria-controls="collapse{{ $key }}">
+                                                {{ $data['value'] }}
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="collapse{{ $key }}" class="collapse" aria-labelledby="heading{{ $key }}" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            {!! nl2br(e($data['comment'])) !!}
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+
+                            <h2>Кузнечное дело</h2>
+                            @foreach ($smithing_perks as $key => $data)
+                                <div class="card" style="background-color: rgba(0, 0, 0, 0.6)!important;">
+                                    <div class="card-header" id="heading{{ $key }}">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-danger" style="background-color: rgba(0, 0, 0, 0.6)!important;" type="button" data-toggle="collapse" data-target="#collapse{{ $key }}" aria-expanded="true" aria-controls="collapse{{ $key }}">
+                                                {{ $data['value'] }}
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="collapse{{ $key }}" class="collapse" aria-labelledby="heading{{ $key }}" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            {!! nl2br(e($data['comment'])) !!}
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+
+                            <h2>Двуручное оружие</h2>
+                            @foreach ($two_Handed_perks as $key => $data)
+                                <div class="card" style="background-color: rgba(0, 0, 0, 0.6)!important;">
+                                    <div class="card-header" id="heading{{ $key }}">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-danger" style="background-color: rgba(0, 0, 0, 0.6)!important;" style="background-color: rgba(0, 0, 0, 0.6)!important;" type="button" data-toggle="collapse" data-target="#collapse{{ $key }}" aria-expanded="true" aria-controls="collapse{{ $key }}">
+                                                {{ $data['value'] }}
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="collapse{{ $key }}" class="collapse" aria-labelledby="heading{{ $key }}" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            {!! nl2br(e($data['comment'])) !!}
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+
+                            <h2>Алхимия</h2>
+                            @foreach ($alchemy_perks as $key => $data)
+                                <div class="card" style="background-color: rgba(0, 0, 0, 0.6)!important;">
+                                    <div class="card-header" id="heading{{ $key }}">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-success" style="background-color: rgba(0, 0, 0, 0.6)!important;" type="button" data-toggle="collapse" data-target="#collapse{{ $key }}" aria-expanded="true" aria-controls="collapse{{ $key }}">
+                                                {{ $data['value'] }}
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="collapse{{ $key }}" class="collapse" aria-labelledby="heading{{ $key }}" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            {!! nl2br(e($data['comment'])) !!}
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+
+                            <h2>Лёгкая броня</h2>
+                            @foreach ($light_Armor_perks as $key => $data)
+                                <div class="card" style="background-color: rgba(0, 0, 0, 0.6)!important;">
+                                    <div class="card-header" id="heading{{ $key }}">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-success" style="background-color: rgba(0, 0, 0, 0.6)!important;" type="button" data-toggle="collapse" data-target="#collapse{{ $key }}" aria-expanded="true" aria-controls="collapse{{ $key }}">
+                                                {{ $data['value'] }}
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="collapse{{ $key }}" class="collapse" aria-labelledby="heading{{ $key }}" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            {!! nl2br(e($data['comment'])) !!}
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+
+                            <h2>Взлом</h2>
+                            @foreach ($lockpicking_perks as $key => $data)
+                                <div class="card" style="background-color: rgba(0, 0, 0, 0.6)!important;">
+                                    <div class="card-header" id="heading{{ $key }}">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-success" style="background-color: rgba(0, 0, 0, 0.6)!important;" type="button" data-toggle="collapse" data-target="#collapse{{ $key }}" aria-expanded="true" aria-controls="collapse{{ $key }}">
+                                                {{ $data['value'] }}
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="collapse{{ $key }}" class="collapse" aria-labelledby="heading{{ $key }}" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            {!! nl2br(e($data['comment'])) !!}
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+
+                            <h2>Карманные кражи</h2>
+                            @foreach ($pickpocket_perks as $key => $data)
+                                <div class="card" style="background-color: rgba(0, 0, 0, 0.6)!important;">
+                                    <div class="card-header" id="heading{{ $key }}">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-success" style="background-color: rgba(0, 0, 0, 0.6)!important;" type="button" data-toggle="collapse" data-target="#collapse{{ $key }}" aria-expanded="true" aria-controls="collapse{{ $key }}">
+                                                {{ $data['value'] }}
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="collapse{{ $key }}" class="collapse" aria-labelledby="heading{{ $key }}" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            {!! nl2br(e($data['comment'])) !!}
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+
+                            <h2>Скрытность</h2>
+                            @foreach ($sneak_perks as $key => $data)
+                                <div class="card" style="background-color: rgba(0, 0, 0, 0.6)!important;">
+                                    <div class="card-header" id="heading{{ $key }}">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-success" style="background-color: rgba(0, 0, 0, 0.6)!important;" type="button" data-toggle="collapse" data-target="#collapse{{ $key }}" aria-expanded="true" aria-controls="collapse{{ $key }}">
+                                                {{ $data['value'] }}
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="collapse{{ $key }}" class="collapse" aria-labelledby="heading{{ $key }}" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            {!! nl2br(e($data['comment'])) !!}
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+
+                            <h2>Красноречие</h2>
+                            @foreach ($speech_perks as $key => $data)
+                                <div class="card" style="background-color: rgba(0, 0, 0, 0.6)!important;">
+                                    <div class="card-header" id="heading{{ $key }}">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-success" style="background-color: rgba(0, 0, 0, 0.6)!important;" type="button" data-toggle="collapse" data-target="#collapse{{ $key }}" aria-expanded="true" aria-controls="collapse{{ $key }}">
+                                                {{ $data['value'] }}
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="collapse{{ $key }}" class="collapse" aria-labelledby="heading{{ $key }}" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            {!! nl2br(e($data['comment'])) !!}
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
                         </div>
-                    </div>
+
+                        </div>
 
 
-                    <div class="tab-pane fade" id="vert-tabs-messages" role="tabpanel"
+
+                    <div class="tab-pane fade h-auto" id="vert-tabs-messages" role="tabpanel"
                          aria-labelledby="vert-tabs-messages-tab">
                         <div class="card-body">
                             <!-- we are adding the accordion ID so Bootstrap's collapse plugin detects it -->
@@ -281,7 +484,7 @@
                                                                 <td class="fw-bold h2">{{ $value }}</td>
                                                                 @break
                                                                 @default
-                                                                <td>{{ $value }}</td>
+                                                                <td>{!! nl2br(e($value)) !!}</td>
                                                             @endswitch
                                                         @endforeach
                                                     </tr>
@@ -336,7 +539,7 @@
                                                                 <td class="fw-bold h2">{{ $value }}</td>
                                                                 @break
                                                                 @default
-                                                                <td>{{ $value }}</td>
+                                                                <td>{!! nl2br(e($value)) !!}</td>
                                                             @endswitch
                                                         @endforeach
                                                     </tr>
@@ -387,7 +590,7 @@
                                                                 <td class="fw-bold h2">{{ $value }}</td>
                                                                 @break
                                                                 @default
-                                                                <td>{{ $value }}</td>
+                                                                <td>{!! nl2br(e($value)) !!}</td>
                                                             @endswitch
                                                         @endforeach
                                                     </tr>
@@ -439,7 +642,7 @@
                                                                 <td class="fw-bold h2">{{ $value }}</td>
                                                                 @break
                                                                 @default
-                                                                <td>{{ $value }}</td>
+                                                                <td>{!! nl2br(e($value)) !!}</td>
                                                             @endswitch
                                                         @endforeach
                                                     </tr>
@@ -490,7 +693,7 @@
                                                                 <td class="fw-bold h2">{{ $value }}</td>
                                                                 @break
                                                                 @default
-                                                                <td>{{ $value }}</td>
+                                                                <td>{!! nl2br(e($value)) !!}</td>
                                                             @endswitch
                                                         @endforeach
                                                     </tr>
@@ -568,7 +771,7 @@
         });
     });
 </script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"></script>
+<script  type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"></script>
 
 
 <button class="btn btn-info" id="scrollTopButton">Наверх</button>

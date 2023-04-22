@@ -84,14 +84,15 @@ Route::get('/installation', [\App\Http\Controllers\InstallationController::class
 Route::middleware('auth')->group(function () {
     Route::get('/database', [\App\Http\Controllers\DataBaseController::class, 'index']);
     Route::get('/last_mods', [\App\Http\Controllers\ParseModsController::class, 'index'])->name('parse');
-    Route::get('/chagelog', [App\Http\Controllers\ChangelogController::class, 'index'])->name('chagelog');
     Route::get('/LPCalculator', function () {
         return view('LPcalc.calcLP');
     });
 
 });
 
-Route::get('/test', [\App\Http\Controllers\DataBaseController::class, 'index']);
+Route::get('/test', function () {
+    return view('test_layout/test');
+});
 
 Route::get('404', function () {
     return view('errors.404');

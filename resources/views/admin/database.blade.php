@@ -107,11 +107,10 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Картинка/Тип</th>
+                                            <th>Тип</th>
                                             <th>Название</th>
                                             <th>Описание</th>
                                             <th>Материал</th>
-                                            <th>Вес</th>
                                             <th>Местонахождение</th>
                                             <th>Действия</th>
                                         </tr>
@@ -119,14 +118,12 @@
                                     <tbody>
                                     @foreach($data as $item)
                                         <tr>
-                                            <td style="width: 15%; height: 45px"><img style="height: 60px;" src="{{asset('images/' . $item->image)}}" alt="Оружие">
-                                                <br>{{$item->type}}</td>
-                                            <td style="width: 5%; height: 45px!important;">{{$item->name}}</td>
-                                            <td style="width: 45%;">{{$item->description}}</td>
-                                            <td style="width: 15%;">{{$item->material}}</td>
-                                            <td style="width: 5%;">{{$item->weight}}</td>
-                                            <td style="width: 15%;">{{$item->location}}</td>
-                                            <td class="d-flex">
+                                            <td>{{$item->type}}</td>
+                                            <td>{{$item->name}}</td>
+                                            <td>{!! nl2br(e($item->description)) !!}</td>
+                                            <td>{{$item->material}}</td>
+                                            <td>{{$item->location}}</td>
+                                            <td class="d-flex justify-content-between">
                                                 <a class="text-white" href="{{ route('admin.database.show', $item->id) }}"><button class="btn btn-info ">Show</button></a>
                                                 <a class="text-white" href="{{ route('admin.database.edit', $item->id) }}"><button class="btn btn-warning ms-1">Edit</button></a>
                                                 <form action="{{ route('admin.database.destroy', $item->id) }}" method="POST">

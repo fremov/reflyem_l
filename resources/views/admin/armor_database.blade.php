@@ -117,8 +117,8 @@
                                     @foreach($data as $item)
                                         <tr>
                                             <td>{{$item->title}}</td>
-                                            <td>{{$item->description}}</td>
-                                            <td class="d-flex">
+                                            <td>{!! nl2br(e($item->description)) !!}</td>
+                                            <td class="d-flex justify-content-between align-items-center">
                                                 <a class="text-white" href="{{ route('admin.armor.show', $item->id) }}"><button class="btn btn-info ">Show</button></a>
                                                 <a class="text-white" href="{{ route('admin.armor.edit', $item->id) }}"><button class="btn btn-warning ms-1">Edit</button></a>
                                                 <form action="{{ route('admin.armor.destroy', $item->id) }}" method="POST">

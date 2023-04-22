@@ -36,13 +36,6 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="weight">Вес:</label>
-                            <input type="number" name="weight" id="weight" class="form-control mb-3" placeholder="Введите вес" required>
-                            <div class="invalid-feedback">
-                                Пожалуйста, введите вес.
-                            </div>
-                        </div>
-                        <div class="form-group">
                             <label for="image">Тип:</label>
                             <select name="type" id="type" class="form-control mb-3" required>
                                 <option value="">Выберите Тип</option>
@@ -53,23 +46,10 @@
                                 <option value="Топор">Топор</option>
                             </select>
                             <div class="invalid-feedback">
-                                Пожалуйста, выберите вес.
+                                Пожалуйста, выберите тип оружия.
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="image">Картинка:</label>
-                            <select name="image" id="image" class="form-control mb-3" required>
-                                <option value="">Выберите картинку</option>
-                                <option value="dagger.png">Кинжал</option>
-                                <option value="bow.png">Лук</option>
-                                <option value="mace.png">Булава</option>
-                                <option value="spear.png">Копьё</option>
-                                <option value="axe.png">Топор</option>
-                            </select>
-                            <div class="invalid-feedback">
-                                Пожалуйста, выберите вес.
-                            </div>
-                        </div>
+
                         <div class="form-group">
                             <label for="location">Местонахождение:</label>
                             <input type="text" name="location" id="location" class="form-control mb-3" placeholder="Введите местонахождение">

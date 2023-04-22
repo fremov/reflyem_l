@@ -22,10 +22,6 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td>Картинка</td>
-                    <td><img style="height: auto;" src="{{asset('images/' . $data->image)}}" alt="img">
-                </tr>
-                <tr>
                     <td>Тип</td>
                     <td>{{$data->type}}</td>
                 </tr>
@@ -40,10 +36,6 @@
                 <tr>
                     <td>Материал</td>
                     <td>{{$data->material}}</td>
-                </tr>
-                <tr>
-                    <td>Вес</td>
-                    <td>{{$data->weight}}</td>
                 </tr>
                 <tr>
                     <td>Местонахождение</td>

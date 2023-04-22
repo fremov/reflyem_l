@@ -18,18 +18,14 @@ class AdminArmorTableController extends Controller
     }
     public function store(Request $request) {
         $validatedData = $request->validate([
-            'helmet' => 'required',
-            'body_armor' => 'required',
-            'gloves' => 'required',
-            'boots' => 'required',
-            'location' => 'required',
-            'bonus' => 'required',
             'title' => 'required',
-            'image' => 'required',
             'type' => 'required',
+            'description' => 'required',
+            'bonus' => 'required',
+            'location' => 'required',
         ]);
         $data = Armor::create($validatedData);
-//        dd($data);
+       //dd($data);
         return redirect(route('admin.armor'))->with('success', 'Оружие успешно добавлено');
     }
     public function show($id) {
@@ -43,15 +39,11 @@ class AdminArmorTableController extends Controller
     public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
-            'helmet' => 'max:255',
-            'body_armor' => 'max:255',
-            'gloves' => 'max:255',
-            'boots' => 'max:255',
-            'location' => 'max:255',
-            'bonus' => 'max:255',
-            'title' => 'max:255'.$id,
-            'image' => 'max:255',
-            'type' => 'max:255',
+            'title' => 'max:250'.$id,
+            'type' => 'max:250',
+            'description' => 'max:250',
+            'bonus' => 'max:250',
+            'location' => 'max:250',
         ]);
 
         Armor::whereId($id)->update($validatedData);
