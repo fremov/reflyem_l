@@ -25,6 +25,7 @@
     <!-- Подключите bootstrap и jquery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-xxxxxxxxx"
             crossorigin="anonymous"></script>
+
     <!-- Добавьте стили для фиксированной кнопки -->
     <style>
         #scrollTopButton {
@@ -110,37 +111,127 @@
                     <div class="tab-pane fade" id="vert-tabs-profile" role="tabpanel"
                          aria-labelledby="vert-tabs-profile-tab">
                         {{--   перки--}}
-                        <table class="table-container ms-5 me-5 fs-5">
-                            @foreach ($warrior_perks as $item)
-                                <tr style="background-color: red;" class="fs-5" data-toggle="tooltip"
-                                    data-placement="top" title="{{ $item['comment'] }}">
-                                    <td class="border border-3 border-dark">{{ $item['value'] }}</td>
-                                </tr>
-                            @endforeach
-                        </table>
-                        <table class="table-container me-5 fs-5">
-                            @foreach ($assasin_perks as $item)
-                                <tr style="background-color: green;" class="fs-5" data-toggle="tooltip"
-                                    data-placement="top" title="{{ $item['comment'] }}">
-                                    <td class="border border-3 border-dark">{{ $item['value'] }}</td>
-                                </tr>
-                            @endforeach
-                        </table>
-                        <table class="table-container fs-5">
-                            @foreach ($mage_perks as $item)
-                                <tr style="background-color: blue;" class="fs-5 text-white" data-toggle="tooltip"
-                                    data-placement="top" title="{{ $item['comment'] }}">
-                                    <td class="border border-5 border-dark">{{ $item['value'] }}</td>
-                                </tr>
-                            @endforeach
-                        </table>
+{{--                        <table class="table-container ms-5 me-5 fs-5">--}}
+{{--                            @foreach ($warrior_perks as $item)--}}
+{{--                                <tr style="background-color: red;" class="fs-5" data-toggle="tooltip"--}}
+{{--                                    data-placement="top" title="{{ $item['comment'] }}">--}}
+{{--                                    <td class="border border-3 border-dark">{{ $item['value'] }}</td>--}}
+{{--                                </tr>--}}
+{{--                            @endforeach--}}
+{{--                        </table>--}}
+{{--                        <table class="table-container me-5 fs-5">--}}
+{{--                            @foreach ($assasin_perks as $item)--}}
+{{--                                <tr style="background-color: green;" class="fs-5" data-toggle="tooltip"--}}
+{{--                                    data-placement="top" title="{{ $item['comment'] }}">--}}
+{{--                                    <td class="border border-3 border-dark">{{ $item['value'] }}</td>--}}
+{{--                                </tr>--}}
+{{--                            @endforeach--}}
+{{--                        </table>--}}
+{{--                        <table class="table-container fs-5">--}}
+{{--                            @foreach ($mage_perks as $item)--}}
+{{--                                <tr style="background-color: blue;" class="fs-5 text-white" data-toggle="tooltip"--}}
+{{--                                    data-placement="top" title="{{ $item['comment'] }}">--}}
+{{--                                    <td class="border border-5 border-dark">{{ $item['value'] }}</td>--}}
+{{--                                </tr>--}}
+{{--                            @endforeach--}}
+{{--                        </table>--}}
 
-                        <script>
-                            $(function () {
-                                $('[data-toggle="tooltip"]').tooltip()
-                            })
-                        </script>
+{{--                        <script>--}}
+{{--                            $(function () {--}}
+{{--                                $('[data-toggle="tooltip"]').tooltip()--}}
+{{--                            })--}}
+{{--                        </script>--}}
+
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <!-- we are adding the accordion ID so Bootstrap's collapse plugin detects it -->
+                                <div id="accordion">
+                                    <div class="card" style="background-color: rgba(0, 0, 0, 0.6)!important; background-color: #0B2161">
+                                        <div class="card-header">
+                                            <h4 class="card-title w-100">
+                                                <a class="d-block w-100 collapsed" data-toggle="collapse" href="#collapseOne" aria-expanded="false">
+                                                    Изменение
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseOne" class="collapse" data-parent="#accordion" style="">
+                                            <div class="card-body">
+                                                <div class="accordion" id="accordionExample">
+                                                    @foreach ($alteration as $key => $data)
+                                                        <div class="card" style="background-color: rgba(0, 0, 0, 0.6)!important;">
+                                                            <div class="card-header" id="heading{{ $key }}">
+                                                                <h2 class="mb-0">
+                                                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{ $key }}" aria-expanded="true" aria-controls="collapse{{ $key }}">
+                                                                        {{ $data['value'] }}
+                                                                    </button>
+                                                                </h2>
+                                                            </div>
+                                                            <div id="collapse{{ $key }}" class="collapse" aria-labelledby="heading{{ $key }}" data-parent="#accordionExample">
+                                                                <div class="card-body">
+                                                                    {!! nl2br(e($data['comment'])) !!}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    @endforeach
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card card-danger">
+                                        <div class="card-header">
+                                            <h4 class="card-title w-100">
+                                                <a class="d-block w-100" data-toggle="collapse" href="#collapseTwo">
+                                                    Collapsible Group Danger
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                                            <div class="card-body">
+                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                                                3
+                                                wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                                                laborum
+                                                eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
+                                                nulla
+                                                assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
+                                                nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
+                                                beer
+                                                farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+                                                labore sustainable VHS.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card card-success">
+                                        <div class="card-header">
+                                            <h4 class="card-title w-100">
+                                                <a class="d-block w-100" data-toggle="collapse" href="#collapseThree">
+                                                    Collapsible Group Success
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseThree" class="collapse" data-parent="#accordion">
+                                            <div class="card-body">
+                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                                                3
+                                                wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                                                laborum
+                                                eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
+                                                nulla
+                                                assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
+                                                nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
+                                                beer
+                                                farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+                                                labore sustainable VHS.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
                     </div>
+
+
                     <div class="tab-pane fade" id="vert-tabs-messages" role="tabpanel"
                          aria-labelledby="vert-tabs-messages-tab">
                         <div class="card-body">
