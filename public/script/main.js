@@ -1,4 +1,5 @@
 'use strict';
+
 const FiE_GV_IncreaseCostEvery = 25;
 const FiE_GV_CostLPMult = 1;
 const FiE_GV_CostGoldMult = 60;
@@ -147,13 +148,15 @@ let twentyLp = document.getElementById('twentyLP');
 let needLvlForUp = 0;
 let needLvlForUpF = document.getElementById('needLvlForUpF');
 
+
+
 function tenLpFunc() {
 
     if (tenLPOn) {
         tenLPOn = false;
         needLvlForUp = 10;
         tenLP.classList.add('text-success');
-        console.log('10lp');
+        // console.log('10_lp');
         chosenLevel.innerText = '10LP';
         chosenLevel.classList.remove('text-danger');
         chosenLevel.classList.add('text-success');
@@ -170,6 +173,7 @@ function fifteenLpFunc() {
         fifteenLpOn = false;
         needLvlForUp = 15;
         fifteenLp.classList.add('text-success');
+        // console.log('15_lp');
         chosenLevel.innerText = '15LP';
         chosenLevel.classList.remove('text-danger');
         chosenLevel.classList.add('text-success');
@@ -185,6 +189,7 @@ function twentyLpFunc() {
         twentyLpOn = false;
         needLvlForUp = 20;
         twentyLp.classList.add('text-success');
+        // console.log('20_lp');
         chosenLevel.innerText = '20LP';
         chosenLevel.classList.remove('text-danger');
         chosenLevel.classList.add('text-success');
@@ -200,16 +205,16 @@ function twentyLpFunc() {
 // Получаем все radio кнопки в форме
 let radioButtons = document.getElementsByName('stoneClass');
 
-let lastSelected; // переменная для хранения последней выбранной радиокнопки
+let lastSelectedStone; // переменная для хранения последней выбранной радиокнопки
 
 radioButtons.forEach(function (radioButton) {
     radioButton.addEventListener('change', function () {
         if (radioButton.checked) {
-            console.log(radioButton.value);
+            // console.log(radioButton.value);
 
             // вычитаем 5 из поля последней выбранной кнопки (если она есть)
-            if (lastSelected) {
-                switch (lastSelected.value) {
+            if (lastSelectedStone) {
+                switch (lastSelectedStone.value) {
                     case 'warrior':
                         Blacksmith.value = Number(Blacksmith.value) - 5;
                         OneHandedWeapon.value = Number(OneHandedWeapon.value) - 5;
@@ -276,7 +281,7 @@ radioButtons.forEach(function (radioButton) {
                     Alchemy.value = Number(Alchemy.value) + 5;
                     break;
             }
-            lastSelected = radioButton; // сохраняем текущую кнопку в lastSelected
+            lastSelectedStone = radioButton; // сохраняем текущую кнопку в lastSelected
         }
     });
 });
@@ -289,6 +294,7 @@ function set_warrior_stats_5() {
     Shooting.value = 5;
     Blocking.value = 5;
 }
+
 function set_thief_stats_5() {
     Evasion.value = 5;
     Stealth.value = 5;
@@ -297,6 +303,7 @@ function set_thief_stats_5() {
     Speech.value = 5;
     Alchemy.value = 5;
 }
+
 function set_mage_stats_5() {
     Illusion.value = 5;
     Destruction.value = 5;
@@ -311,7 +318,7 @@ function changeArgoStats() {
     chosenRace.innerText = 'Аргонианин';
     chosenRace.classList.remove('text-danger');
     chosenRace.classList.add('text-success');
-
+    // console.log('Аргонианин');
     set_warrior_stats_5()
 
     Evasion.value = 15;
@@ -331,6 +338,7 @@ function changeOrcStats() {
     chosenRace.innerText = 'Орк';
     chosenRace.classList.remove('text-danger');
     chosenRace.classList.add('text-success');
+    // console.log('Орк');
 
     Blacksmith.value = 15;
     OneHandedWeapon.value = 10;
@@ -349,6 +357,7 @@ function changeNordStats() {
     chosenRace.innerText = 'Норд';
     chosenRace.classList.remove('text-danger');
     chosenRace.classList.add('text-success');
+    // console.log('Норд');
 
     Blacksmith.value = 15;
     OneHandedWeapon.value = 10;
@@ -367,6 +376,7 @@ function changeRedgarcStats() {
     chosenRace.innerText = 'Редгард';
     chosenRace.classList.remove('text-danger');
     chosenRace.classList.add('text-success');
+    // console.log('Редгард');
 
     Blacksmith.value = 10;
     OneHandedWeapon.value = 20;
@@ -385,6 +395,7 @@ function changeDanmerStats() {
     chosenRace.innerText = 'Данмер';
     chosenRace.classList.remove('text-danger');
     chosenRace.classList.add('text-success');
+    // console.log('Данмер');
 
     set_warrior_stats_5();
     OneHandedWeapon.value = 15;
@@ -406,6 +417,7 @@ function changeImperecStats() {
     chosenRace.innerText = 'Имперец';
     chosenRace.classList.remove('text-danger');
     chosenRace.classList.add('text-success');
+    // console.log('Имперец');
 
     Blacksmith.value = 5;
     OneHandedWeapon.value = 10;
@@ -429,6 +441,7 @@ function changeBosmerStats() {
     chosenRace.innerText = 'Босмер';
     chosenRace.classList.remove('text-danger');
     chosenRace.classList.add('text-success');
+    // console.log('Босмер');
 
     Blacksmith.value = 15;
     OneHandedWeapon.value = 5;
@@ -451,6 +464,7 @@ function changeCatjitStats() {
     chosenRace.innerText = 'Каджит';
     chosenRace.classList.remove('text-danger');
     chosenRace.classList.add('text-success');
+    // console.log('Каджит');
 
     set_warrior_stats_5();
 
@@ -468,6 +482,7 @@ function changeAltmerStats() {
     chosenRace.innerText = 'Альтмер';
     chosenRace.classList.remove('text-danger');
     chosenRace.classList.add('text-success');
+    // console.log('Альтмер');
 
     set_warrior_stats_5();
 
@@ -485,6 +500,7 @@ function changeBretonStats() {
     chosenRace.innerText = 'Бретон';
     chosenRace.classList.remove('text-danger');
     chosenRace.classList.add('text-success');
+    // console.log('Бретон');
 
     set_warrior_stats_5();
 
