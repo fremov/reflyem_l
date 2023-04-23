@@ -104,19 +104,34 @@
 
     <!--Выбор камня(кнопка)-->
     <div class="dropdown">
-        <button
-                class="btn btn-info dropdown-toggle"
-                type="button"
-                id="dropdownMenuButton2"
-                data-mdb-toggle="dropdown"
-                aria-expanded="false"
-        >
+        <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton2" data-mdb-toggle="dropdown" aria-expanded="false">
             Выберите камень
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a><button id="stoneWarrior"     type="submit" class="dropdown-item">Воин</button></a>
-            <a><button id="stoneThif"        type="submit" class="dropdown-item">Вор</button></a>
-            <a><button id="stoneMage"        type="submit" class="dropdown-item">Маг</button></a>
+            <li>
+                <div class="form-check ms-3">
+                    <input class="form-check-input" type="radio" name="stoneClass" id="stoneWarrior" value="warrior">
+                    <label class="form-check-label" for="stoneWarrior">
+                        Воин
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check ms-3">
+                    <input class="form-check-input" type="radio" name="stoneClass" id="stoneThif" value="thief">
+                    <label class="form-check-label" for="stoneThif">
+                        Вор
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check ms-3">
+                    <input class="form-check-input" type="radio" name="stoneClass" id="stoneMage" value="mage">
+                    <label class="form-check-label" for="stoneMage">
+                        Маг
+                    </label>
+                </div>
+            </li>
         </ul>
     </div>
     <!--Выбор камня(кнопка)-->
@@ -124,16 +139,16 @@
     <!--Выбор количества LP(кнопка)-->
     <div class="dropdown">
         <button
-                class="btn btn-info dropdown-toggle"
-                type="button"
-                id="dropdownMenuButton3"
-                data-mdb-toggle="dropdown"
-                aria-expanded="false"
+            class="btn btn-info dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton3"
+            data-mdb-toggle="dropdown"
+            aria-expanded="false"
         >
             Выберите уровень сложности
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a><button id="tenLP"     type="submit" class="dropdown-item">10</button></a>
+            <button id="tenLP"     type="submit" class="dropdown-item">10</button></a>
             <a><button id="fifteenLp" type="submit" class="dropdown-item">15</button></a>
             <a><button id="twentyLP"  type="submit" class="dropdown-item">20</button></a>
         </ul>

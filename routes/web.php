@@ -84,9 +84,7 @@ Route::get('/installation', [\App\Http\Controllers\InstallationController::class
 Route::middleware('auth')->group(function () {
     Route::get('/database', [\App\Http\Controllers\DataBaseController::class, 'index']);
     Route::get('/last_mods', [\App\Http\Controllers\ParseModsController::class, 'index'])->name('parse');
-    Route::get('/LPCalculator', function () {
-        return view('LPcalc.calcLP');
-    });
+    Route::get('/Calculator', [\App\Http\Controllers\LPcalcController::class, 'index'])->name('calc');
 
 });
 

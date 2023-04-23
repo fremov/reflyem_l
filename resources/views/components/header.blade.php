@@ -47,7 +47,7 @@
                                 <li><a class="dropdown-item" href="installation">Как установить?</a></li>
                                 <li><a class="dropdown-item" href="builds.html">Билды</a></li>
                                 <li><a class="dropdown-item" href="guides.html">Гайды</a></li>
-                                <li><a class="dropdown-item" href="LPCalculator">Калькулятор LP</a></li>
+                                <li><a class="dropdown-item" href="{{route('calc')}}">Калькулятор LP</a></li>
                                 <li><a class="dropdown-item" href="database">База знаний</a></li>
                                 <li><a class="dropdown-item" href="{{route('parse')}}">Parse</a></li>
                             </ul>
@@ -57,30 +57,7 @@
             </div>
             <!-- Right elements -->
             <div class="d-flex align-items-center me-3">
-                <!-- Avatar -->
-                <label for="searchInput" class="me-3">
-                    <input type="text" id="searchInput" placeholder="Введите текст для поиска">
-                </label>
-                <script>
-                    const searchInput = document.getElementById("searchInput");
-                    const listItems = document.querySelectorAll(".item");
 
-                    searchInput.addEventListener("input", (event) => {
-                        const value = event.target.value.toLowerCase();
-                        listItems.forEach((item) => {
-                            if (item.textContent.toLowerCase().includes(value)) {
-                                item.classList.remove("hidden");
-                            } else {
-                                item.classList.add("hidden");
-                            }
-                        });
-                    });
-                </script>
-                <style>
-                    .hidden {
-                        display: none;
-                    }
-                </style>
                 <div class="dropdown">
                     <a
                         class="dropdown-toggle d-flex align-items-center hidden-arrow"

@@ -127,10 +127,6 @@ let needGoldRecovery = document.getElementById('needGoldRecovery');
 let needGoldChange = document.getElementById('needGoldChange');
 let needGoldEnchantment = document.getElementById('needGoldEnchantment');
 
-// для проверки камней
-let warriorStoneOn = true;
-let mageStoneOn = true;
-let thifStoneOn = true;
 
 // для проверки ЛП
 let tenLPOn = true;
@@ -157,6 +153,7 @@ function tenLpFunc() {
         tenLPOn = false;
         needLvlForUp = 10;
         tenLP.classList.add('text-success');
+        console.log('10lp');
         chosenLevel.innerText = '10LP';
         chosenLevel.classList.remove('text-danger');
         chosenLevel.classList.add('text-success');
@@ -166,6 +163,7 @@ function tenLpFunc() {
         tenLPOn = true;
     }
 }
+
 function fifteenLpFunc() {
 
     if (fifteenLpOn) {
@@ -197,103 +195,124 @@ function twentyLpFunc() {
     }
 
 }
-// камень воина
-function changeWarriorStone() {
 
-    if (warriorStoneOn) {
-        warriorStoneOn = false;
-        // console.log('Камень воина включен');
-        stoneWarrior.classList.add('text-success');
-        chosenStone.innerText = 'Воин';
-        chosenStone.classList.remove('text-danger');
-        chosenStone.classList.add('text-success');
-        Blacksmith.value = Number(Blacksmith.value) + 5;
-        OneHandedWeapon.value = Number(OneHandedWeapon.value) + 5;
-        HeavyArmor.value = Number(HeavyArmor.value) + 5;
-        TwoHandedWeapon.value = Number(TwoHandedWeapon.value) + 5;
-        Shooting.value = Number(Shooting.value) + 5;
-        Blocking.value = Number(Blocking.value) + 5;
+// Проверка выбранного камня
+// Получаем все radio кнопки в форме
+let radioButtons = document.getElementsByName('stoneClass');
 
-    } else if (!warriorStoneOn) {
-        warriorStoneOn = true;
-        console.log('Камень воина выключен')
-        stoneWarrior.classList.remove('text-success');
-        Blacksmith.value = Number(Blacksmith.value) - 5;
-        OneHandedWeapon.value = Number(OneHandedWeapon.value) - 5;
-        HeavyArmor.value = Number(HeavyArmor.value) - 5;
-        TwoHandedWeapon.value = Number(TwoHandedWeapon.value) - 5;
-        Shooting.value = Number(Shooting.value) - 5;
-        Blocking.value = Number(Blocking.value) - 5;
-    }
-}
-// камень мага
-function changeMageStone() {
+let lastSelected; // переменная для хранения последней выбранной радиокнопки
 
-    if (mageStoneOn) {
-        mageStoneOn = false;
-        // console.log('Камень мага включен');
-        stoneMage.classList.add('text-success');
-        chosenStone.innerText = 'Маг';
-        chosenStone.classList.remove('text-danger');
-        chosenStone.classList.add('text-success');
-        Illusion.value = Number(Illusion.value) + 5;
-        Destruction.value = Number(Destruction.value) + 5;
-        Witchcraft.value = Number(Witchcraft.value) + 5;
-        Recovery.value = Number(Recovery.value) + 5;
-        Change.value = Number(Change.value) + 5;
-        Enchantment.value = Number(Enchantment.value) + 5;
+radioButtons.forEach(function (radioButton) {
+    radioButton.addEventListener('change', function () {
+        if (radioButton.checked) {
+            console.log(radioButton.value);
 
-    } else if (!mageStoneOn) {
-        mageStoneOn = true;
-        console.log('Камень мага выключен')
-        stoneMage.classList.remove('text-success');
-        Illusion.value = Number(Illusion.value) - 5;
-        Destruction.value = Number(Destruction.value) - 5;
-        Witchcraft.value = Number(Witchcraft.value) - 5;
-        Recovery.value = Number(Recovery.value) - 5;
-        Change.value = Number(Change.value) - 5;
-        Enchantment.value = Number(Enchantment.value) - 5;
-    }
-}
-// камень вора
-function changeThifStone() {
+            // вычитаем 5 из поля последней выбранной кнопки (если она есть)
+            if (lastSelected) {
+                switch (lastSelected.value) {
+                    case 'warrior':
+                        Blacksmith.value = Number(Blacksmith.value) - 5;
+                        OneHandedWeapon.value = Number(OneHandedWeapon.value) - 5;
+                        HeavyArmor.value = Number(HeavyArmor.value) - 5;
+                        TwoHandedWeapon.value = Number(TwoHandedWeapon.value) - 5;
+                        Shooting.value = Number(Shooting.value) - 5;
+                        Blocking.value = Number(Blocking.value) - 5;
+                        break;
+                    case 'mage':
+                        // здесь нужно написать вычитание 5 из полей для случая "mage"
+                        Illusion.value = Number(Illusion.value) - 5;
+                        Destruction.value = Number(Destruction.value) - 5;
+                        Witchcraft.value = Number(Witchcraft.value) - 5;
+                        Recovery.value = Number(Recovery.value) - 5;
+                        Change.value = Number(Change.value) - 5;
+                        Enchantment.value = Number(Enchantment.value) - 5;
+                        break;
+                    case 'thief':
+                        // здесь нужно написать вычитание 5 из полей для случая "rogue"
+                        Evasion.value = Number(Evasion.value) - 5;
+                        Stealth.value = Number(Stealth.value) - 5;
+                        Breaking.value = Number(Breaking.value) - 5;
+                        Pickpocketing.value = Number(Pickpocketing.value) - 5;
+                        Speech.value = Number(Speech.value) - 5;
+                        Alchemy.value = Number(Alchemy.value) - 5;
+                        break;
+                }
+            }
+            // добавляем 5 к полю выбранной кнопки
+            switch (radioButton.value) {
+                case 'warrior':
+                    chosenStone.innerText = 'Воин';
+                    chosenStone.classList.remove('text-danger');
+                    chosenStone.classList.add('text-success');
+                    Blacksmith.value = Number(Blacksmith.value) + 5;
+                    OneHandedWeapon.value = Number(OneHandedWeapon.value) + 5;
+                    HeavyArmor.value = Number(HeavyArmor.value) + 5;
+                    TwoHandedWeapon.value = Number(TwoHandedWeapon.value) + 5;
+                    Shooting.value = Number(Shooting.value) + 5;
+                    Blocking.value = Number(Blocking.value) + 5;
+                    break;
+                case 'mage':
+                    // здесь нужно написать добавление 5 к полям для случая "mage"
+                    chosenStone.innerText = 'Маг';
+                    chosenStone.classList.remove('text-danger');
+                    chosenStone.classList.add('text-success');
+                    Illusion.value = Number(Illusion.value) + 5;
+                    Destruction.value = Number(Destruction.value) + 5;
+                    Witchcraft.value = Number(Witchcraft.value) + 5;
+                    Recovery.value = Number(Recovery.value) + 5;
+                    Change.value = Number(Change.value) + 5;
+                    Enchantment.value = Number(Enchantment.value) + 5;
+                    break;
+                case 'thief':
+                    // здесь нужно написать добавление 5 к полям для случая "rogue"
+                    chosenStone.innerText = 'Вор';
+                    chosenStone.classList.remove('text-danger');
+                    chosenStone.classList.add('text-success');
+                    Evasion.value = Number(Evasion.value) + 5;
+                    Stealth.value = Number(Stealth.value) + 5;
+                    Breaking.value = Number(Breaking.value) + 5;
+                    Pickpocketing.value = Number(Pickpocketing.value) + 5;
+                    Speech.value = Number(Speech.value) + 5;
+                    Alchemy.value = Number(Alchemy.value) + 5;
+                    break;
+            }
+            lastSelected = radioButton; // сохраняем текущую кнопку в lastSelected
+        }
+    });
+});
 
-    if (thifStoneOn) {
-        thifStoneOn = false;
-        // console.log('Камень вора включен');
-        stoneThif.classList.add('text-success');
-        chosenStone.innerText = 'Вор';
-        chosenStone.classList.remove('text-danger');
-        chosenStone.classList.add('text-success');
-        Evasion.value = Number(Evasion.value) + 5;
-        Stealth.value = Number(Stealth.value) + 5;
-        Breaking.value = Number(Breaking.value) + 5;
-        Pickpocketing.value = Number(Pickpocketing.value) + 5;
-        Speech.value = Number(Speech.value) + 5;
-        Alchemy.value = Number(Alchemy.value) + 5;
-    } else if (!thifStoneOn) {
-        thifStoneOn = true;
-        console.log('Камень вора выключен');
-        stoneThif.classList.remove('text-success');
-        Evasion.value = Number(Evasion.value) - 5;
-        Stealth.value = Number(Stealth.value) - 5;
-        Breaking.value = Number(Breaking.value) - 5;
-        Pickpocketing.value = Number(Pickpocketing.value) - 5;
-        Speech.value = Number(Speech.value) - 5;
-        Alchemy.value = Number(Alchemy.value) - 5;
-    }
-}
-
-function changeArgoStats() {
-    chosenRace.innerText = 'Аргонианин';
-    chosenRace.classList.remove('text-danger');
-    chosenRace.classList.add('text-success');
+function set_warrior_stats_5() {
     Blacksmith.value = 5;
     OneHandedWeapon.value = 5;
     HeavyArmor.value = 5;
     TwoHandedWeapon.value = 5;
     Shooting.value = 5;
     Blocking.value = 5;
+}
+function set_thief_stats_5() {
+    Evasion.value = 5;
+    Stealth.value = 5;
+    Breaking.value = 5;
+    Pickpocketing.value = 5;
+    Speech.value = 5;
+    Alchemy.value = 5;
+}
+function set_mage_stats_5() {
+    Illusion.value = 5;
+    Destruction.value = 5;
+    Witchcraft.value = 5;
+    Recovery.value = 5;
+    Change.value = 5;
+    Enchantment.value = 5;
+}
+
+
+function changeArgoStats() {
+    chosenRace.innerText = 'Аргонианин';
+    chosenRace.classList.remove('text-danger');
+    chosenRace.classList.add('text-success');
+
+    set_warrior_stats_5()
 
     Evasion.value = 15;
     Stealth.value = 10;
@@ -302,18 +321,17 @@ function changeArgoStats() {
     Speech.value = 5;
     Alchemy.value = 5;
 
-    Illusion.value = 5;
-    Destruction.value = 5;
-    Witchcraft.value = 5;
+    set_mage_stats_5();
     Recovery.value = 10;
     Change.value = 10;
-    Enchantment.value = 5;
+
 }
 
 function changeOrcStats() {
     chosenRace.innerText = 'Орк';
     chosenRace.classList.remove('text-danger');
     chosenRace.classList.add('text-success');
+
     Blacksmith.value = 15;
     OneHandedWeapon.value = 10;
     HeavyArmor.value = 15;
@@ -321,24 +339,17 @@ function changeOrcStats() {
     Shooting.value = 5;
     Blocking.value = 10;
 
+    set_thief_stats_5();
     Evasion.value = 10;
-    Stealth.value = 5;
-    Breaking.value = 5;
-    Pickpocketing.value = 5;
-    Speech.value = 5;
-    Alchemy.value = 5;
 
-    Illusion.value = 5;
-    Destruction.value = 5;
-    Witchcraft.value = 5;
-    Recovery.value = 5;
-    Change.value = 5;
-    Enchantment.value = 5;
+    set_mage_stats_5();
 }
+
 function changeNordStats() {
     chosenRace.innerText = 'Норд';
     chosenRace.classList.remove('text-danger');
     chosenRace.classList.add('text-success');
+
     Blacksmith.value = 15;
     OneHandedWeapon.value = 10;
     HeavyArmor.value = 10;
@@ -346,24 +357,17 @@ function changeNordStats() {
     Shooting.value = 5;
     Blocking.value = 10;
 
+    set_thief_stats_5()
     Evasion.value = 10;
-    Stealth.value = 5;
-    Breaking.value = 5;
-    Pickpocketing.value = 5;
-    Speech.value = 5;
-    Alchemy.value = 5;
 
-    Illusion.value = 5;
-    Destruction.value = 5;
-    Witchcraft.value = 5;
-    Recovery.value = 5;
-    Change.value = 5;
-    Enchantment.value = 5;
+    set_mage_stats_5();
 }
+
 function changeRedgarcStats() {
     chosenRace.innerText = 'Редгард';
     chosenRace.classList.remove('text-danger');
     chosenRace.classList.add('text-success');
+
     Blacksmith.value = 10;
     OneHandedWeapon.value = 20;
     HeavyArmor.value = 5;
@@ -371,37 +375,24 @@ function changeRedgarcStats() {
     Shooting.value = 10;
     Blocking.value = 10;
 
+    set_thief_stats_5()
     Evasion.value = 10;
-    Stealth.value = 5;
-    Breaking.value = 5;
-    Pickpocketing.value = 5;
-    Speech.value = 5;
-    Alchemy.value = 5;
 
-    Illusion.value = 5;
-    Destruction.value = 5;
-    Witchcraft.value = 5;
-    Recovery.value = 5;
-    Change.value = 5;
-    Enchantment.value = 5;
+    set_mage_stats_5();
 }
+
 function changeDanmerStats() {
     chosenRace.innerText = 'Данмер';
     chosenRace.classList.remove('text-danger');
     chosenRace.classList.add('text-success');
-    Blacksmith.value = 5;
-    OneHandedWeapon.value = 15;
-    HeavyArmor.value = 5;
-    TwoHandedWeapon.value = 5;
-    Shooting.value = 5;
-    Blocking.value = 5;
 
+    set_warrior_stats_5();
+    OneHandedWeapon.value = 15;
+
+    set_thief_stats_5();
     Evasion.value = 10;
     Stealth.value = 10;
-    Breaking.value = 5;
-    Pickpocketing.value = 5;
-    Speech.value = 5;
-    Alchemy.value = 5;
+
 
     Illusion.value = 10;
     Destruction.value = 15;
@@ -410,10 +401,12 @@ function changeDanmerStats() {
     Change.value = 10;
     Enchantment.value = 5;
 }
+
 function changeImperecStats() {
     chosenRace.innerText = 'Имперец';
     chosenRace.classList.remove('text-danger');
     chosenRace.classList.add('text-success');
+
     Blacksmith.value = 5;
     OneHandedWeapon.value = 10;
     HeavyArmor.value = 10;
@@ -421,12 +414,8 @@ function changeImperecStats() {
     Shooting.value = 5;
     Blocking.value = 10;
 
-    Evasion.value = 5;
-    Stealth.value = 5;
-    Breaking.value = 5;
-    Pickpocketing.value = 5;
+    set_thief_stats_5();
     Speech.value = 15;
-    Alchemy.value = 5;
 
     Illusion.value = 5;
     Destruction.value = 10;
@@ -435,10 +424,12 @@ function changeImperecStats() {
     Change.value = 5;
     Enchantment.value = 5;
 }
+
 function changeBosmerStats() {
     chosenRace.innerText = 'Босмер';
     chosenRace.classList.remove('text-danger');
     chosenRace.classList.add('text-success');
+
     Blacksmith.value = 15;
     OneHandedWeapon.value = 5;
     HeavyArmor.value = 5;
@@ -453,23 +444,15 @@ function changeBosmerStats() {
     Speech.value = 5;
     Alchemy.value = 10;
 
-    Illusion.value = 5;
-    Destruction.value = 5;
-    Witchcraft.value = 5;
-    Recovery.value = 5;
-    Change.value = 5;
-    Enchantment.value = 5;
+    set_mage_stats_5();
 }
+
 function changeCatjitStats() {
     chosenRace.innerText = 'Каджит';
     chosenRace.classList.remove('text-danger');
     chosenRace.classList.add('text-success');
-    Blacksmith.value = 5;
-    OneHandedWeapon.value = 5;
-    HeavyArmor.value = 5;
-    TwoHandedWeapon.value = 5;
-    Shooting.value = 5;
-    Blocking.value = 5;
+
+    set_warrior_stats_5();
 
     Evasion.value = 10;
     Stealth.value = 15;
@@ -478,30 +461,17 @@ function changeCatjitStats() {
     Speech.value = 10;
     Alchemy.value = 10;
 
-    Illusion.value = 5;
-    Destruction.value = 5;
-    Witchcraft.value = 5;
-    Recovery.value = 5;
-    Change.value = 5;
-    Enchantment.value = 5;
+    set_mage_stats_5();
 }
+
 function changeAltmerStats() {
     chosenRace.innerText = 'Альтмер';
     chosenRace.classList.remove('text-danger');
     chosenRace.classList.add('text-success');
-    Blacksmith.value = 5;
-    OneHandedWeapon.value = 5;
-    HeavyArmor.value = 5;
-    TwoHandedWeapon.value = 5;
-    Shooting.value = 5;
-    Blocking.value = 5;
 
-    Evasion.value = 5;
-    Stealth.value = 5;
-    Breaking.value = 5;
-    Pickpocketing.value = 5;
-    Speech.value = 5;
-    Alchemy.value = 5;
+    set_warrior_stats_5();
+
+    set_thief_stats_5();
 
     Illusion.value = 15;
     Destruction.value = 15;
@@ -515,17 +485,10 @@ function changeBretonStats() {
     chosenRace.innerText = 'Бретон';
     chosenRace.classList.remove('text-danger');
     chosenRace.classList.add('text-success');
-    Blacksmith.value = 5;
-    OneHandedWeapon.value = 5;
-    HeavyArmor.value = 5;
-    TwoHandedWeapon.value = 5;
-    Shooting.value = 5;
-    Blocking.value = 5;
 
-    Evasion.value = 5;
-    Stealth.value = 5;
-    Breaking.value = 5;
-    Pickpocketing.value = 5;
+    set_warrior_stats_5();
+
+    set_thief_stats_5()
     Speech.value = 10;
     Alchemy.value = 10;
 
@@ -541,8 +504,9 @@ function changeBretonStats() {
 function GetGCostFor(skillValue) {
     return (Math.ceil(skillValue / FiE_GV_IncreaseCostEvery)) * FiE_GV_CostGoldMult;
 }
+
 function GetLPCostFor(skillValue) {
-    return (Math.ceil(skillValue/FiE_GV_IncreaseCostEvery)) * FiE_GV_CostLPMult;
+    return (Math.ceil(skillValue / FiE_GV_IncreaseCostEvery)) * FiE_GV_CostLPMult;
 }
 
 function CalculateGCost(currentSkillValue, countValue) {
@@ -554,6 +518,7 @@ function CalculateGCost(currentSkillValue, countValue) {
     }
     return cost;
 }
+
 function CalculateLPCost(currentSkillValue, countValue) {
     let cost = 0;
     let index = currentSkillValue;
@@ -587,11 +552,13 @@ function getAllLPFromTable() {
         + Number(needGoldRecovery.innerHTML)
         + Number(needGoldChange.innerHTML)
         + Number(needGoldEnchantment.innerHTML);
+
     if (allGoldTable.innerHTML > 0) {
         allGoldTable.classList.remove('text-danger');
         allGoldTable.classList.add('text-success');
     }
 }
+
 // расчет всех ячеек с золотом с таблицы
 function getAllGoldFromTable() {
     allLPTable.innerHTML =
@@ -620,12 +587,14 @@ function getAllGoldFromTable() {
     }
 
 }
+
 // расчет значений из текущего и до которого нужно подня навыка
 function calcLpAndGold(currentSkillValue, countValue, needLp, needGold) {
     let minus = countValue - currentSkillValue;
     needLp.innerHTML = CalculateLPCost(Number(currentSkillValue), minus);
     needGold.innerHTML = CalculateGCost(Number(currentSkillValue), minus);
 }
+
 function formula() {
 
     // расчет лп + золота воин
@@ -689,9 +658,6 @@ raceBosmer.addEventListener('click', changeBosmerStats);
 raceCatjit.addEventListener('click', changeCatjitStats);
 raceAltmer.addEventListener('click', changeAltmerStats);
 raceBreton.addEventListener('click', changeBretonStats);
-stoneWarrior.addEventListener('click', changeWarriorStone);
-stoneMage.addEventListener('click', changeMageStone);
-stoneThif.addEventListener('click', changeThifStone);
 
 result.addEventListener('click', formula);
 
