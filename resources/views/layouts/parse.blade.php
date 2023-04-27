@@ -26,7 +26,18 @@
     <x-preloader />
     <div class="container-fluid">
         <div class="row justify-content-center">
-            @foreach($data as $mod)
+
+            <form action="{{ route('parse') }}" method="GET">
+                <label for="sort_col">Sort by:</label>
+                <select name="sort_col" id="sort_col">
+                    <option value="date" {{ (request()->input('sort_col') == 'date') ? 'selected' : '' }}>Date</option>
+                    <option value="likes" {{ (request()->input('sort_col') == 'likes') ? 'selected' : '' }}>Likes</option>
+                    <option value="size" {{ (request()->input('sort_col') == 'size') ? 'selected' : '' }}>Size</option>
+                </select>
+                <button type="submit">Sort</button>
+            </form>
+
+        @foreach($data as $mod)
                 <div class="col-lg-4 col-md-6 col-sm-12 mb-4 h-auto">
                     <div class="card custom-card">
                         <img src="{{$mod['image']}}" class="card-img-top rounded-2" alt="image">
@@ -59,6 +70,9 @@
                     </div>
                 </div>
             @endforeach
+            <div class="d-flex w-100 align-items-center justify-content-center ">
+                {{ $data->links() }}
+            </div>
         </div>
     </div>
 </div>

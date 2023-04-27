@@ -45,11 +45,28 @@
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <li><a class="dropdown-item" href="installation">Как установить?</a></li>
-                                <li><a class="dropdown-item" href="builds.html">Билды</a></li>
-                                <li><a class="dropdown-item" href="guides.html">Гайды</a></li>
+                                <li><a class="dropdown-item" href="{{route('builds')}}">Билды</a></li>
+                                <li><a class="dropdown-item" href="{{route('guides')}}">Гайды</a></li>
                                 <li><a class="dropdown-item" href="{{route('calc')}}">Калькулятор LP</a></li>
                                 <li><a class="dropdown-item" href="database">База знаний</a></li>
-                                <li><a class="dropdown-item" href="{{route('parse')}}">Parse</a></li>
+                                <li><a class="dropdown-item" href="{{route('parse')}}">Последние моды</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="dropdown text-center">
+                            <button
+                                class="btn text-white dropdown-toggle"
+                                type="button"
+                                id="dropdownMenuButton"
+                                data-mdb-toggle="dropdown"
+                                aria-expanded="false"
+                                style="background-color: rgba(0, 0, 0, 0)!important;"
+                            >
+                                <span class="text-lowercase"><span class="text-uppercase">Д</span>ля разработчкиов</span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li><a class="dropdown-item" href="{{route('develop')}}">Создание SKSE плагинов</a></li>
                             </ul>
                         </div>
                     </li>

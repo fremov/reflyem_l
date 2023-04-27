@@ -85,6 +85,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/database', [\App\Http\Controllers\DataBaseController::class, 'index']);
     Route::get('/last_mods', [\App\Http\Controllers\ParseModsController::class, 'index'])->name('parse');
     Route::get('/Calculator', [\App\Http\Controllers\LPcalcController::class, 'index'])->name('calc');
+    Route::get('/Builds', [\App\Http\Controllers\BuildsController::class, 'index'])->name('builds');
+    Route::get('/Guides', [\App\Http\Controllers\GuidesController::class, 'index'])->name('guides');
+    Route::get('/Dev', [\App\Http\Controllers\DeveloperController::class, 'index'])->name('develop');
 
 });
 

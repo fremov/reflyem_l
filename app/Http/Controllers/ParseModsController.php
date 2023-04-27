@@ -2,46 +2,50 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Mods;
 use Illuminate\Http\Request;
-use Goutte\Client;
+use function GuzzleHttp\Promise\all;
 
 
 class ParseModsController extends Controller
 {
+
+//    public function addModsFromJson()
+//    {
+//        // Путь к файлу с данными JSON
+//        $file = public_path('data/parse/data.json');
+//        // Загрузка данных из файла
+//        $data = json_decode(file_get_contents($file), true);
+//
+//        // Записываем данные в базу данных
+//        foreach ($data as $row) {
+//            Mods::create([
+//                'title' => $row['title'],
+//                'image' => $row['image'],
+//                'category' => $row['category'],
+//                'date' => $row['date'],
+//                'author' => $row['author'],
+//                'desc' => $row['desc'],
+//                'size' => $row['size'],
+//                'likes' => $row['likes'],
+//                'link' => $row['link']
+//            ]);
+//        }
+//
+//        echo 'Данные успешно добавлены в базу данных!';
+//    }
+
     public function index()
     {
 
-        $client = new Client();
-        $url = 'https://www.nexusmods.com/skyrimspecialedition/';
-        $crawler = $client->request('GET', $url);
 
-        $data = [];
+        $sort_col = request()->query('sort_col', 'date'); // Здесь мы получаем параметр запроса sort_col, и если его нет, то сортируем по умолчанию по дате
+        $sort_dir = request()->query('sort_dir', 'desc'); // Здесь мы получаем параметр запроса sort_dir, и если его нет, то сортируем по умолчанию по убыванию
+        $sort_dir = request()->query('sort_dir', 'desc'); // Здесь мы получаем параметр запроса sort_dir, и если его нет, то сортируем по умолчанию по убыванию
 
-        $crawler->filter('#mod-list .mod-tile')->slice(0, 12)->each(function ($node) use (&$data) {
-            $title = $node->filter('.tile-name')->text();
-            $image = $node->filter('.fore')->attr('src');
-            $category = $node->filter('.category')->text();
-            $date = $node->filter('.date')->text();
-            $author = $node->filter('.realauthor')->text();
-            $desc = $node->filter('.desc')->text();
-            $size = $node->filter('li.sizecount .flex-label')->text();
-            $likes = $node->filter('li.endorsecount .flex-label')->text();
-            $link = $node->filter('.tile-name a')->attr('href');
+        $data = Mods::where('size', '<', '100')->orderBy('likes')->paginate(10);
 
-            $data[] = [
-                'title' => $title,
-                'image' => $image,
-                'category' => $category,
-                'date' => $date,
-                'author' => $author,
-                'desc' => $desc,
-                'link' => $link,
-                'size' => $size,
-                'likes' => $likes,
-            ];
-        });
         return view('layouts.parse', ['data' => $data]);
-
     }
 
 }
