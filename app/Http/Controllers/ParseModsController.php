@@ -38,12 +38,7 @@ class ParseModsController extends Controller
     public function index()
     {
 
-
-        $sort_col = request()->query('sort_col', 'date'); // Здесь мы получаем параметр запроса sort_col, и если его нет, то сортируем по умолчанию по дате
-        $sort_dir = request()->query('sort_dir', 'desc'); // Здесь мы получаем параметр запроса sort_dir, и если его нет, то сортируем по умолчанию по убыванию
-        $sort_dir = request()->query('sort_dir', 'desc'); // Здесь мы получаем параметр запроса sort_dir, и если его нет, то сортируем по умолчанию по убыванию
-
-        $data = Mods::where('size', '<', '100')->orderBy('likes')->paginate(10);
+        $data = Mods::paginate(12);
 
         return view('layouts.parse', ['data' => $data]);
     }

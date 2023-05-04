@@ -45,11 +45,6 @@ let Change = document.getElementById('Change');
 let Enchantment = document.getElementById('Enchantment');
 // mage
 
-//stone
-let stoneWarrior = document.getElementById('stoneWarrior');
-let stoneMage = document.getElementById('stoneMage');
-let stoneThif = document.getElementById('stoneThif');
-//
 
 // Значение до которого вы хотите повысить навык воин
 let BlacksmithValue = document.getElementById('BlacksmithValue');
@@ -148,6 +143,10 @@ let twentyLp = document.getElementById('twentyLP');
 let needLvlForUp = 0;
 let needLvlForUpF = document.getElementById('needLvlForUpF');
 
+// лп за перки
+let perks_lp_cost;
+// голды за перки
+let perks_gold_cost;
 
 
 function tenLpFunc() {
@@ -545,6 +544,34 @@ function CalculateLPCost(currentSkillValue, countValue) {
     return cost;
 }
 
+function calculatePerksCost(numPerks) {
+    const costFirstPerk = 600;
+    const additionalCostPerPerk = 200;
+    let totalGold = costFirstPerk;
+    let totalLP = 5;
+    if (numPerks > 1) {
+        totalGold += additionalCostPerPerk * (numPerks - 1);
+        totalLP += (numPerks - 1) * 5;
+    }
+    return { "gold": totalGold, "LP": totalLP };
+}
+
+function calculate() {
+    const numPerksInput = document.getElementById("numPerks");
+    const numPerks = parseInt(numPerksInput.value, 10);
+    if (numPerksInput.value === "0") {
+        const perkCosts = calculatePerksCost(numPerks);
+        perks_gold_cost = 0;
+        perks_lp_cost = 0
+    } else if (!isNaN(numPerks) ) {
+        const perkCosts = calculatePerksCost(numPerks);
+        perks_gold_cost = perkCosts.gold;
+        perks_lp_cost = perkCosts.LP;
+    } else {
+        return console.log('error');
+    }
+}
+
 // расчет всех ячеек с лп с таблицы
 function getAllLPFromTable() {
     allGoldTable.innerHTML =
@@ -567,7 +594,8 @@ function getAllLPFromTable() {
         + Number(needGoldWitchcraft.innerHTML)
         + Number(needGoldRecovery.innerHTML)
         + Number(needGoldChange.innerHTML)
-        + Number(needGoldEnchantment.innerHTML);
+        + Number(needGoldEnchantment.innerHTML)
+        + Number(perks_gold_cost);
 
     if (allGoldTable.innerHTML > 0) {
         allGoldTable.classList.remove('text-danger');
@@ -596,7 +624,9 @@ function getAllGoldFromTable() {
         + Number(needLPWitchcraft.innerHTML)
         + Number(needLPRecovery.innerHTML)
         + Number(needLPChange.innerHTML)
-        + Number(needLPEnchantment.innerHTML);
+        + Number(needLPEnchantment.innerHTML)
+        + Number(perks_lp_cost);
+
     if (allLPTable.innerHTML > 0) {
         allLPTable.classList.remove('text-danger');
         allLPTable.classList.add('text-success');
@@ -637,6 +667,9 @@ function formula() {
     calcLpAndGold(Change.value, ChangeValue.value, needLPChange, needGoldChange);
     calcLpAndGold(Enchantment.value, EnchantmentValue.value, needLPEnchantment, needGoldEnchantment);
 
+
+    // перки
+    calculate()
     // расчет всех ячеек с лп со всей таблицы
     getAllLPFromTable();
     // расчет всех ячеек с золотом со всей таблицы
@@ -661,6 +694,11 @@ function formula() {
             needLvlForUpF.classList.remove('text-danger');
             needLvlForUpF.classList.add('text-success');
             break;
+        default:
+            needLvlForUp = Math.ceil(Number(allLPTable.innerHTML) / 15);
+            needLvlForUpF.innerHTML = needLvlForUp;
+            needLvlForUpF.classList.remove('text-danger');
+            needLvlForUpF.classList.add('text-success');
     }
 }
 
@@ -680,5 +718,3 @@ result.addEventListener('click', formula);
 tenLp.addEventListener('click', tenLpFunc);
 fifteenLp.addEventListener('click', fifteenLpFunc);
 twentyLp.addEventListener('click', twentyLpFunc);
-
-

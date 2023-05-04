@@ -21,28 +21,28 @@
 </style>
 <x-preloader />
 <div class="font-frem">
-    <a name="Main"></a>
-<div
-        class="bg-image p-5 text-center shadow-1-strong"
-        style="background-image: url('{{asset('images/3690802.jpg')}}');
-        height: 1000px;
-"
->
+        <a name="Main"></a>
+        <div
+            class="bg-image p-5 text-center shadow-1-strong"
+            style="background-image: url('{{asset('images/3690802.jpg')}}');
+                height: 1000px;
+                "
+        >
 
-        <div class="d-flex justify-content-center align-items-center h-100 " style="">
-            <div class="text-white shadow-5 ">
-                <h1 class="mb-3"> <img src="{{ asset('images/logo.png') }}" style="height: 150px" alt="logo"></h1>
-                <h4 class="mb-3 text-center lh-base ps-3 pe-3 pt-2 border border-2 d-flex"
-                    style="height: 200px; background-color: rgba(0, 0, 0, 0.6)!important;  border-color: rgba(233, 177 , 177 , 0.5)!important;">
-                    Reflyem это сборка модов для Skyrim Special Edition,<br>которая меняет множество аспектов игры и создана для того,<br>чтобы
-                    ваше путешествие по миру Скайрима было<br> максимально комфортным и приятным.</h4>
-                <a target="_blank" class="btn text-white btn-lg fw-normal rounded-pill mt-3 justify-content-center align-items-center pt-3"
-                   style="width: 250px; height: 70px;background-color: rgba(0, 0, 0, 0.6) !important; border-color: rgba(233, 177 , 177 , 0.5)!important;"
-                   href="https://drive.google.com/file/d/1MwhGeiXEEzOOjwcraSgQH5CYvGebiz5g/view?usp=share_link" role="button">Скачать сборку</a>
+            <div class="d-flex justify-content-center align-items-center h-100 " style="">
+                <div class="text-white shadow-5 ">
+                    <h1 class="mb-3"> <img src="{{ asset('images/logo.png') }}" style="height: 150px" alt="logo"></h1>
+                    <h4 class="mb-3 text-center lh-base ps-3 pe-3 pt-2 border border-2 d-flex"
+                        style="height: 200px; background-color: rgba(0, 0, 0, 0.6)!important;  border-color: rgba(233, 177 , 177 , 0.5)!important;">
+                        Reflyem это сборка модов для Skyrim Special Edition,<br>которая меняет множество аспектов игры и создана для того,<br>чтобы
+                        ваше путешествие по миру Скайрима было<br> максимально комфортным и приятным.</h4>
+                    <a target="_blank" class="btn text-white btn-lg fw-normal rounded-pill mt-3 justify-content-center align-items-center pt-3"
+                       style="width: 250px; height: 70px;background-color: rgba(0, 0, 0, 0.6) !important; border-color: rgba(233, 177 , 177 , 0.5)!important;"
+                       href="https://drive.google.com/file/d/1MwhGeiXEEzOOjwcraSgQH5CYvGebiz5g/view?usp=share_link" role="button">Скачать сборку</a>
+                </div>
             </div>
         </div>
-</div>
-<!-- Блок Главная -->
+        <!-- Блок Главная -->
 
 <!-- Блок Базы знаний -->
 <a name="Base"></a>

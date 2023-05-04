@@ -5,8 +5,12 @@
     <link rel="stylesheet" href="{{ asset('style/calcLPstyle.css') }}">
 </head>
 <x-header/>
-<body class="bg-dark mt-5" style="background-image: url('{{asset('images/541231.png')}}')">
+
 <x-preloader/>
+<!--Выбор расы(кнопка)-->
+
+<body class="bg-dark mt-5 bg-dark">
+
 <!--Выбор расы(кнопка)-->
 <div class="d-flex justify-content-evenly w-100 mb-3 pt-3 mt-2">
 
@@ -41,14 +45,20 @@
                                    id="list-messages-list"
                                    data-mdb-toggle="list" href="#list-messages" role="tab"
                                    aria-controls="list-messages">3 Шаг</a>
+
                                 <a class="text-info fw-bold text-center list-group-item list-group-item-action px-3 border-0"
                                    id="list-messages-list-1"
+                                   data-mdb-toggle="list" href="#list-messages-2" role="tab"
+                                   aria-controls="list-messages2">4 Шаг</a>
+
+                                <a class="text-info fw-bold text-center list-group-item list-group-item-action px-3 border-0"
+                                   id="list-messages-list-2"
                                    data-mdb-toggle="list" href="#list-messages-1" role="tab"
-                                   aria-controls="list-messages">4 Шаг</a>
+                                   aria-controls="list-messages">5 Шаг</a>
                                 <a class="text-info fw-bold text-center list-group-item list-group-item-action px-3 border-0"
                                    id="list-settings-list"
                                    data-mdb-toggle="list" href="#list-settings" role="tab"
-                                   aria-controls="list-settings">5 Шаг</a>
+                                   aria-controls="list-settings">6 Шаг</a>
                             </div>
                         </div>
                         <div class="col-8">
@@ -56,33 +66,40 @@
                                 <div class="tab-pane fade show active" id="list-home" role="tabpanel"
                                      aria-labelledby="list-home-list">
                                     <span class="fw-bold">Выбираем нужную расу персонажа: </span> <br>
-                                    <img src="{{ asset('images/insruction1.png') }}" alt="pic">
+                                    <img src="{{asset('images/insruction1.png')}}" alt="pic">
                                 </div>
                                 <div class="tab-pane fade" id="list-profile" role="tabpanel"
                                      aria-labelledby="list-profile-list">
                                     <span class="fw-bold">Выбираем нужный камень для персонажа: </span> <br>
-                                    <img src="{{ asset('images/insruction2.png') }}" alt="pic"> <br>
+                                    <img src="{{asset('images/insruction2.png')}}" alt="pic"> <br>
                                     <span class="fw-bold">Если камень не: 'Вор', 'Воин', 'Маг', <br> тогда этот пункт пропускаем, посколько другие камни никак не повлияют на вычисления </span>
                                 </div>
                                 <div class="tab-pane fade" id="list-messages" role="tabpanel"
                                      aria-labelledby="list-messages-list">
                                     <span class="fw-bold">Выбираем нужный уровень сложности: </span><br>
-                                    <img src="{{ asset('images/insruction3.png') }}" alt="pic">
+                                    <img src="{{asset('images/insruction3.png')}}" alt="pic">
                                 </div>
+
+                                <div class="tab-pane fade" id="list-messages-2" role="tabpanel"
+                                     aria-labelledby="list-messages-list-2">
+                                    <span class="fw-bold">Выбираем нужное количество перков: </span><br>
+                                    <img src="{{asset('images/Capture.png')}}" alt="pic">
+                                </div>
+
                                 <div class="tab-pane fade" id="list-messages-1" role="tabpanel"
                                      aria-labelledby="list-messages-list-1">
                                     <span class="fw-bold">В первом поле вводим текущее значение нужного навыка: </span>
                                     <br>
                                     <span class="fw-bold">Во втором поле вводим значение навыка до которого вы хотите повысить: </span>
                                     <img class="w-75" style="width: 300px!important;"
-                                         src="{{ asset('images/insruction6.png') }}" alt="pic">
+                                         src="{{asset('images/insruction6.png')}}" alt="pic">
                                 </div>
                                 <div class="tab-pane fade" id="list-settings" role="tabpanel"
                                      aria-labelledby="list-settings-list">
                                     <span class="fw-bold">И наконец нажимаем на кнопку "Расчитать" и смотрим на результаты: </span>
                                     <br>
-                                    <img class="mb-2" src="{{ asset('images/insruction4.png') }}" alt="pic"> <br>
-                                    <img style="width: 650px!important;" src="{{ asset('images/instruction.png') }}"
+                                    <img class="mb-2" src="{{asset('images/insruction4.png')}}" alt="pic"> <br>
+                                    <img style="width: 650px!important;" src="{{asset('images/instruction.png')}}"
                                          alt="pic">
                                 </div>
                             </div>
@@ -267,6 +284,10 @@
         </ul>
     </div>
     <!--Выбор количества LP(кнопка)-->
+
+    <!--Перки-->
+    <input type="number" class="input" placeholder="Количество перков" id="numPerks" name="numPerks" value="0">
+
 
     <!--кнопка рассчитать-->
     <button type="submit" id="result" class="btn btn-danger" data-mdb-toggle="modal" data-mdb-target="#exampleModal1">
@@ -711,6 +732,6 @@
 </div>
 
 
-<script src="{{ asset('script/main.js') }}"></script>
+<script src="{{asset('script/main.js')}}"></script>
 </body>
 </html>
