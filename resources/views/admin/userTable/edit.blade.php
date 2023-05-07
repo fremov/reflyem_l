@@ -27,11 +27,6 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="password">Пароль пользователя:</label>
-                    <input type="password" name="password" id="password" class="form-control mb-3" value="{{$data->password}}">
-                </div>
-
-                <div class="form-group">
                     <label for="is_admin">Роль пользователя:</label>
                     <select name="is_admin" id="is_admin" class="form-control mb-3">
                         <option value="">Выберите роль</option>

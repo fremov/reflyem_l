@@ -36,11 +36,11 @@
                 </tr>
                 <tr>
                     <td>Дата создания</td>
-                    <td>{{$data->created_at}}</td>
+                    <td>{{ date_format($data->created_at->setTimezone('Europe/Moscow'), 'd.m.Y H:i') }}</td>
                 </tr>
                 <tr>
                     <td>Дата изменения</td>
-                    <td>{{$data->updated_at}}</td>
+                    <td>{{ date_format($data->updated_at->setTimezone('Europe/Moscow'), 'd.m.Y H:i') }}</td>
                 </tr>
                 </tbody>
             </table>

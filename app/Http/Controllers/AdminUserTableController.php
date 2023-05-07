@@ -49,17 +49,14 @@ class AdminUserTableController extends Controller
     public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
-            'name' => 'max:255'.$id,
-            'email' => 'unique:users,email,',
-            'is_admin' => 'int',
+            'name' => 'max:255'. $id,
+            'email' => 'max:255',
+            'is_admin' => 'max:1',
             'password' => 'max:25',
         ]);
 
-        if (!empty($request->input('password'))) {
-            $validatedData['password'] = Hash::make($request->input('password'));
-        }
-
-        $id->update($validatedData);
+        $user = User::find($id);
+        $user->update($validatedData);
 
         return redirect()->route('admin.user')->with('success', 'Данные пользователя успешно обновлены!');
     }
