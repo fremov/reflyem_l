@@ -32,7 +32,6 @@
     <x-preloader />
     <div class="container-fluid">
         <div class="row justify-content-center">
-
         @foreach($data as $mod)
                 <div class="col-lg-4 col-md-6 col-sm-12 mb-4 h-auto">
                     <div class="card custom-card">

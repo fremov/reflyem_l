@@ -1,155 +1,191 @@
-<!doctype html>
-<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminLTE 3 | Boxed Layout</title>
-
-    <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&amp;display=fallback">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{asset('AdminLTE/plugins/fontawesome-free/css/all.min.css')}}">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="{{asset('AdminLTE//dist/css/adminlte.min.css')}}">
+<x-head />
 </head>
 <x-header />
-<x-preloader />
-<body class="sidebar-mini layout-boxed mt-5">
-<!-- Site wrapper -->
-<div class="wrapper bg-dark">
 
-    <!-- Main Sidebar Container -->
-    <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: rgba(0, 0, 0, 0)!important;">
-
-        <!-- Sidebar -->
-        <div class="sidebar">
-            <!-- Sidebar user (optional) -->
-
-
-
-
-            <!-- Sidebar Menu -->
-            <nav class="mt-2">
-                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                    <!-- Add icons to the links using the .nav-icon class
-                         with font-awesome or any other icon font library -->
-
-
-                    <li class="nav-header">MULTI LEVEL EXAMPLE</li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="fas fa-circle nav-icon"></i>
-                            <p>Level 1</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-circle"></i>
-                            <p>
-                                Level 1
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Level 2</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>
-                                        Level 2
-                                        <i class="right fas fa-angle-left"></i>
-                                    </p>
-                                </a>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">
-                                            <i class="far fa-dot-circle nav-icon"></i>
-                                            <p>Level 3</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">
-                                            <i class="far fa-dot-circle nav-icon"></i>
-                                            <p>Level 3</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">
-                                            <i class="far fa-dot-circle nav-icon"></i>
-                                            <p>Level 3</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Level 2</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="fas fa-circle nav-icon"></i>
-                            <p>Level 1</p>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <!-- /.sidebar-menu -->
-        </div>
-        <!-- /.sidebar -->
-    </aside>
-
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-
-
-        <!-- Main content -->
-        <section class="content text-dark">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12">
-                        <!-- Default box -->
-                        <div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title">Title</h3>
-
-                                <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                                        <i class="fas fa-minus"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-                                        <i class="fas fa-times"></i>
-                                    </button>
-                                </div>
-                            </div>
-                            <!-- /.card-footer-->
-                        </div>
-                        <!-- /.card -->
+<body class="mt-5 bg-dark text-white fs-5 fw-">
+    <div class="container">
+        <div class="row text-dark">
+            <div class="col-md-4">
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <h5 class="card-title">Как прокачивать навыки?</h5>
+                        <p class="card-text">Прокачка основных навыков осуществляется у учителей навыков за очки обучения
+                            и золото, расположение учителей не менялось и соответствует ванильному Скайриму, каждый
+                            учитель является мастером своего дела. Также, у любого придворного мага вы можете приобрести
+                        </p>
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- /.content -->
+            <div class="col-md-4">
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <h5 class="card-title">Что такое очки обучения и как их получить?</h5>
+                        <p class="card-text">Очки обучения это валюта которую вы получаете за повышения уровня
+                            персонажа, убийство сильных противников, выполнение даэдрических квестов и чтение черных
+                            книг, праведные персонажи имеют возможность сдавать дэдрические артефакты дозорному Марку,
+                            который расположен в Сигнальной Башне Стендарра.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <h5 class="card-title">За уровни я не получаю очки способностей (перки) это нормально?</h5>
+                        <p class="card-text">Да, система прокачки персонажа претерпела большие изменения, теперь каждый
+                            персонаж получает на 1 уровне 10 очков способностей (перков), но не получает их за уровни.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <h5 class="card-title">Как мне получить очки способностей (перки)?</h5>
+                        <p class="card-text">Очки способностей (перки) теперь приобретаются у учителей навыков за очки
+                            обучения и золото, вам необходим диалог - "Ты можешь обучить меня особым навыкам?"</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <h5 class="card-title">Где и как посмотреть характеристики персонажа?</h5>
+                        <p class="card-text">"Вы можете увидеть все характеристики вашего персонажа в особом меню
+                            характеристик.
+                            Нажмите клавишу ""G"" и перед вами появится меню со всеми характеристиками персонажа.
+                            Перемещаться по меню можно с помощью мыши, а также клавиш ""W"" ""A"" ""S"" ""D"" и
+                            стрелочек.
+
+                            Если вас не устраивает клавиша вызова меню, то вы можете ее изменить - нажмите ESC, выберите
+                            пункт ""Настройка модов"", в открывшемся окне выберите мод ""Forged in experience"",
+                            выберите графу ""Общие"" и в пункте ""Клавиша для открытия меню статов"" укажите нужную вам
+                            клавишу."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <h5 class="card-title">Можно ли каким то образом получить души дракона до убийства драконов?
+                        </h5>
+                        <p class="card-text">"Да, у вас есть возможность получить души дракона иным путем. Для этого вам
+                            следует отправиться к Алтарю Рожденного Небом и заполучить книгу """"Плач о Пепельном
+                            Короле"""", которая находится в трупе скелета Грега.
+
+                            После нахождения книги, зайдите в ветку навыков ""Мастерство Ту'ума"" и изучите перк
+                            ""Неукротимая сила"", далее прочтите книгу и вы получите 3 души дракона.
+
+                            Открыть ветку талантов вы можете с помощью клавиши ""Ъ"" (твердый знак), если она вас не
+                            устраивает, то вы можете ее изменить - нажмите ESC, выберите пункт ""Настройка модов"", в
+                            открывшемся окне выберите мод ""Custom Skills Menu"" и в пункте ""Show custom skills""
+                            укажите нужную вам клавишу."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <h5 class="card-title">Как стать вервольфом?</h5>
+                        <p class="card-text">"Становление вервольфом было изменено, теперь оно осуществляется через
+                            собственную ветку талантов ""Ликантропия"", вам необходимо иметь 5 уровень персонажа и плоть
+                            вервольфа в инвентаре. Плоть вервольфа вы можете найти в Разводной пещере, там находится
+                            молодой раненный вервольф, который нашел здесь убежище. Имея плоть вервольфа и 5 уровень вы
+                            можете изучить перк ""Молодой хищник"", после этого вы станете вервольфом.
+
+                            Открыть ветку талантов вы можете с помощью клавиши ""Ъ"" (твердый знак), если она вас не
+                            устраивает, то вы можете ее изменить - нажмите ESC, выберите пункт ""Настройка модов"", в
+                            открывшемся окне выберите мод ""Custom Skills Menu"" и в пункте ""Show custom skills""
+                            укажите нужную вам клавишу."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <h5 class="card-title">Как стать вампиром?</h5>
+                        <p class="card-text">"Становление вампиром было изменено, теперь оно осуществляется через
+                            собственную ветку талантов ""Вампиризм"", вам необходимо иметь 5 уровень персонажа и прах
+                            вампира в инвентаре. Прах вампира вы можете найти в Зале Достижений на столике в своей
+                            комнате. Имея прах вампира и 5 уровень вы можете изучить перк ""Дитя ночи"", после этого
+                            подождите пару суток и вы станете вампиром.
+
+                            Открыть ветку талантов вы можете с помощью клавиши ""Ъ"" (твердый знак), если она вас не
+                            устраивает, то вы можете ее изменить - нажмите ESC, выберите пункт ""Настройка модов"", в
+                            открывшемся окне выберите мод ""Custom Skills Menu"" и в пункте ""Show custom skills""
+                            укажите нужную вам клавишу."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <h5 class="card-title">Как стать праведным персонажем?</h5>
+                        <p class="card-text">"Становление праведным персонажем было изменено, теперь оно осуществляется
+                            через собственную ветку талантов ""Праведность"", вам необходимо иметь 5 уровень персонажа,
+                            не иметь в инвентаре даэдрических предметов, быть чистым перед законом (не иметь убийств,
+                            штрафов и тд) и не состоять в Гильдии Воров и Темном Братстве.
+
+                            Если вы соответствуете требованиям, вы можете изучить перк ""Безупречная праведность"",
+                            который позволит вам получить одно из благословений Аэдра.
+
+                            Большинство алтарей для получения благословений находится в Храме богов (кроме Талоса, его
+                            вы можете найти в Вайтране возле проповедника Хеймскара) на 30ом уровне персонажа и
+                            изученном перке ""Избранник богов"" у вас появится возможность получить еще одно
+                            благословение.
+
+                            Открыть ветку талантов вы можете с помощью клавиши ""Ъ"" (твердый знак), если она вас не
+                            устраивает, то вы можете ее изменить - нажмите ESC, выберите пункт ""Настройка модов"", в
+                            открывшемся окне выберите мод ""Custom Skills Menu"" и в пункте ""Show custom skills""
+                            укажите нужную вам клавишу."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <h5 class="card-title">Почему на кинжалы не работает ветка одноручного оружия, а на боевые
+                            посохи не работает ветка двуручного оружия?</h5>
+                        <p class="card-text">"Кинжалы более не получают бонусов от одноручного оружия, так как в Reflyem
+                            они ориентированы для игры от скрытных атак и имеют свою ветку талантов в ""Скрытности""
+
+                            Боевые посохи более не получают бонусов от двуручного оружия, так как в Reflyem они
+                            ориентированы на нанесение магического урона от чар и имеют свою ветку талантов в
+                            ""Зачаровании"""""</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <h5 class="card-title">Не могу взять перк "Лич" в ветке Лича, что делать?</h5>
+                        <p class="card-text">"Для начала вам следует отправиться в Пещеру Хоба и найти труп дозорного
+                            который лежит перед ней, прочтите записку и отправляйтесь вглубь пещеры чтобы убить Лорда
+                            Некромантов.
+                            Далее прочтите его дневник и отправляйтесь в Дом Дреласа, там в сейфе вы найдете Том
+                            Нежизни, прочтите его и обнаружите внутри Свиток Превосходства.
+                            После всего этого вам следует отправиться на Солстхейм в двемерское подземелье Фалбтарз, в
+                            самом конце вас ждет бой с боссом Личом, одолев его вы получите Заготовку для Филактерии
+                            (важно понимать, что трупов босса будет 2)
+                            В завершении вам нужно отправиться в подземелье Глубины Илиналты в ходе квеста ""Черная
+                            звезда"" и создать Филактерию Превосходства на уникальной пентаграмме душ Мейлина Варена.
+                            Имея Филактерию Превосходства, Свиток Превосходства и Том Нежизни вы сможете взять
+                            долгожданный перк"</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <h5 class="card-title">Что такое волшебная сумка?</h5>
+                        <p class="card-text">Волшебная сумка это возможность увеличить переносимый вес вашего персонажа,
+                            вы можете приобрести ее у торговцев "Всякой всячиной" (например Товары Белетора в Вайтране)
+                            Выберите диалог - "Приобрести волшебную сумку" и вы автоматически увеличите вместимость
+                            вашего инвентаря на 400 единиц. Также вы можете продолжить увеличивать его на 200 единиц,
+                            вплоть до 3000, для покупки и улучшения требуется золото.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- /.content-wrapper -->
-</div>
-
-<!-- jQuery -->
-<script src="{{asset('AdminLTE/plugins/jquery/jquery.min.js')}}"></script>
-<!-- Bootstrap 4 -->
-<script src="{{asset('AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-<!-- AdminLTE App -->
-<script src="{{asset('AdminLTE/dist/js/adminlte.min.js')}}"></script>
-
 </body>
-</html>
-
-
