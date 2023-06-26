@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Таблица(Броня)</title>
+    <title>Таблица(пользователи)</title>
 
     <!-- Custom fonts for this template -->
     <link href="{{asset('admin_panel/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
@@ -30,159 +30,153 @@
 
 <body id="page-top">
 
-    <!-- Page Wrapper -->
-    <div id="wrapper">
-        <x-preloader />
-        <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+<!-- Page Wrapper -->
+<div id="wrapper">
+    <x-preloader/>
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('dashboard')}}">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">Админ <sup>Панель</sup></div>
-            </a>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
-
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
-                <a class="nav-link" href="/">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>На главную</span></a>
-            </li>
-
-            <hr class="sidebar-divider my-0">
-            <!-- Nav Item - Tables -->
-            <li class="nav-item active">
-                <a class="nav-link" href="{{route('admin.database')}}">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Таблица(оружие)</span></a>
-            </li>
-            <hr class="sidebar-divider my-0">
-            <li class="nav-item active">
-                <a class="nav-link" href="{{route('admin.armor')}}">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Таблица(броня)</span></a>
-            </li>
-            <hr class="sidebar-divider my-0">
-            <!-- Nav Item - Tables -->
-            <li class="nav-item active">
-                <a class="nav-link" href="{{route('admin.user')}}">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Таблица(Пользователи)</span></a>
-            </li>
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
-
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        <!-- Sidebar - Brand -->
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('dashboard')}}">
+            <div class="sidebar-brand-icon rotate-n-15">
+                <i class="fas fa-laugh-wink"></i>
             </div>
+            <div class="sidebar-brand-text mx-3">Админ <sup>Панель</sup></div>
+        </a>
 
-        </ul>
-        <!-- End of Sidebar -->
+        <!-- Divider -->
+        <hr class="sidebar-divider my-0">
 
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
+        <!-- Nav Item - Dashboard -->
+        <li class="nav-item">
+            <a class="nav-link" href="/">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>На главную</span></a>
+        </li>
 
-            <!-- Main Content -->
-            <div id="content">
+        <hr class="sidebar-divider my-0">
 
-            <x-admin_topbar />
+        <hr class="sidebar-divider my-0">
+        <!-- Nav Item - Tables -->
+        <li class="nav-item active">
+            <a class="nav-link" href="{{route('admin.user')}}">
+                <i class="fas fa-fw fa-table"></i>
+                <span>Таблица(Пользователи)</span></a>
+        </li>
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block">
 
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
+        <!-- Sidebar Toggler (Sidebar) -->
+        <div class="text-center d-none d-md-inline">
+            <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>
 
-                    <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Таблица {{'Пользователи'}}</h6>
-                            <a class="text-success" href="{{route('admin.user.create')}}">Добавить</a>
-                            <a class="text-danger" href="{{route('deleted_user')}}">Удалённые записи</a>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Имя</th>
-                                            <th>Почта</th>
-                                            <th>Роль</th>
-                                            <th>Когда создан</th>
-                                            <th>Когда изменен</th>
-                                            <th>Действие</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                    @foreach($data as $item)
-                                        <tr>
-                                            <td style="width: 10%;">{{$item->id}}</td>
-                                            <td style="width: 20%; height: 45px!important;">{{$item->name}}</td>
-                                            <td style="width: 20%;">{{$item->email}}</td>
-                                            <td style="width: 20%;">
-                                                @if($item->is_admin == 1)
-                                                    Админ
-                                                @else
-                                                    Пользователь
-                                                @endif
-                                            </td>
-                                            <td style="width: 20%;">{{$item->created_at}}</td>
-                                            <td style="width: 20%;">{{$item->update_at}}</td>
-                                            <td class="d-flex">
-                                                <a class="text-white" href="{{ route('admin.user.show', $item->id) }}"><button class="btn btn-info ">Show</button></a>
-                                                <a class="text-white" href="{{ route('admin.user.edit', $item->id) }}"><button class="btn btn-warning ms-1">Edit</button></a>
-                                                <form action="{{ route('admin.user.destroy', $item->id) }}" method="POST">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button class="btn btn-danger" type="submit"><i class="fas fa-trash"></i></button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                    </tbody>
-                                </table>
-                            </div>
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <x-admin_topbar/>
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <!-- DataTales Example -->
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Таблица {{'Пользователи'}}</h6>
+                        <a class="text-success" href="{{route('admin.user.create')}}">Добавить</a>
+                        <a class="text-danger" href="{{route('deleted_user')}}">Удалённые записи</a>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Имя</th>
+                                    <th>Почта</th>
+                                    <th>Роль</th>
+                                    <th>Когда создан</th>
+                                    <th>Когда изменен</th>
+                                    <th>Действие</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($data as $item)
+                                    <tr>
+                                        <td style="width: 10%;">{{$item->id}}</td>
+                                        <td style="width: 20%; height: 45px!important;">{{$item->name}}</td>
+                                        <td style="width: 20%;">{{$item->email}}</td>
+                                        <td style="width: 20%;">
+                                            @if($item->is_admin == 1)
+                                                Админ
+                                            @else
+                                                Пользователь
+                                            @endif
+                                        </td>
+                                        <td style="width: 15%;">{{ date_format($item->created_at->setTimezone('Europe/Moscow'), 'd.m.Y H:i') }}</td>
+                                        <td style="width: 15%;">{{ date_format($item->updated_at->setTimezone('Europe/Moscow'), 'd.m.Y H:i') }}</td>
+                                        <td class="d-flex">
+                                            <a class="text-white" href="{{ route('admin.user.show', $item->id) }}">
+                                                <button class="btn btn-info ">Show</button>
+                                            </a>
+                                            <a class="text-white" href="{{ route('admin.user.edit', $item->id) }}">
+                                                <button class="btn btn-warning ms-1">Edit</button>
+                                            </a>
+                                            <form action="{{ route('admin.user.destroy', $item->id) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button class="btn btn-danger" type="submit"><i
+                                                        class="fas fa-trash"></i></button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-
                 </div>
-                <!-- /.container-fluid -->
 
             </div>
-            <!-- End of Main Content -->
+            <!-- /.container-fluid -->
+
         </div>
-        <!-- End of Content Wrapper -->
-
+        <!-- End of Main Content -->
     </div>
-    <!-- End of Page Wrapper -->
+    <!-- End of Content Wrapper -->
 
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
+</div>
+<!-- End of Page Wrapper -->
 
-   <x-admin_logout_modal />
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="{{asset('admin_panel/vendor/jquery/jquery.min.js')}}"></script>
-    <script src="{{asset('admin_panel/vendor/bootstrap/js/bootstrap.bundle.min.js')}} "></script>
+<x-admin_logout_modal/>
 
-    <!-- Core plugin JavaScript-->
-    <script src="{{asset('admin_panel/vendor/jquery-easing/jquery.easing.min.js')}} "></script>
+<!-- Bootstrap core JavaScript-->
+<script src="{{asset('admin_panel/vendor/jquery/jquery.min.js')}}"></script>
+<script src="{{asset('admin_panel/vendor/bootstrap/js/bootstrap.bundle.min.js')}} "></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="{{asset('admin_panel/js/sb-admin-2.min.js')}} "></script>
+<!-- Core plugin JavaScript-->
+<script src="{{asset('admin_panel/vendor/jquery-easing/jquery.easing.min.js')}} "></script>
 
-    <!-- Page level plugins -->
-    <script src="{{asset('admin_panel/vendor/datatables/jquery.dataTables.min.js')}} "></script>
-    <script src="{{asset('admin_panel/vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
+<!-- Custom scripts for all pages-->
+<script src="{{asset('admin_panel/js/sb-admin-2.min.js')}} "></script>
 
-    <!-- Page level custom scripts -->
-    <script src="{{asset('admin_panel/js/demo/datatables-demo.js')}} "></script>
+<!-- Page level plugins -->
+<script src="{{asset('admin_panel/vendor/datatables/jquery.dataTables.min.js')}} "></script>
+<script src="{{asset('admin_panel/vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
+
+<!-- Page level custom scripts -->
+<script src="{{asset('admin_panel/js/demo/datatables-demo.js')}} "></script>
 
 </body>
 
