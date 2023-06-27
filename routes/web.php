@@ -60,6 +60,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/Builds', [\App\Http\Controllers\BuildsController::class, 'index'])->name('builds');
     Route::get('/Guides', [\App\Http\Controllers\GuidesController::class, 'index'])->name('guides');
     Route::get('/Dev', [\App\Http\Controllers\DeveloperController::class, 'index'])->name('develop');
+    Route::get('/Profile', [\App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
 
 });
 

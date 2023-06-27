@@ -38,8 +38,6 @@
                                 id="dropdownMenuButton"
                                 data-mdb-toggle="dropdown"
                                 aria-expanded="false"
-
-
                             >
                                 <span class="text-lowercase"><span class="text-uppercase">Д</span>ля игроков</span>
                             </button>
@@ -101,9 +99,15 @@
                                 <a class="dropdown-item" href="{{route('dashboard')}}">Админ панель</a>
                             </li>
                             <li>
+                                <a class="dropdown-item" href="{{ route('profile') }}">Профиль</a>
+                            </li>
+                            <li>
                                 <a class="dropdown-item" href="{{ route('logout') }}">Выйти</a>
                             </li>
                         @elseif (Auth::user())
+                            <li>
+                                <a class="dropdown-item" href="{{ route('profile') }}">Профиль</a>
+                            </li>
                             <li>
                                 <a class="dropdown-item" href="{{ route('logout') }}">Выйти</a>
                             </li>
